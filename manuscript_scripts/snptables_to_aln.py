@@ -57,10 +57,20 @@ everything = lambda x: True
 
 def main(script_info):
     option_parser, opts, args =\
-       parse_command_line_parameters(**script_info)
-      
+       parse_command_line_parameters(disallow_positional_arguments=False, **script_info)
+    
+    if len(args) > 1:
+        raise RuntimeError("too many positional args")
+    
+    # have a command line label from sumatra which requires we put all results
+    # in a sub-directory of the same name
+    if args:
+        outpath = os.path.join(opts.outpath, args[0])
+    else:
+        outpath = opts.outpath
+    
     if not opts.dry_run:
-        create_path(opts.outpath)
+        create_path(outpath)
     
     chrom_class = opts.chrom_class
     freq_class = opts.freq_class
@@ -92,7 +102,7 @@ def main(script_info):
             chrom_class='chrom_'+chrom_class,
             gc_class='GC_'+gc_class, direction=opts.direction)
     
-    outfilename = os.path.join(opts.outpath,
+    outfilename = os.path.join(outpath,
     '%(freq_class)s-%(chrom_class)s-%(gc_class)s-%(direction)s.fasta.gz' % name_components)
     for fn in filenames:
         with open_(fn) as infile:
