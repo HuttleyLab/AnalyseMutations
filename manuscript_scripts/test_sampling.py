@@ -1,12 +1,10 @@
 import os, sys
 
-sys.path.append('..')
-
 from cogent import DNA
 from cogent.util.unit_test import TestCase, main
 from cogent.db.ensembl import Species, HostAccount, Genome
 
-from mutation_motif import sample_snp
+import sample_snp
 
 account = HostAccount(*os.environ['ENSEMBL_ACCOUNT'].split())
 human = Genome('human', Release=71, account=account)

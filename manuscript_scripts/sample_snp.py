@@ -1,7 +1,6 @@
 """sampling SNP data from Ensembl"""
 import os, sys
 
-sys.path.append('..')
 from optparse import make_option
 
 from cogent import DNA
