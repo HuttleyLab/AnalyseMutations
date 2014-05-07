@@ -1,16 +1,12 @@
 from cogent import LoadTable, DNA
 
 def reverse_complement_record(gene_strand, snp_strand):
-    """returns True if the SNP record needs to be reverse complemented to put on transcribed strand"""
+    """returns True if the Ensembl 71 SNP record needs to be reverse complemented to put on transcribed strand"""
+    # rc if the strands are different
+    if gene_strand not in [-1,1] or snp_strand not in [-1, 1]:
+        raise ValueError("strand must be -1 or 1")
     
-    if gene_strand == snp_strand:
-        # gene is + snp is +; False
-        rc = False
-    elif gene_strand != snp_strand:
-        # gene is - snp is -; True
-        rc = False
-    
-    return rc
+    return snp_strand != gene_strand
 
 def get_rc_record(alleles, ancestor, allele_freqs, flank_5, flank_3):
     """reverse complements the alleles, ancestror, flanking seqs, and allele freqs
@@ -25,4 +21,5 @@ def get_rc_record(alleles, ancestor, allele_freqs, flank_5, flank_3):
     
     flank_5_rc = str(DNA.makeSequence(flank_5).rc())
     flank_3_rc = str(DNA.makeSequence(flank_3).rc())
-    return alleles_rc, ancestor_rc, allele_freqs_rc, flank_5_rc, flank_3_rc
+    return alleles_rc, ancestor_rc, allele_freqs_rc, flank_3_rc, flank_5_rc
+

@@ -3,6 +3,7 @@ import sys, os
 from cogent.util.unit_test import TestCase, main
 
 from strand import reverse_complement_record, get_rc_record
+from snptables_to_aln import filtered_records
 
 class TestStrand(TestCase):
     def test_reverse_record(self):
@@ -31,6 +32,22 @@ class TestStrand(TestCase):
         self.assertEqual(ancestor_rc, 'A')
         expect_freqs = {'A': 0.0115, 'G': 0.9885}
         self.assertEqual(allele_freqs_rc, expect_freqs)
+    
+    def test_gen_stranded_fasta(self):
+        """correctly generate a stranded fasta formatted sequence file"""
+        data = [line.strip() for line in open('test_data/strand.txt')]
+        seen = set()
+        chroms = set()
+        expect_records = [
+        '>rs141018741\nATACTGTTGCCTCAATATCAAGGAACTGGAAGCATGTAAAA\n',
+        '>rs114239297\nTGTGATGTTGGAGAACTACAAGAACCTGATCTCCCTGGGTG\n',
+        '>rs4983150\nTATCATGACTGGGCATCTCTATGCCAAACTGGTCATACTGT\n',
+        '>rs4572095\nCTGGATTCTGGGAGTCTGTCAAGATTCCAGGACTGCAGATG\n'
+        ]
+        
+        for record in filtered_records(data[1:], ('A', 'G'), seen, chroms, verbose=False):
+            self.assertTrue(record in expect_records)
+    
     
 
 if __name__ == "__main__":

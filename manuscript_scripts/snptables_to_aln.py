@@ -44,6 +44,30 @@ def MakeFreqCompare(cuttoff, ge, get_freq=None, verbose=False):
     
     return call
 
+def MakeStranded(stranded):
+    """returns a function that reverse complements if seq_type is not-intergenic"""
+    
+    def unmodified(gene_strand, snp_strand, alleles, ancestor, freqs, flank_5, flank_3):
+        """makes the seq"""
+        return alleles, ancestor, flank_5 + ancestor + flank_3
+    
+    def reverse_complementable(gene_strand, snp_strand, alleles, ancestor, freqs, flank_5, flank_3):
+        """makes the seq"""
+        if gene_strand and not \
+         strand.reverse_complement_record(gene_strand, snp_strand):
+            return flank_5 + ancestor + flank_3
+        
+        alleles, ancestor, freqs, flank_5, flank_3 = strand.get_rc_record(alleles, ancestor, freqs, flank_5, flank_3)
+        
+        return alleles, ancestor, flank_5 + ancestor + flank_3
+    
+    if stranded:
+        func = reverse_complementable
+    else:
+        func = unmodified
+    
+    return func
+
 def is_autosome(chrom):
     """docstring for is_autosome"""
     chrom = chrom.upper()
@@ -55,6 +79,71 @@ def is_xchrom(chrom):
 
 everything = lambda x: True
 
+def filtered_records(records, direction, seen, chroms, correct_chrom=everything, correct_freq=everything, correct_comp=everything, stranded=False, verbose=True):
+    """parses records, yielding when condition met"""
+    adjust_strand = MakeStranded(stranded)
+    for line in records:
+        line = line.strip().split('\t')
+        label = line[0].strip()
+        if label in seen:
+            continue
+
+        coord = line[1]
+
+        ancestor = line[6]
+        if len(ancestor) > 1: # it's the string "None"
+            continue
+
+        alleles = line[5]
+        if ancestor not in alleles:
+            continue
+
+        alleles = set(alleles.split('/'))
+        if len(alleles) != 2:
+            continue
+
+        if not correct_chrom(coord):
+            continue
+
+        freqs = dict(eval(line[4]))
+        if not freqs:
+            continue
+
+        if not correct_freq(freqs.values()):
+            continue
+        
+        flank_5, flank_3 = line[7], line[8]
+        
+        if 'N' in flank_5 or 'N' in flank_3:
+            continue
+        
+        # handle the strandedness
+        snp_strand = int(line[2])
+        try:
+            # e.g. Homo sapiens:chromosome:20:68350-77174:1
+            gene_strand = int(line[11].split(':')[-1])
+        except IndexError:
+            gene_strand = None
+        
+        alleles, ancestor, seq = adjust_strand(gene_strand, snp_strand, alleles,
+                                    ancestor, freqs, flank_5, flank_3)
+        
+        got = alleles.difference(ancestor).pop()
+        if (ancestor, got) != direction:
+            continue
+        
+        seen.update([label])
+
+        if not correct_comp(seq):
+            continue
+
+        
+        record = '\n'.join(['>%s' % label, seq, ''])
+        yield record
+        
+        chroms.update([coord.split(':')[2]])
+    
+
 def main(script_info):
     option_parser, opts, args =\
        parse_command_line_parameters(disallow_positional_arguments=False, **script_info)
@@ -62,9 +151,9 @@ def main(script_info):
     if len(args) > 1:
         raise RuntimeError("too many positional args")
     
-    # have a command line label from sumatra which requires we put all results
-    # in a sub-directory of the same name
     if args:
+        # have a command line label from sumatra which requires we put all
+        # results in a sub-directory of the same name
         outpath = os.path.join(opts.outpath, args[0])
     else:
         outpath = opts.outpath
@@ -100,85 +189,22 @@ def main(script_info):
     
     name_components = dict(freq_class='freq_'+freq_class,
             chrom_class='chrom_'+chrom_class,
-            gc_class='GC_'+gc_class, direction=opts.direction)
+            gc_class='GC_'+gc_class, direction=opts.direction,
+            prefix = opts.prefix or '')
     
     outfilename = os.path.join(outpath,
-    '%(freq_class)s-%(chrom_class)s-%(gc_class)s-%(direction)s.fasta.gz' % name_components)
+    '%(prefix)s%(freq_class)s-%(chrom_class)s-%(gc_class)s-%(direction)s.fasta.gz' % name_components)
     for fn in filenames:
         with open_(fn) as infile:
             with open_(outfilename, 'w') as outfile:
                 num = 0
-                for line in infile:
-                    line = line.strip().split('\t')
-                    label = line[0].strip()
-                    if label in seen:
-                        continue
-            
-                    coord = line[1]
-            
-                    ancestor = line[6]
-                    if len(ancestor) > 1: # it's the string "None"
-                        continue
-            
-                    alleles = line[5]
-                    if ancestor not in alleles:
-                        continue
-            
-                    alleles = set(alleles.split('/'))
-                    if len(alleles) != 2:
-                        continue
-            
-                    if not correct_chrom(coord):
-                        continue
-            
-                    freqs = dict(eval(line[4]))
-                    if not freqs:
-                        continue
-            
-                    if not correct_freq(freqs.values()):
-                        continue
-                    
-                    flank_5, flank_3 = line[7], line[8]
-                    
-                    if 'N' in flank_5 or 'N' in flank_3:
-                        continue
-                    
-                    # handle the strandedness
-                    snp_strand = int(line[2])
-                    try:
-                        # e.g. Homo sapiens:chromosome:20:68350-77174:1
-                        gene_strand = int(line[11].split(':')[-1])
-                    except IndexError:
-                        gene_strand = None
-                    
-                    if gene_strand and \
-                     strand.reverse_complement_record(gene_strand, snp_strand):
-                        alleles, ancestor, freqs, flank_5, flank_3 = strand.get_rc_record(alleles, ancestor, freqs, flank_5, flank_3)
-                    
-                    got = alleles.difference(ancestor).pop()
-                    if (ancestor, got) != direction:
-                        continue
-                    
-                    seen.update([label])
-                    seq = flank_5 + ancestor + flank_3
-            
-                    if not correct_comp(seq):
-                        continue
-            
-                    
-                    record = '\n'.join(['>%s' % label, seq, ''])
+                for record in filtered_records(infile, direction, seen, chroms,
+                 correct_chrom=correct_chrom, correct_freq=correct_freq,
+                 correct_comp=correct_comp, verbose=False):
                     outfile.write(record)
-                    chroms.update([coord.split(':')[2]])
                     num += 1
-                    if num % 1000 == 0:
-                        print num
-            
-                    if num == 1000000:
+                    if opts.limit and num >= opts.limit:
                         break
-
-        print 'Wrote %s to %s' % (num, outfilename)
-        print chroms
-        print
 
 script_info = {}
 script_info['brief_description'] = ""
@@ -188,6 +214,7 @@ script_info['script_description'] = "export fasta formatted seqs matching specif
 script_info['required_options'] = [
      make_option('-i','--input_path', help='glob pattern to data files.'),
      make_option('-o','--outpath', help='Path to write data.'),
+     make_option('-p','--prefix', help='Prefix for output figure, e.g. intronic-'),
     make_option('--direction', default=None,
      choices=['AtoC', 'AtoG', 'AtoT', 'CtoA', 'CtoG', 'CtoT', 'GtoA', 'GtoC',
              'GtoT', 'TtoA', 'TtoC', 'TtoG'], help='Mutation direction.'),
@@ -201,8 +228,10 @@ script_info['optional_options'] = [
     make_option('--freq_class', type='choice', default='All',
         choices=['All', 'Common', 'Rare'],
         help='Frequency class. Common has MAF >0.05, rare <= 0.05.'),
-    make_option('-l','--limit', default=100000, type=int,
+    make_option('-l','--limit', default=None, type=int,
         help='Number of results to return.'),
+    make_option('-a','--adjust_strand', action='store_true', default=False,
+        help='Reverse complements records whose gene and snp strands differ.'),
     make_option('-D','--dry_run', action='store_true', default=False,
         help='Do a dry run of the analysis without writing output.'),
     ]
