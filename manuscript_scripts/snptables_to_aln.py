@@ -183,9 +183,8 @@ def main(script_info):
     direction = tuple(opts.direction.split('to'))
     seen = set()
     chroms = set()
-    filenames = glob.glob(opts.input_path)
-    if not filenames:
-        raise ValueError("no files matching %s" % opts.input_path)
+    if not os.path.exists(opts.input_path):
+        raise IOError("no files matching %s" % opts.input_path)
     
     name_components = dict(freq_class='freq_'+freq_class,
             chrom_class='chrom_'+chrom_class,
@@ -194,17 +193,16 @@ def main(script_info):
     
     outfilename = os.path.join(outpath,
     '%(prefix)s%(freq_class)s-%(chrom_class)s-%(gc_class)s-%(direction)s.fasta.gz' % name_components)
-    for fn in filenames:
-        with open_(fn) as infile:
-            with open_(outfilename, 'w') as outfile:
-                num = 0
-                for record in filtered_records(infile, direction, seen, chroms,
-                 correct_chrom=correct_chrom, correct_freq=correct_freq,
-                 correct_comp=correct_comp, verbose=False):
-                    outfile.write(record)
-                    num += 1
-                    if opts.limit and num >= opts.limit:
-                        break
+    with open_(opts.input_path) as infile:
+        with open_(outfilename, 'w') as outfile:
+            num = 0
+            for record in filtered_records(infile, direction, seen, chroms,
+             correct_chrom=correct_chrom, correct_freq=correct_freq,
+             correct_comp=correct_comp, stranded=opts.adjust_strand, verbose=False):
+                outfile.write(record)
+                num += 1
+                if opts.limit and num >= opts.limit:
+                    break
 
 script_info = {}
 script_info['brief_description'] = ""
