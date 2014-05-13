@@ -9,6 +9,7 @@ from cogent.util.option_parsing import parse_command_line_parameters
 from mutation_motif.util import open_, create_path
 import strand
 
+
 MAF = 0.05
 
 def get_gc_freq(seq):
@@ -53,11 +54,9 @@ def MakeStranded(stranded):
     
     def reverse_complementable(gene_strand, snp_strand, alleles, ancestor, freqs, flank_5, flank_3):
         """makes the seq"""
-        if gene_strand and not \
+        if gene_strand and \
          strand.reverse_complement_record(gene_strand, snp_strand):
-            return flank_5 + ancestor + flank_3
-        
-        alleles, ancestor, freqs, flank_5, flank_3 = strand.get_rc_record(alleles, ancestor, freqs, flank_5, flank_3)
+            alleles, ancestor, freqs, flank_5, flank_3 = strand.get_rc_record(alleles, ancestor, freqs, flank_5, flank_3)
         
         return alleles, ancestor, flank_5 + ancestor + flank_3
     
