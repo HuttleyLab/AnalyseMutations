@@ -1,12 +1,16 @@
 """export seq files for different mutation types"""
 from __future__ import division
 
-import os
+import os, sys, time
 import glob
 from itertools import permutations
 from optparse import make_option
 from cogent.util.option_parsing import parse_command_line_parameters
-from mutation_motif.util import open_, create_path
+
+from sumatra.projects import load_project
+from sumatra.programs import get_executable
+
+from mutation_motif.util import open_, create_path, abspath
 import strand
 
 
@@ -143,22 +147,13 @@ def filtered_records(records, direction, seen, chroms, correct_chrom=everything,
         chroms.update([coord.split(':')[2]])
     
 
-def main(script_info):
-    option_parser, opts, args =\
-       parse_command_line_parameters(disallow_positional_arguments=False, **script_info)
+def main(opts):
     
     if len(args) > 1:
         raise RuntimeError("too many positional args")
     
-    if args:
-        # have a command line label from sumatra which requires we put all
-        # results in a sub-directory of the same name
-        outpath = os.path.join(opts.outpath, args[0])
-    else:
-        outpath = opts.outpath
-    
     if not opts.dry_run:
-        create_path(outpath)
+        create_path(opts.outpath)
     
     chrom_class = opts.chrom_class
     freq_class = opts.freq_class
@@ -190,7 +185,7 @@ def main(script_info):
             gc_class='GC_'+gc_class, direction=opts.direction,
             prefix = opts.prefix or '')
     
-    outfilename = os.path.join(outpath,
+    outfilename = os.path.join(opts.outpath,
     '%(prefix)s%(freq_class)s-%(chrom_class)s-%(gc_class)s-%(direction)s.fasta.gz' % name_components)
     with open_(opts.input_path) as infile:
         with open_(outfilename, 'w') as outfile:
@@ -231,11 +226,48 @@ script_info['optional_options'] = [
         help='Reverse complements records whose gene and snp strands differ.'),
     make_option('-D','--dry_run', action='store_true', default=False,
         help='Do a dry run of the analysis without writing output.'),
+    make_option('-r','--reason', help='Reason for running analysis (for Sumatra log).'),
     ]
 
 script_info['version'] = '0.1'
 script_info['authors'] = 'Gavin Huttley'
 
 if __name__ == "__main__":
-    main(script_info)
+    option_parser, opts, args =\
+       parse_command_line_parameters(disallow_positional_arguments=False, **script_info)
     
+    # record run using sumatra
+    project = load_project()
+    
+    # determine the path to input data relative to sumatra's input data store
+    input_path = abspath(opts.input_path)
+    if project.input_datastore.root not in input_path:
+        raise ValueError("input path not nested under sumatra input path")
+    
+    input_path = input_path.replace(project.input_datastore.root, '')
+    if input_path.startswith('/'):
+        input_path = input_path[1:]
+    
+    # generate unique hash key for input files, then create sumatra record
+    input_data = project.input_datastore.generate_keys(input_path)
+    record = project.new_record(parameters=opts, input_data=input_data,
+                                executable=get_executable(script_file=__file__),
+                                main_file=__file__,
+                                reason=opts.reason)
+    
+    # the sumatra_label will be used to create a subdirectory within the user
+    # specified output path so that output from simultaneous runs are
+    # associated with the correct sumatra record
+    opts.sumatra_label = record.label
+    opts.outpath = os.path.join(opts.outpath, record.label)
+    start_time = time.time()
+    
+    # run the program
+    main(opts)
+    
+    # determine runtime, output file identifiers and save the sumatra record
+    record.datastore.root = opts.outpath
+    record.duration = time.time() - start_time
+    record.output_data = record.datastore.find_new_data(record.timestamp)
+    project.add_record(record)
+    project.save()
