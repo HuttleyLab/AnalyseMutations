@@ -62,7 +62,7 @@ script_info['script_description'] = "export tab delimited counts table from "\
 script_info['required_options'] = [
      make_option('-a','--alignfile', help='fasta aligned file centred on mutated position.'),
      make_option('-o','--output_path', help='Path to write data.'),
-     make_option('-f','--flank_size', help='Number of bases per side to include.'),
+     make_option('-f','--flank_size', type=int, help='Number of bases per side to include.'),
      make_option('--direction', default=None,
                  choices=['AtoC', 'AtoG', 'AtoT', 'CtoA', 'CtoG', 'CtoT', 'GtoA', 'GtoC',
                           'GtoT', 'TtoA', 'TtoC', 'TtoG'], help='Mutation direction.'),
