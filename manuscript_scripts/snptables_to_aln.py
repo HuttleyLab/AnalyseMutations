@@ -149,9 +149,6 @@ def filtered_records(records, direction, seen, chroms, correct_chrom=everything,
 
 def main(opts):
     
-    if len(args) > 1:
-        raise RuntimeError("too many positional args")
-    
     if not opts.dry_run:
         create_path(opts.outpath)
     
@@ -235,6 +232,9 @@ script_info['authors'] = 'Gavin Huttley'
 if __name__ == "__main__":
     option_parser, opts, args =\
        parse_command_line_parameters(disallow_positional_arguments=False, **script_info)
+    
+    if len(args) > 1:
+        raise RuntimeError("too many positional args")
     
     # record run using sumatra
     project = load_project()
