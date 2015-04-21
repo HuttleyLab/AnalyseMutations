@@ -121,7 +121,7 @@ if __name__ == "__main__":
     
     
     # determine runtime, output file identifiers and save the sumatra record
-    record.datastore.root = opts.outpath
+    record.datastore.root = opts.output_path
     record.duration = time.time() - start_time
     record.output_data = record.datastore.find_new_data(record.timestamp)
     project.add_record(record)
