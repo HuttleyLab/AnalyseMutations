@@ -206,13 +206,13 @@ script_info['script_description'] = "export fasta formatted seqs matching specif
 script_info['required_options'] = [
      make_option('-i','--input_path', help='glob pattern to data files.'),
      make_option('-o','--outpath', help='Path to write data.'),
-     make_option('-p','--prefix', help='Prefix for output figure, e.g. intronic-'),
-    make_option('--direction', default=None,
+     make_option('--direction', default=None,
      choices=['AtoC', 'AtoG', 'AtoT', 'CtoA', 'CtoG', 'CtoT', 'GtoA', 'GtoC',
              'GtoT', 'TtoA', 'TtoC', 'TtoG'], help='Mutation direction.'),
     ]
 
 script_info['optional_options'] = [
+    make_option('-p','--prefix', help='Prefix for output file, e.g. intronic-'),
     make_option('-c','--chrom_class', type='choice', default='All',
         choices=['All', 'X', 'A', 'Y'], help='Chrom class [default:%default].'),
     make_option('--GC', type='choice', default='All',
