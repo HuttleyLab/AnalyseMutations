@@ -224,6 +224,8 @@ script_info['optional_options'] = [
         help='Reverse complements records whose gene and snp strands differ.'),
     make_option('-D','--dry_run', action='store_true', default=False,
         help='Do a dry run of the analysis without writing output.'),
+    make_option('-F','--force_overwite', action='store_true', default=False,
+        help='Overwrite output and run.log files.'),
     make_option('-r','--reason', help='Reason for running analysis (for Sumatra log).'),
     ]
 
@@ -237,11 +239,19 @@ if __name__ == "__main__":
     # determine the path to input data relative to sumatra's input data store
     opts.input_path = abspath(opts.input_path)
     opts.output_path = abspath(opts.output_path)
+    runlog_path = os.path.join(opts.output_path, 'run.log')
     
     if not opts.dry_run:
+        if not opts.force_overwite and (os.path.exists(opts.output_path) or os.path.exists(runlog_path)):
+            msg = "Either %s or %s already exist. Force overwrite of existing files with -F. "\
+                "Make sure you write alignments and counts to separate directories."
+            raise ValueError(msg % (opts.output_path, runlog_path))
+        
         set_logger(os.path.join(opts.output_path, 'run.log'))
         logging.info("command_string: %s" % ' '.join(sys.argv))
         logging.info("vars: %s" % str(vars(opts)))
+        logging.info("input_path md5 sum: %s" % get_file_hexdigest(opts.input_path))
+        
     
     start_time = time.time()
     
@@ -250,3 +260,5 @@ if __name__ == "__main__":
     
     # determine runtime
     duration = time.time() - start_time
+    if not opts.dry_run:
+        logging.info("run duration (minutes): %.2f" % (duration/60.))

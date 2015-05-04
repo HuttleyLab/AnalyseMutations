@@ -72,6 +72,8 @@ script_info['optional_options'] = [
         help='Seed for random number generator (e.g. 17, or 2015-02-13). Defaults to system time.'),
     make_option('-D','--dry_run', action='store_true', default=False,
         help='Do a dry run of the analysis without writing output.'),
+    make_option('-F','--force_overwite', action='store_true', default=False,
+        help='Overwrite output and run.log files.'),
     make_option('-r','--reason', help='Reason for running analysis (for Sumatra log).'),
     ]
 
@@ -88,17 +90,28 @@ if __name__ == "__main__":
     opts.align_path = abspath(opts.align_path)
     opts.output_path = abspath(opts.output_path)
     
+    counts_filename = get_counts_filename(opts.align_path, opts.output_path)
+    runlog_path = os.path.join(opts.output_path, 'run.log')
     if not opts.dry_run:
-        set_logger(os.path.join(opts.output_path, 'run.log'))
+        if not opts.force_overwite and (os.path.exists(counts_filename) or os.path.exists(runlog_path)):
+            msg = "Either %s or %s already exist. Force overwrite of existing files with -F. "\
+                "Make sure you write alignments and counts to separate directories."
+            raise ValueError(msg % (counts_filename, runlog_path))
+        
+        set_logger(runlog_path)
         logging.info("command_string: %s" % ' '.join(sys.argv))
         logging.info("vars: %s" % str(vars(opts)))
+        logging.info("align_path md5 sum: %s" % get_file_hexdigest(opts.align_path))
         
-    
     start_time = time.time()
     
     # run the program
     counts_table = align_to_counts(opts)
-    counts_filename = get_counts_filename(opts.align_path, opts.output_path)
+    if not opts.dry_run:
+        logging.info("command_string: %s" % ' '.join(sys.argv))
+        logging.info("vars: %s" % str(vars(opts)))
+        
+    
     if not opts.dry_run:
         counts_table.writeToFile(counts_filename, sep='\t')
         md5sum = get_file_hexdigest(counts_filename)
@@ -109,4 +122,6 @@ if __name__ == "__main__":
     
     # determine runtime
     duration = time.time() - start_time
+    if not opts.dry_run:
+        logging.info("run duration (minutes): %.2f" % (duration/60.))
     
