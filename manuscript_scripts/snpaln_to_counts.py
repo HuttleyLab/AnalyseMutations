@@ -9,8 +9,9 @@ from cogent.util.option_parsing import parse_command_line_parameters
 from mutation_motif.util import open_, create_path, abspath, just_nucs, load_from_fasta
 from mutation_motif import profile, motif_count
 
-from util import logging, set_logger, get_file_hexdigest
+from util import CachingLogger, get_file_hexdigest
 
+LOGGER = CachingLogger()
 fn_suffixes = re.compile(r"\.(fa|fasta)\.(gz|gzip|bz2)$")
 
 def get_counts_filename(align_path, output_dir):
@@ -72,7 +73,7 @@ script_info['optional_options'] = [
         help='Seed for random number generator (e.g. 17, or 2015-02-13). Defaults to system time.'),
     make_option('-D','--dry_run', action='store_true', default=False,
         help='Do a dry run of the analysis without writing output.'),
-    make_option('-F','--force_overwite', action='store_true', default=False,
+    make_option('-F','--force_overwrite', action='store_true', default=False,
         help='Overwrite output and run.log files.'),
     make_option('-r','--reason', help='Reason for running analysis (for Sumatra log).'),
     ]
@@ -91,37 +92,34 @@ if __name__ == "__main__":
     opts.output_path = abspath(opts.output_path)
     
     counts_filename = get_counts_filename(opts.align_path, opts.output_path)
-    runlog_path = os.path.join(opts.output_path, 'run.log')
+    runlog_path = counts_filename.replace(".txt", ".log")
+    LOGGER.log_file_path = runlog_path
+    
     if not opts.dry_run:
-        if not opts.force_overwite and (os.path.exists(counts_filename) or os.path.exists(runlog_path)):
-            msg = "Either %s or %s already exist. Force overwrite of existing files with -F. "\
-                "Make sure you write alignments and counts to separate directories."
+        if not opts.force_overwrite and (os.path.exists(counts_filename) or os.path.exists(runlog_path)):
+            msg = "Either %s or %s already exist. Force overwrite of existing files with -F."
             raise ValueError(msg % (counts_filename, runlog_path))
         
-        set_logger(runlog_path)
-        logging.info("command_string: %s" % ' '.join(sys.argv))
-        logging.info("vars: %s" % str(vars(opts)))
-        logging.info("align_path md5 sum: %s" % get_file_hexdigest(opts.align_path))
+        LOGGER.write("command_string: %s" % ' '.join(sys.argv))
+        LOGGER.write("user: %s" % os.environ['USER'])
+        LOGGER.write("vars: %s" % str(vars(opts)))
+        LOGGER.write("align_path md5 sum: %s" % get_file_hexdigest(opts.align_path))
         
     start_time = time.time()
     
     # run the program
     counts_table = align_to_counts(opts)
-    if not opts.dry_run:
-        logging.info("command_string: %s" % ' '.join(sys.argv))
-        logging.info("vars: %s" % str(vars(opts)))
-        
     
     if not opts.dry_run:
         counts_table.writeToFile(counts_filename, sep='\t')
         md5sum = get_file_hexdigest(counts_filename)
-        logging.info("output file: %s" % counts_filename)
-        logging.info("output file md5 sum: %s" % md5sum)
+        LOGGER.write("output file: %s" % counts_filename)
+        LOGGER.write("output file md5 sum: %s" % md5sum)
         
     
     
     # determine runtime
     duration = time.time() - start_time
     if not opts.dry_run:
-        logging.info("run duration (minutes): %.2f" % (duration/60.))
+        LOGGER.write("run duration (minutes): %.2f" % (duration/60.))
     

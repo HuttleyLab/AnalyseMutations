@@ -8,8 +8,10 @@ from cogent.util.option_parsing import parse_command_line_parameters
 
 from mutation_motif.util import open_, create_path, abspath
 import strand
-from util import logging, set_logger, get_file_hexdigest
+from util import CachingLogger, get_file_hexdigest
 
+
+LOGGER = CachingLogger()
 
 MAF = 0.05
 
@@ -180,6 +182,16 @@ def main(opts):
     
     outfilename = os.path.join(opts.output_path,
     '%(prefix)s%(freq_class)s-%(chrom_class)s-%(gc_class)s-%(direction)s.fasta.gz' % name_components)
+    
+    runlog_path = os.path.join(opts.output_path,
+    '%(prefix)s%(freq_class)s-%(chrom_class)s-%(gc_class)s-%(direction)s.log' % name_components)
+    LOGGER.log_file_path = runlog_path
+    
+    if not opts.force_overwrite and (os.path.exists(outfilename) or os.path.exists(runlog_path)):
+        msg = "Either %s or %s already exist. Force overwrite of existing files with -F."
+        raise ValueError(msg % (outfilename, runlog_path))
+ 
+    
     with open_(opts.input_path) as infile:
         with open_(outfilename, 'w') as outfile:
             num = 0
@@ -192,8 +204,8 @@ def main(opts):
                     break
         
         md5sum = get_file_hexdigest(outfilename)
-        logging.info("output file: %s" % outfilename)
-        logging.info("output file md5 sum: %s" % md5sum)
+        LOGGER.write("output file: %s" % outfilename)
+        LOGGER.write("output file md5 sum: %s" % md5sum)
         
 
 script_info = {}
@@ -224,7 +236,7 @@ script_info['optional_options'] = [
         help='Reverse complements records whose gene and snp strands differ.'),
     make_option('-D','--dry_run', action='store_true', default=False,
         help='Do a dry run of the analysis without writing output.'),
-    make_option('-F','--force_overwite', action='store_true', default=False,
+    make_option('-F','--force_overwrite', action='store_true', default=False,
         help='Overwrite output and run.log files.'),
     make_option('-r','--reason', help='Reason for running analysis (for Sumatra log).'),
     ]
@@ -242,15 +254,10 @@ if __name__ == "__main__":
     runlog_path = os.path.join(opts.output_path, 'run.log')
     
     if not opts.dry_run:
-        if not opts.force_overwite and (os.path.exists(opts.output_path) or os.path.exists(runlog_path)):
-            msg = "Either %s or %s already exist. Force overwrite of existing files with -F. "\
-                "Make sure you write alignments and counts to separate directories."
-            raise ValueError(msg % (opts.output_path, runlog_path))
-        
-        set_logger(os.path.join(opts.output_path, 'run.log'))
-        logging.info("command_string: %s" % ' '.join(sys.argv))
-        logging.info("vars: %s" % str(vars(opts)))
-        logging.info("input_path md5 sum: %s" % get_file_hexdigest(opts.input_path))
+        LOGGER.write("command_string: %s" % ' '.join(sys.argv))
+        LOGGER.write("user: %s" % os.environ['USER'])
+        LOGGER.write("vars: %s" % str(vars(opts)))
+        LOGGER.write("input_path md5 sum: %s" % get_file_hexdigest(opts.input_path))
         
     
     start_time = time.time()
@@ -261,4 +268,4 @@ if __name__ == "__main__":
     # determine runtime
     duration = time.time() - start_time
     if not opts.dry_run:
-        logging.info("run duration (minutes): %.2f" % (duration/60.))
+        LOGGER.write("run duration (minutes): %.2f" % (duration/60.))

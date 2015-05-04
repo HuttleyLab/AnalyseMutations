@@ -6,6 +6,32 @@ import hashlib
 RUN_VARS_TOKEN = "vars:"
 DELIM = ' : '
 
+class CachingLogger(object):
+    """stores log messages until a log filename is provided"""
+    def __init__(self, log_file_path=None):
+        super(CachingLogger, self).__init__()
+        self.log_file_path = log_file_path
+        self._started = False
+        self._messages = []
+    
+    def write(self, msg):
+        """writes a log message"""
+        
+        if not self._started:
+            self._messages.append(msg)
+        else:
+            logging.info(msg)
+        
+        if not self._started and self.log_file_path:
+            # start the logger and flush the message cache
+            set_logger(self.log_file_path)
+            for m in self._messages:
+                logging.info(m)
+            
+            self._messages = []
+            self._started = True
+            
+    
 
 def set_logger(logfile_name, level=logging.DEBUG):
     """setup logging"""
