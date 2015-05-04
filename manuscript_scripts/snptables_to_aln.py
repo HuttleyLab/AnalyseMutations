@@ -2,16 +2,13 @@
 from __future__ import division
 
 import os, sys, time
-import glob
 from itertools import permutations
 from optparse import make_option
 from cogent.util.option_parsing import parse_command_line_parameters
 
-from sumatra.projects import load_project
-from sumatra.programs import get_executable
-
 from mutation_motif.util import open_, create_path, abspath
 import strand
+from util import logging, set_logger, get_file_hexdigest
 
 
 MAF = 0.05
@@ -148,9 +145,8 @@ def filtered_records(records, direction, seen, chroms, correct_chrom=everything,
     
 
 def main(opts):
-    
     if not opts.dry_run:
-        create_path(opts.outpath)
+        create_path(opts.output_path)
     
     chrom_class = opts.chrom_class
     freq_class = opts.freq_class
@@ -182,7 +178,7 @@ def main(opts):
             gc_class='GC_'+gc_class, direction=opts.direction,
             prefix = opts.prefix or '')
     
-    outfilename = os.path.join(opts.outpath,
+    outfilename = os.path.join(opts.output_path,
     '%(prefix)s%(freq_class)s-%(chrom_class)s-%(gc_class)s-%(direction)s.fasta.gz' % name_components)
     with open_(opts.input_path) as infile:
         with open_(outfilename, 'w') as outfile:
@@ -194,6 +190,11 @@ def main(opts):
                 num += 1
                 if opts.limit and num >= opts.limit:
                     break
+        
+        md5sum = get_file_hexdigest(outfilename)
+        logging.info("output file: %s" % outfilename)
+        logging.info("output file md5 sum: %s" % md5sum)
+        
 
 script_info = {}
 script_info['brief_description'] = ""
@@ -202,7 +203,7 @@ script_info['script_description'] = "export fasta formatted seqs matching specif
 
 script_info['required_options'] = [
      make_option('-i','--input_path', help='glob pattern to data files.'),
-     make_option('-o','--outpath', help='Path to write data.'),
+     make_option('-o','--output_path', help='Path to write data.'),
      make_option('--direction', default=None,
      choices=['AtoC', 'AtoG', 'AtoT', 'CtoA', 'CtoG', 'CtoT', 'GtoA', 'GtoC',
              'GtoT', 'TtoA', 'TtoC', 'TtoG'], help='Mutation direction.'),
@@ -231,43 +232,21 @@ script_info['authors'] = 'Gavin Huttley'
 
 if __name__ == "__main__":
     option_parser, opts, args =\
-       parse_command_line_parameters(disallow_positional_arguments=False, **script_info)
-    
-    if len(args) > 1:
-        raise RuntimeError("too many positional args")
-    
-    # record run using sumatra
-    project = load_project()
+       parse_command_line_parameters(**script_info)
     
     # determine the path to input data relative to sumatra's input data store
-    input_path = abspath(opts.input_path)
-    if project.input_datastore.root not in input_path:
-        raise ValueError("input path not nested under sumatra input path")
+    opts.input_path = abspath(opts.input_path)
+    opts.output_path = abspath(opts.output_path)
     
-    input_path = input_path.replace(project.input_datastore.root, '')
-    if input_path.startswith('/'):
-        input_path = input_path[1:]
+    if not opts.dry_run:
+        set_logger(os.path.join(opts.output_path, 'run.log'))
+        logging.info("command_string: %s" % ' '.join(sys.argv))
+        logging.info("vars: %s" % str(vars(opts)))
     
-    # generate unique hash key for input files, then create sumatra record
-    input_data = project.input_datastore.generate_keys(input_path)
-    record = project.new_record(parameters=opts, input_data=input_data,
-                                executable=get_executable(script_file=__file__),
-                                main_file=__file__,
-                                reason=opts.reason)
-    
-    # the sumatra_label will be used to create a subdirectory within the user
-    # specified output path so that output from simultaneous runs are
-    # associated with the correct sumatra record
-    opts.sumatra_label = record.label
-    opts.outpath = os.path.join(opts.outpath, record.label)
     start_time = time.time()
     
     # run the program
     main(opts)
     
-    # determine runtime, output file identifiers and save the sumatra record
-    record.datastore.root = opts.outpath
-    record.duration = time.time() - start_time
-    record.output_data = record.datastore.find_new_data(record.timestamp)
-    project.add_record(record)
-    project.save()
+    # determine runtime
+    duration = time.time() - start_time

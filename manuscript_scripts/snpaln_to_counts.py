@@ -6,11 +6,10 @@ from itertools import permutations
 from optparse import make_option
 from cogent.util.option_parsing import parse_command_line_parameters
 
-from sumatra.projects import load_project
-from sumatra.programs import get_executable
-
 from mutation_motif.util import open_, create_path, abspath, just_nucs, load_from_fasta
 from mutation_motif import profile, motif_count
+
+from util import logging, set_logger, get_file_hexdigest
 
 fn_suffixes = re.compile(r"\.(fa|fasta)\.(gz|gzip|bz2)$")
 
@@ -39,7 +38,7 @@ def align_to_counts(opts):
     print "Deriving counts from sequence file"
     direction = tuple(opts.direction.split('to'))
     chosen_base = direction[0]
-    orig_seqs = load_from_fasta(os.path.abspath(opts.alignfile))
+    orig_seqs = load_from_fasta(os.path.abspath(opts.align_path))
     seqs = orig_seqs.ArraySeqs
     seqs = just_nucs(seqs)
     orig, ctl = profile.get_profiles(seqs, chosen_base=chosen_base, step=1,
@@ -60,7 +59,7 @@ script_info['script_description'] = "export tab delimited counts table from "\
 "path with just the file suffix changed from fasta to txt."
 
 script_info['required_options'] = [
-     make_option('-a','--alignfile', help='fasta aligned file centred on mutated position.'),
+     make_option('-a','--align_path', help='fasta aligned file centred on mutated position.'),
      make_option('-o','--output_path', help='Path to write data.'),
      make_option('-f','--flank_size', type=int, help='Number of bases per side to include.'),
      make_option('--direction', default=None,
@@ -81,48 +80,33 @@ script_info['authors'] = 'Gavin Huttley'
 
 if __name__ == "__main__":
     option_parser, opts, args =\
-       parse_command_line_parameters(disallow_positional_arguments=False, **script_info)
+       parse_command_line_parameters(**script_info)
     
     if not opts.seed:
         opts.seed = str(time.time())
-        print "NOTE: set random number seed to '%s'" % (opts.seed)
     
-    # record run using sumatra
-    project = load_project()
+    opts.align_path = abspath(opts.align_path)
+    opts.output_path = abspath(opts.output_path)
     
-    # determine the path to input data relative to sumatra's input data store
-    input_path = abspath(opts.alignfile)
-    if project.input_datastore.root not in input_path:
-        raise ValueError("input path not nested under sumatra input path")
+    if not opts.dry_run:
+        set_logger(os.path.join(opts.output_path, 'run.log'))
+        logging.info("command_string: %s" % ' '.join(sys.argv))
+        logging.info("vars: %s" % str(vars(opts)))
+        
     
-    input_path = input_path.replace(project.input_datastore.root, '')
-    if input_path.startswith('/'):
-        input_path = input_path[1:]
-    
-    # generate unique hash key for input files, then create sumatra record
-    input_data = project.input_datastore.generate_keys(input_path)
-    record = project.new_record(parameters=opts, input_data=input_data,
-                                executable=get_executable(script_file=__file__),
-                                main_file=__file__,
-                                reason=opts.reason)
-    
-    # the sumatra_label will be used to create a subdirectory within the user
-    # specified output path so that output from simultaneous runs are
-    # associated with the correct sumatra record
-    opts.sumatra_label = record.label
-    opts.output_path = os.path.join(opts.output_path, record.label)
     start_time = time.time()
     
     # run the program
     counts_table = align_to_counts(opts)
-    counts_filename = get_counts_filename(opts.alignfile, opts.output_path)
+    counts_filename = get_counts_filename(opts.align_path, opts.output_path)
     if not opts.dry_run:
         counts_table.writeToFile(counts_filename, sep='\t')
+        md5sum = get_file_hexdigest(counts_filename)
+        logging.info("output file: %s" % counts_filename)
+        logging.info("output file md5 sum: %s" % md5sum)
+        
     
     
-    # determine runtime, output file identifiers and save the sumatra record
-    record.datastore.root = opts.output_path
-    record.duration = time.time() - start_time
-    record.output_data = record.datastore.find_new_data(record.timestamp)
-    project.add_record(record)
-    project.save()
+    # determine runtime
+    duration = time.time() - start_time
+    
