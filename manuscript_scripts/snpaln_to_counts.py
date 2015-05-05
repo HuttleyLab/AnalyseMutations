@@ -100,6 +100,8 @@ if __name__ == "__main__":
             msg = "Either %s or %s already exist. Force overwrite of existing files with -F."
             raise ValueError(msg % (counts_filename, runlog_path))
         
+        create_path(opts.output_path)
+        
         LOGGER.write("command_string: %s" % ' '.join(sys.argv))
         LOGGER.write("user: %s" % os.environ['USER'])
         LOGGER.write("vars: %s" % str(vars(opts)))
