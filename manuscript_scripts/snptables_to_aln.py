@@ -6,9 +6,10 @@ from itertools import permutations
 from optparse import make_option
 from cogent.util.option_parsing import parse_command_line_parameters
 
-from mutation_motif.util import open_, create_path, abspath
+from mutation_motif.util import open_, create_path, abspath,\
+     CachingLogger, get_file_hexdigest
+
 import strand
-from util import CachingLogger, get_file_hexdigest
 
 
 LOGGER = CachingLogger()

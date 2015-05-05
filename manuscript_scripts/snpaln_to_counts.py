@@ -9,7 +9,7 @@ from cogent.util.option_parsing import parse_command_line_parameters
 from mutation_motif.util import open_, create_path, abspath, just_nucs, load_from_fasta
 from mutation_motif import profile, motif_count
 
-from util import CachingLogger, get_file_hexdigest
+from mutation_motif.util import CachingLogger, get_file_hexdigest
 
 LOGGER = CachingLogger()
 fn_suffixes = re.compile(r"\.(fa|fasta)\.(gz|gzip|bz2)$")
