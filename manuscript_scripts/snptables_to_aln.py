@@ -6,13 +6,13 @@ from itertools import permutations
 from optparse import make_option
 from cogent.util.option_parsing import parse_command_line_parameters
 
-from mutation_motif.util import open_, create_path, abspath,\
-     CachingLogger, get_file_hexdigest
+from mutation_motif.util import open_, create_path, abspath
+from scitrack import CachingLogger
 
 import strand
 
 
-LOGGER = CachingLogger()
+LOGGER = CachingLogger(create_dir=True)
 
 MAF = 0.05
 
@@ -205,8 +205,7 @@ def main(opts):
                     break
         
         md5sum = get_file_hexdigest(outfilename)
-        LOGGER.write("output file: %s" % outfilename)
-        LOGGER.write("output file md5 sum: %s" % md5sum)
+        LOGGER.output_file(outfilename)
         
 
 script_info = {}
@@ -255,10 +254,8 @@ if __name__ == "__main__":
     runlog_path = os.path.join(opts.output_path, 'run.log')
     
     if not opts.dry_run:
-        LOGGER.write("command_string: %s" % ' '.join(sys.argv))
-        LOGGER.write("user: %s" % os.environ['USER'])
-        LOGGER.write("vars: %s" % str(vars(opts)))
-        LOGGER.write("input_path md5 sum: %s" % get_file_hexdigest(opts.input_path))
+        LOGGER.write("%s" % str(vars(opts)), label="vars")
+        LOGGER.input_file((opts.input_path)
         
     
     start_time = time.time()
@@ -269,4 +266,4 @@ if __name__ == "__main__":
     # determine runtime
     duration = time.time() - start_time
     if not opts.dry_run:
-        LOGGER.write("run duration (minutes): %.2f" % (duration/60.))
+        LOGGER.write("%.2f" % (duration/60.), label="run duration (minutes)")
