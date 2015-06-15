@@ -1,7 +1,8 @@
 #!/usr/bin/env ipython
 directions = ['AtoC', 'AtoG', 'AtoT', 'CtoA', 'CtoG', 'CtoT', 'GtoA', 'GtoC',
              'GtoT', 'TtoA', 'TtoC', 'TtoG']
-command = "-i /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_71/%(seq_class)s_variant_71.txt.gz "            "-o ../data/aligns/%(chrom_class)s/%(seq_class)s --direction=%(direction)s --chrom_class=%(chrom_class)s -F"
+command = "-i /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_71/%(seq_class)s_variant_71.txt.gz "\
+"-o ../data/aligns/%(chrom_class)s/%(seq_class)s --direction=%(direction)s --chrom_class=%(chrom_class)s -F"
 for chrom_class in "A X".split():
     for seq_class in "intergenic intron missense synonymous".split():
         sample = dict(seq_class=seq_class, chrom_class=chrom_class)
