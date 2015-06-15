@@ -108,12 +108,12 @@ class CosmicRef():
         
         # some data validity checks!
         alleles = ''.join((snp.Change[-3], '/', snp.Change[-1]))
-        pep_alleles = gene_loc = gene_id = 'None'
+        pep_alleles = gene_loc = gene_id = allele_freqs = 'None'
         effect = effects.get(snp.Type, None)
         if effect is None:
             raise ValueError(str(snp))
 
-        return (snp.Symbol, location, strand, effect, "", alleles,
+        return (snp.Symbol, location, strand, effect, allele_freqs, alleles,
                 str(ref), str(f5), str(f3), pep_alleles, gene_loc, gene_id)
 
 def cosmic_reader(cosmic_snps_path):

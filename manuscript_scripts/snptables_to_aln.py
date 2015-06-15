@@ -114,7 +114,8 @@ def filtered_records(records, direction, seen, chroms, correct_chrom=everything,
 
         if not correct_chrom(coord):
             continue
-
+        
+        
         freqs = dict(eval(line[4]))
         if not freqs:
             continue
@@ -211,7 +212,6 @@ def main(opts):
                 if opts.limit and num >= opts.limit:
                     break
         
-        md5sum = get_file_hexdigest(outfilename)
         LOGGER.output_file(outfilename)
         
 
