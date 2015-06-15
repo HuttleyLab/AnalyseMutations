@@ -16,3 +16,6 @@ build
 *.idea
 draw_results
 *.coverage
+*.ipynb_checkpoints
+*blah*
+*delme*
