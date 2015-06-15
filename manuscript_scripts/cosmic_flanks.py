@@ -1,4 +1,5 @@
 import os
+import gzip
 import sys
 import click
 
@@ -153,9 +154,9 @@ def main(cosmic_snps_path, output_path, chrom_dir, limit, verbose):
             res = app.get_snp_dump_data(snp)
             if res:
                 if snp.Histology not in outfiles:
-                    outfile_path = os.path.join(output_path, "COSMIC_flanks_%s.txt" % snp.Histology)
+                    outfile_path = os.path.join(output_path, "COSMIC_flanks_%s.txt.gz" % snp.Histology)
                     outfile_paths.append(outfile_path)
-                    outfiles[snp.Histology] = open(outfile_path, "w")
+                    outfiles[snp.Histology] = gzip.open(outfile_path, "w")
                 
                 outfile = outfiles[snp.Histology]
                 outfile.write('\t'.join(res)+'\n')
