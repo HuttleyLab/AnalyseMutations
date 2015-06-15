@@ -140,7 +140,7 @@ def main(cosmic_snps_path, output_path, chrom_dir, limit, verbose):
     
     print
     print "processing COSMIC data from file:", cosmic_snps_path
-    print "results stored in: %s/<primary histology>.txt.gz", output_path
+    print "results stored in: %s/<primary histology>.txt.gz" % output_path
     
     runlog_path = os.path.join(output_path, 'COSMIC_flanks.log')
     LOGGER.log_file_path = runlog_path
