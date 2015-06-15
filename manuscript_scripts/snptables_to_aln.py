@@ -115,9 +115,13 @@ def filtered_records(records, direction, seen, chroms, correct_chrom=everything,
         if not correct_chrom(coord):
             continue
 
-        freqs = dict(eval(line[4]))
+        freqs = eval(line[4])
+        if freqs is not None:
+            freqs = dict(freqs)
+        
         if not freqs:
             continue
+        
 
         if not correct_freq(freqs.values()):
             continue
