@@ -6,6 +6,14 @@ from cogent.db.ensembl import Species, HostAccount, Genome
 
 import sample_snp
 
+__author__ = "Yicheng Zhu, Gavin Huttley"
+__copyright__ = "Copyright 2015, Gavin Huttley"
+__credits__ = ["Yicheng Zhu", "Gavin Huttley"]
+__license__ = "GPL"
+__maintainer__ = "Gavin Huttley"
+__email__ = "Gavin.Huttley@anu.edu.au"
+__status__ = "Development"
+
 account = HostAccount(*os.environ['ENSEMBL_ACCOUNT'].split())
 human = Genome('human', Release=71, account=account)
 

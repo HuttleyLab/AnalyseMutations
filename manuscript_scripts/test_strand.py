@@ -5,6 +5,14 @@ from cogent.util.unit_test import TestCase, main
 from strand import reverse_complement_record, get_rc_record
 from snptables_to_aln import filtered_records
 
+__author__ = "Yicheng Zhu, Gavin Huttley"
+__copyright__ = "Copyright 2015, Gavin Huttley"
+__credits__ = ["Yicheng Zhu", "Gavin Huttley"]
+__license__ = "GPL"
+__maintainer__ = "Gavin Huttley"
+__email__ = "Gavin.Huttley@anu.edu.au"
+__status__ = "Development"
+
 class TestStrand(TestCase):
     def test_reverse_record(self):
         """correctly identify when a record needs to be reversed"""

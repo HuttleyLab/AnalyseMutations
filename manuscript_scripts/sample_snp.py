@@ -10,6 +10,15 @@ from cogent.db.ensembl import Species, HostAccount, Genome
 
 from mutation_motif import util
 
+__author__ = "Yicheng Zhu, Gavin Huttley"
+__copyright__ = "Copyright 2015, Gavin Huttley"
+__credits__ = ["Yicheng Zhu", "Gavin Huttley"]
+__license__ = "GPL"
+__maintainer__ = "Gavin Huttley"
+__email__ = "Gavin.Huttley@anu.edu.au"
+__status__ = "Development"
+
+
 _nucs = set(DNA)
 
 def is_valid(snp, verbose=False):
