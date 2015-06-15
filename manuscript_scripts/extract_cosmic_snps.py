@@ -1,4 +1,5 @@
 import os
+import sys
 import gzip
 
 from cytoolz.itertoolz import pluck, get
@@ -58,8 +59,7 @@ def main(cosmic_raw, output_path):
     table.writeToFile(outfile_path, sep='\t')
     
     LOGGER.output_file(outfile_path)
-    
+    print "Done!"
 
 if __name__ == "__main__":
     main()
-    print "Done!"

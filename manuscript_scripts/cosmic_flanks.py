@@ -187,10 +187,10 @@ def main(cosmic_snps_path, output_path, chrom_dir, limit, verbose):
         print "# SNPs without flank data:", noflank
     if snpmm:
         print "# SNP mismatches from reference:", snpmm
-
+    
+    print
+    print"Done."
     return
 
 if __name__=="__main__":
     main()
-    print
-    print"Done."

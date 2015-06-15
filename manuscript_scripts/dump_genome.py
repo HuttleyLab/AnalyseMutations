@@ -56,9 +56,9 @@ def dumpchroms(release, output_path):
         os.rename(xoutpath, outpath)
         LOGGER.output_file(outpath)
         
+    print "Done."
+    sys.stdout.flush()
     return
 
 if __name__=="__main__":
     dumpchroms()
-    sys.stdout.flush()
-    print "Done."
