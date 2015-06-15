@@ -118,10 +118,8 @@ def filtered_records(records, direction, seen, chroms, correct_chrom=everything,
         freqs = eval(line[4])
         if freqs is not None:
             freqs = dict(freqs)
-        
-        if not freqs:
-            continue
-        
+        else:
+            freqs = {}
 
         if not correct_freq(freqs.values()):
             continue
@@ -136,7 +134,7 @@ def filtered_records(records, direction, seen, chroms, correct_chrom=everything,
         try:
             # e.g. Homo sapiens:chromosome:20:68350-77174:1
             gene_strand = int(line[11].split(':')[-1])
-        except IndexError:
+        except (IndexError, ValueError):
             gene_strand = None
         
         alleles, ancestor, seq = adjust_strand(gene_strand, snp_strand, alleles,
