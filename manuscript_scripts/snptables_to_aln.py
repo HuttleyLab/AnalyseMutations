@@ -262,8 +262,8 @@ if __name__ == "__main__":
     
     if not opts.dry_run:
         LOGGER.write("%s" % str(vars(opts)), label="vars")
-        LOGGER.input_file((opts.input_path)
-        
+        LOGGER.input_file((opts.input_path))
+    
     
     start_time = time.time()
     
