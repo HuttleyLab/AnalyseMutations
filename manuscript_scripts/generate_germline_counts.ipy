@@ -3,7 +3,7 @@
 directions = ['AtoC', 'AtoG', 'AtoT', 'CtoA', 'CtoG', 'CtoT', 'GtoA', 'GtoC',
              'GtoT', 'TtoA', 'TtoC', 'TtoG']
 command = " -f 2 -a %(align_file_path)s "\
-    "-o ../data/counts/%(chrom_class)s/%(seq_class)s --direction=%(direction)s -F"
+    "-o ../data/counts/%(chrom_class)s/%(seq_class)s/directions --direction=%(direction)s -F"
 
 for chrom_class in "A X".split():
     for seq_class in "intergenic intron missense synonymous".split():
