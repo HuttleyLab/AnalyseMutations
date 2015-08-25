@@ -1,5 +1,5 @@
 """sampling SNP data from Ensembl"""
-import os, sys
+import os, sys, cPickle, gzip
 
 from optparse import make_option
 
@@ -7,8 +7,9 @@ from cogent import DNA
 from cogent.core.moltype import IUPAC_DNA_complements
 from cogent.util.option_parsing import parse_command_line_parameters
 from cogent.db.ensembl import Species, HostAccount, Genome
+from cogent.db.ensembl.region import Variation
 
-from mutation_motif import util
+from phyg import util, path
 
 __author__ = "Yicheng Zhu, Gavin Huttley"
 __copyright__ = "Copyright 2015, Gavin Huttley"
@@ -47,9 +48,9 @@ def get_max_allele_freqs(freq_table):
     freq_table = freq_table.filtered(lambda x: type(x) == float and 0 < x < 1,
                                 columns='freq')
     alleles_freqs = dict((a, []) for a in freq_table.getDistinctValues('allele'))
-    pops = freq_table.getDistinctValues('sample_id')
+    pops = freq_table.getDistinctValues('population_id')
     for pop in pops:
-        pop_freqs = freq_table.filtered(lambda x: x == pop, columns='sample_id')
+        pop_freqs = freq_table.filtered(lambda x: x == pop, columns='population_id')
         assert pop_freqs.Shape[0] != 1, pop_freqs
         
         data = pop_freqs.getRawData(['allele', 'freq'])
@@ -60,7 +61,7 @@ def get_max_allele_freqs(freq_table):
     return [(a, max(alleles_freqs[a])) for a in alleles_freqs]
 
 def get_snp_dump_data(snp, genic=False):
-    """returns all SNP data for dumping. If rc, reverse complements all properties."""
+    """returns all SNP data for dumping."""
     allele_freqs = get_max_allele_freqs(snp.AlleleFreqs)
     alleles = snp.Alleles
     ancestral = snp.Ancestral
@@ -80,6 +81,50 @@ def get_snp_dump_data(snp, genic=False):
     
     return record
 
+def get_basic_snp_dump_data(snp, genic=False):
+    """returns basic SNP data for dumping."""
+    allele_freqs = get_max_allele_freqs(snp.AlleleFreqs)
+    alleles = snp.Alleles
+    ancestral = snp.Ancestral
+    if genic:
+        features = list(snp.getFeatures('gene'))
+        if not features:
+            msg = '\n'.join(["#" * 20, str(snp), "#" * 20, ''])
+            sys.stderr.write(msg)
+            return None
+        
+        gene = features[0]
+        gene_loc = str(gene.Location)
+        gene_id = gene.StableId
+    else:
+        gene_loc = gene_id = 'None'
+    
+    if type(snp.Effect) not in (str, unicode):
+        effect = ','.join(snp.Effect)
+    else:
+        effect = snp.Effect
+    record = [snp.Symbol, str(snp.Location), str(snp.Location.Strand),
+            effect, str(allele_freqs), alleles, str(ancestral), gene_id, gene_loc]
+    
+    return record
+
+def read_snp_records(genome, pickled, effect):
+    effect = unicode(effect)
+    infile = {'gz': gzip.open}.get(pickled.split('.')[-1], open)(pickled)
+    while True:
+        try:
+            record = cPickle.load(infile)
+            if effect not in record['consequence_types']:
+                continue
+            
+            snp = Variation(genome, genome.CoreDb, Effect=None,
+                            Symbol=record['variation_name'], data=record)
+            yield snp
+        except EOFError:
+            break
+    infile.close()
+    
+
 def main(script_info):
     option_parser, opts, args =\
        parse_command_line_parameters(**script_info)
@@ -89,24 +134,34 @@ def main(script_info):
     
     genic = not opts.snp_effect.startswith('intergenic')
     
-    util.create_path(opts.output)
+    path.create_path(opts.output)
     
     print 'Will write to %s' % output_filename
     
     account = HostAccount(*os.environ['ENSEMBL_ACCOUNT'].split())
     human = Genome('human', Release=opts.release, account=account)
-    snps = human.getVariation(somatic=False, flanks_match_ref=True,
-                    validated=True, Effect=opts.snp_effect, like=False,
-                    limit=opts.limit)
+    
+    reader = read_snp_records(human, opts.snp_records, opts.snp_effect)
     
     outfile = util.open_(output_filename, 'w')
     chroms = '12345678910111213141516171819202122XY'
     
-    for num, snp in enumerate(snps):
+    for num, snp in enumerate(reader):
         if num % 100 == 0:
             print 'Snp number %d' % num
+            outfile.flush()
         
-        if snp.Location.CoordName not in chroms or not is_valid(snp, opts.verbose):
+        try:
+            location = snp.Location.CoordName
+        except AssertionError, msg:
+            print
+            print '#' * 20
+            print snp.Symbol, msg.message
+            print '#' * 20 
+            print
+            continue
+        
+        if location not in chroms or not is_valid(snp, opts.verbose):
             if opts.verbose:
                 print "NOT VALID"
                 print snp
@@ -118,10 +173,14 @@ def main(script_info):
         if type(validation) != str:
             validation = ','.join(validation)
         
-        record = get_snp_dump_data(snp, genic=genic)
+        record = get_basic_snp_dump_data(snp, genic=genic)
+        if record is None:
+            continue
+        
         num += 1
         outfile.write('\t'.join(record) + '\n')
     
+    print "num written", num
     outfile.close()
 
 
@@ -132,6 +191,7 @@ script_info['script_description'] = "annotater."
 script_info['required_options'] = [
      make_option('-r','--release', help='Ensembl release number.'),
      make_option('-o','--output', help='Path to write data.'),
+     make_option('-s','--snp_records', help='Path to pickled SNP data dump from Ensembl.'),
     # see http://asia.ensembl.org/info/docs/variation/predicted_data.html
     make_option('-c','--snp_effect', default=None,
      choices=['missense_variant', 'synonymous_variant', 'intron_variant',
@@ -146,7 +206,7 @@ script_info['optional_options'] = [
     ]
 
 script_info['version'] = '0.1'
-script_info['authors'] = 'me'
+script_info['authors'] = 'Gavin Huttley'
 
 
 if __name__ == "__main__":

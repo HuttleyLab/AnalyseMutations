@@ -4,6 +4,7 @@ import sys
 import click
 
 from cogent import Sequence, DNA
+from cogent.core.moltype import IUPAC_DNA_complements
 from scitrack import CachingLogger
 
 from read_cosmic import reader
@@ -95,6 +96,9 @@ class CosmicRef():
         
         # note: Stand in the COSMIC data is '+' or '-'
         strand = '1' if snp.Strand=='+' else '-1'
+        
+        # the alleles
+        orig, dest = snp.Change[-3], snp.Change[-1]
         if strand == '-1':
             f3, ref, f5 = f5.rc(), ref.rc(), f3.rc()
             seq = "%s%s%s" % (f5,ref,f3)
