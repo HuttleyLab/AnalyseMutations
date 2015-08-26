@@ -13,7 +13,7 @@ from cogent.util.option_parsing import parse_command_line_parameters
 from cogent.db.ensembl import Species, HostAccount, Genome
 from cogent.db.ensembl.region import Variation
 
-from phyg import util, path
+from mutation_motif.util import abspath, create_path
 
 __author__ = "Yicheng Zhu, Gavin Huttley"
 __copyright__ = "Copyright 2015, Gavin Huttley"
@@ -100,11 +100,11 @@ def main(script_info):
     ref_mismatch = 0
     written = 0
     
-    out_dir = path.abspath(opts.output)
+    out_dir = abspath(opts.output)
     out_path = os.path.join(out_dir, os.path.basename(opts.snp_path))
     
     if not opts.dry_run:
-        path.create_path(out_dir)
+        create_path(out_dir)
         outfile = gzip.open(out_path, 'w')
     
     for record in record_reader:
