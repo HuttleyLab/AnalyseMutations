@@ -8,7 +8,6 @@ from optparse import make_option
 
 from cogent import DNA, Sequence, LoadTable
 from cogent.parse.fasta import MinimalFastaParser
-from cogent.core.moltype import IUPAC_DNA_complements
 from cogent.util.option_parsing import parse_command_line_parameters
 from cogent.db.ensembl import Species, HostAccount, Genome
 from cogent.db.ensembl.region import Variation
@@ -141,7 +140,12 @@ def main(script_info):
             ancestral_mismatch += 1
             continue
         
-        # if the ref-base at location does not match an allele, count and continue
+        # if genic & the ref-base at location does not match an allele,
+        # reverse complement if it's on negative strand
+        if genic and base not in alleles and record.GeneLocation.Strand in ('-1', -1):
+            alleles = set(DNA.complement(a) for a in alleles)
+            allele_freqs = [(DNA.complement(b), f) for b, f in allele_freqs]
+        
         if base not in alleles:
             ref_mismatch += 1
             continue
@@ -152,17 +156,6 @@ def main(script_info):
         segment[flank_size] = ancestral
         segment = ''.join(segment)
         
-        # if gene strand is -1, reverse complement alleles, Ancestral, segment
-        #    see MakeStranded in snptables_to_aln.py
-        if genic and record.GeneLocation.Strand in ('-1', -1):
-            segment = DNA.rc(segment)
-            ancestral = IUPAC_DNA_complements[ancestral]
-            alleles = set(IUPAC_DNA_complements[a] for a in alleles)
-            allele_freqs = [(IUPAC_DNA_complements[b], f) 
-                                                   for b, f in allele_freqs]
-        
-        # determine direction
-        direction = ancestral, (alleles - set(ancestral)).pop()
         # slice segment
         flank5 = segment[:flank_size]
         flank3 = segment[flank_size+1:]
