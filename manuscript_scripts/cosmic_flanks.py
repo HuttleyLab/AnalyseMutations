@@ -4,7 +4,6 @@ import sys
 import click
 
 from cogent import Sequence, DNA
-from cogent.core.moltype import IUPAC_DNA_complements
 from scitrack import CachingLogger
 
 from read_cosmic import reader
@@ -100,12 +99,13 @@ class CosmicRef():
         # the alleles
         orig, dest = snp.Change[-3], snp.Change[-1]
         if strand == '-1':
-            f3, ref, f5 = f5.rc(), ref.rc(), f3.rc()
-            seq = "%s%s%s" % (f5,ref,f3)
-            assert seq == str(self.chrom_data(snpchr)[loc-flanksize: loc+1+flanksize].rc())
-            assert len(seq) == 2 * flanksize + 1
+            # since the snptables to aln script corrects for strand, we need
+            # to leave things on the original strand and just reverse the
+            # alleles to make them consistent with the genome seq strand
+            orig = DNA.complement(orig)
+            dest = DNA.complement(dest)
         
-        if ref != snp.Change[-3]:
+        if ref != orig:
             return None
         
         location = 'Homo sapiens:chromosome:%s:%s-%s:%s' % (snpchr, loc, loc+1, strand)
