@@ -92,7 +92,16 @@ everything = lambda x: True
 def filtered_records(records, direction, seen, chroms, correct_chrom=everything, correct_freq=everything, correct_comp=everything, stranded=False, verbose=True):
     """parses records, yielding when condition met"""
     adjust_strand = MakeStranded(stranded)
-    for line in records:
+    progress = ""
+    for record_num, line in enumerate(records):
+        if record_num % 1000 == 0:
+            progress = ' ' * len(progress)
+            sys.stdout.write(progress + "\r")
+            progress = 'records read = %d\r' % (record_num)
+            sys.stdout.write(progress)
+            sys.stdout.flush()
+        
+        
         line = line.strip().split('\t')
         label = line[0].strip()
         if label in seen:
@@ -104,11 +113,10 @@ def filtered_records(records, direction, seen, chroms, correct_chrom=everything,
         if len(ancestor) > 1: # it's the string "None"
             continue
 
-        alleles = line[5]
-        if ancestor not in alleles:
+        alleles = eval(line[5])
+        if ancestor not in alleles or set(direction) != alleles:
             continue
 
-        alleles = set(alleles.split('/'))
         if len(alleles) != 2:
             continue
 
@@ -201,7 +209,7 @@ def main(opts):
         msg = "Either %s or %s already exist. Force overwrite of existing files with -F."
         raise ValueError(msg % (outfilename, runlog_path))
  
-    LOGGER.input_file(opts.input_file)
+    LOGGER.input_file(opts.input_path)
     
     with open_(opts.input_path) as infile:
         with open_(outfilename, 'w') as outfile:
@@ -215,7 +223,9 @@ def main(opts):
                     break
         
         LOGGER.output_file(outfilename)
-        
+    msg = "Wrote %d records to %s" % (num, outfilename)
+    print msg
+    LOGGER.write(msg + "\n", label="completed")
 
 script_info = {}
 script_info['brief_description'] = ""
@@ -260,11 +270,9 @@ if __name__ == "__main__":
     # determine the path to input data relative to sumatra's input data store
     opts.input_path = abspath(opts.input_path)
     opts.output_path = abspath(opts.output_path)
-    runlog_path = os.path.join(opts.output_path, 'run.log')
     
     if not opts.dry_run:
         LOGGER.write("%s" % str(vars(opts)), label="vars")
-        LOGGER.input_file((opts.input_path))
     
     
     start_time = time.time()
