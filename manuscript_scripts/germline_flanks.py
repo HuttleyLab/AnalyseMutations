@@ -12,6 +12,8 @@ from cogent.util.option_parsing import parse_command_line_parameters
 from cogent.db.ensembl import Species, HostAccount, Genome
 from cogent.db.ensembl.region import Variation
 
+from scitrack import CachingLogger
+
 from mutation_motif.util import abspath, create_path
 
 __author__ = "Yicheng Zhu, Gavin Huttley"
@@ -22,7 +24,7 @@ __maintainer__ = "Gavin Huttley"
 __email__ = "Gavin.Huttley@anu.edu.au"
 __status__ = "Development"
 
-
+LOGGER = CachingLogger(create_dir=True)
 _nucs = set(DNA)
 
 def get_snp_dump_data(record, allele_freqs, alleles, ancestral, flank5, flank3, genic=False):
@@ -95,12 +97,16 @@ def main(script_info):
     genic = 'missense' in opts.snp_path or 'syn' in opts.snp_path
     record_reader = read_snp_dump(opts.snp_path, genic=genic, limit=opts.limit)
     
+    LOGGER.input_file(opts.snp_path)
+    
     ancestral_mismatch = 0
     ref_mismatch = 0
     written = 0
     
     out_dir = abspath(opts.output)
     out_path = os.path.join(out_dir, os.path.basename(opts.snp_path))
+    runlog_path = "%s.log" % out_path.split('.')[0]
+    LOGGER.log_file_path = runlog_path
     
     if not opts.dry_run:
         create_path(out_dir)
@@ -120,6 +126,8 @@ def main(script_info):
         if record.Location.Chrom not in chroms:
             chrom_path = os.path.join(opts.chroms_path,
                             "Chr%s.fa.gz" % record.Location.Chrom)
+            
+            LOGGER.input_file(chrom_path)
             infile = gzip.open(chrom_path)
             seq = [(l, s) for l, s in MinimalFastaParser(infile)][0][1]
             infile.close()
@@ -173,11 +181,17 @@ def main(script_info):
             sys.stdout.write("Written=%d\r" % written)
             sys.stdout.flush()
     
+    LOGGER.output_file(out_path)
+    
     table = LoadTable(header=['category', 'counts'],
          rows=[['ancestral_mismatch', ancestral_mismatch],
                ['ref_mismatch', ref_mismatch],
            ['written', written]])
+    
     print table
+    
+    LOGGER.write("\n" + str(table), label="summary statistics")
+
 
 script_info = {}
 script_info['brief_description'] = ""

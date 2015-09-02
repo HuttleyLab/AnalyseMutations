@@ -201,6 +201,7 @@ def main(opts):
         msg = "Either %s or %s already exist. Force overwrite of existing files with -F."
         raise ValueError(msg % (outfilename, runlog_path))
  
+    LOGGER.input_file(opts.input_file)
     
     with open_(opts.input_path) as infile:
         with open_(outfilename, 'w') as outfile:
