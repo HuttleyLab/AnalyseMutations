@@ -3,7 +3,7 @@
 directions = ['AtoC', 'AtoG', 'AtoT', 'CtoA', 'CtoG', 'CtoT', 'GtoA', 'GtoC',
              'GtoT', 'TtoA', 'TtoC', 'TtoG']
 command = " -f 2 -a %(align_file_path)s "\
-    "-o ../data/counts/%(chrom_class)s/%(seq_class)s/directions --direction=%(direction)s -F"
+    "-o ../data/ensembl_snps_79/counts/%(chrom_class)s/%(seq_class)s/directions --direction=%(direction)s -F"
 
 for chrom_class in "A X".split():
     for seq_class in "intergenic intron missense synonymous".split():
@@ -12,7 +12,7 @@ for chrom_class in "A X".split():
             sample.update(dict(direction=direction))
 
             # find the align file for this direction
-            find_cmnd = "find ../data/aligns/%(chrom_class)s/%(seq_class)s -name '*%(direction)s*fa*'" % sample
+            find_cmnd = "find ../data/ensembl_snps_79/aligns/%(chrom_class)s/%(seq_class)s -name '*%(direction)s*fa*'" % sample
             fns = !$find_cmnd
             assert len(fns) == 1, fns
             sample.update(dict(align_file_path=fns[0]))

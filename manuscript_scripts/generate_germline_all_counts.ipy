@@ -5,19 +5,20 @@ command_template = '-F --counts_pattern="%s" --output_path=%s'
 
 for chrom_class in ["A", "X"]:
     for seq_class in "intergenic intron missense synonymous".split():
-        dirname = os.path.join("../data/counts", chrom_class, seq_class, "directions")
+        dirname = os.path.join("../data/ensembl_snps_79/counts", chrom_class, seq_class, "directions")
         fns = !find $dirname -name *.txt
         assert len(fns) == 12, dirname
         counts_pattern = os.path.join(dirname, '*.txt')
         # do the strand assymetric combined counts
         outdirname = dirname.replace("directions", "combined")
         cmnd = command_template % (counts_pattern, outdirname)
-        print "\rDoing all_counts %s" % cmnd,
+        print "\rDoing all_counts %s" % cmnd
         r = !all_counts $cmnd
         # do the strand symmetric counts
         outdirname = dirname.replace("directions", "combined_strand_symmetric")
         cmnd = command_template % (counts_pattern, outdirname)
         cmnd += " --strand_symmetric"
-        print "\rDoing all_counts %s" % cmnd,
+        print "\rDoing all_counts %s" % cmnd
         r = !all_counts $cmnd
+        print
 
