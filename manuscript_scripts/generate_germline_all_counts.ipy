@@ -17,7 +17,7 @@ for chrom_class in ["A", "X"]:
         # do the strand symmetric counts
         outdirname = dirname.replace("directions", "combined_strand_symmetric")
         cmnd = command_template % (counts_pattern, outdirname)
-        cmnd += " --strand_symmetric"
+        cmnd += " --strand_symmetric --split_dir %s" % outdirname.replace("combined_strand_symmetric", "directions_strand_symmetric")
         print "\rDoing all_counts %s" % cmnd
         r = !all_counts $cmnd
         print

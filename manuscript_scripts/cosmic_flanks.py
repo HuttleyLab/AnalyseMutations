@@ -123,7 +123,7 @@ class CosmicRef():
         location = 'Homo sapiens:chromosome:%s:%s-%s:%s' % (snpchr, loc, loc+1, strand)
         
         # some data validity checks!
-        alleles = ''.join((snp.Change[-3], '/', snp.Change[-1]))
+        alleles = str(set((snp.Change[-3], snp.Change[-1])))
         pep_alleles = gene_loc = gene_id = allele_freqs = 'None'
         effect = effects.get(snp.Type, None)
         if effect is None:
