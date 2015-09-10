@@ -4,7 +4,7 @@ import os
 command_template = '-F --counts_pattern="%s" --output_path=%s'
 
 for cancer in "carcinoma malignant_melanoma".split():
-    dirname = os.path.join("../data/counts", cancer, "directions")
+    dirname = os.path.join("../data/ensembl_snps_79/counts", cancer, "directions")
     fns = !find $dirname -name *.txt
     assert len(fns) == 12, dirname
     counts_pattern = os.path.join(dirname, '*.txt')

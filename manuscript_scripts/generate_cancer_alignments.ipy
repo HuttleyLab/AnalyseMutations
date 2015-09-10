@@ -1,8 +1,8 @@
 #!/usr/bin/env ipython
 directions = ['AtoC', 'AtoG', 'AtoT', 'CtoA', 'CtoG', 'CtoT', 'GtoA', 'GtoC',
              'GtoT', 'TtoA', 'TtoC', 'TtoG']
-command = "-i /Users/gavin/DevRepos/AnalyseMutations/data/cosmic_flanks/COSMIC_flanks_%(cancer)s.txt.gz "\
-"-o ../data/aligns/%(cancer)s/directions --direction=%(direction)s -F"
+command = "-i /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/cosmic_raw/COSMIC_flanks_%(cancer)s.txt.gz "\
+"-o ../data/ensembl_snps_79/aligns/%(cancer)s/directions --direction=%(direction)s -F"
 for cancer in ["malignant_melanoma", "carcinoma"]:
     sample = dict(cancer=cancer)
     for direction in directions:

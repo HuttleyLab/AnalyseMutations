@@ -3,7 +3,7 @@
 directions = ['AtoC', 'AtoG', 'AtoT', 'CtoA', 'CtoG', 'CtoT', 'GtoA', 'GtoC',
              'GtoT', 'TtoA', 'TtoC', 'TtoG']
 command = " -f 2 -a %(align_file_path)s "\
-    "-o ../data/counts/%(cancer)s/directions --direction=%(direction)s -F"
+    "-o ../data/ensembl_snps_79/counts/%(cancer)s/directions --direction=%(direction)s -F"
 
 for cancer in ["malignant_melanoma", "carcinoma"]:
     sample = dict(cancer=cancer)
@@ -11,7 +11,7 @@ for cancer in ["malignant_melanoma", "carcinoma"]:
         sample.update(dict(direction=direction))
 
         # find the align file for this direction
-        find_cmnd = "find ../data/aligns/%(cancer)s/directions -name '*%(direction)s*fas*'" % sample
+        find_cmnd = "find ../data/ensembl_snps_79/aligns/%(cancer)s/directions -name '*%(direction)s*fas*'" % sample
         fns = !$find_cmnd
         assert len(fns) == 1, fns
         sample.update(dict(align_file_path=fns[0]))
