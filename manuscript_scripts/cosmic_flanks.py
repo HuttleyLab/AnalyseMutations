@@ -4,6 +4,7 @@ import sys
 import click
 
 from cogent import Sequence, DNA
+from cogent.parse.fasta import MinimalFastaParser
 from scitrack import CachingLogger
 
 from read_cosmic import reader
@@ -41,9 +42,9 @@ class CosmicRef():
             print "Didn't find directory", chrdir
             sys.exit(1)
             
-        chrom_files = tuple(os.path.join(chrdir, 'Chr%02d_%s.fa'%(i+1, n)) 
+        chrom_files = tuple(os.path.join(chrdir, 'Chr%02d_%s.fa.gz'%(i+1, n)) 
                             for i, n in enumerate(self.chrom_names) if n)
-        missing = [fn for fn in chrom_files if not os.path.isfile(fn)]
+        missing = [fn for fn in chrom_files if not os.path.exists(fn)]
         
         if missing:
             print "Missing reference files:", missing
@@ -59,9 +60,20 @@ class CosmicRef():
         chrom_name = self.nums_names[chrom_name]
         if chrom_name not in self._chrom_data:
             fn = self.chrom_files[chrom_name]
+            if os.path.islink(fn):
+                fn = os.readlink(fn)
+            
+            print "\r%s" % (" " * 80),
             print ("\rloading %s" % fn).ljust(60),
             sys.stdout.flush()
-            chrom = Sequence(moltype=DNA, filename=fn, format='fasta')
+            with gzip.open(fn) as infile:
+                data = [r for r in MinimalFastaParser(infile)]
+                assert len(data) == 1, len(data)
+                name, seq = data[0]
+                if not data:
+                    print fn, data
+                chrom = Sequence(moltype=DNA, name=name, seq=seq)
+            
             LOGGER.input_file(fn, label='chromosome_seq')
             self._chrom_data[chrom_name] = chrom
         
@@ -175,6 +187,7 @@ def main(cosmic_snps_path, output_path, chrom_dir, limit, verbose):
             break
         
         if rcnt % 100000 == 0:
+            print "\r%s" % (" " * 80),
             print "\rread", rcnt, "records. non-SNPs =", nonsnp, "SNP errors =", snpmm,
             sys.stdout.flush()
     
