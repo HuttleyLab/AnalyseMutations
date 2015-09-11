@@ -1,0 +1,47 @@
+#!/usr/bin/env ipython
+
+directions = ['AtoC', 'AtoG', 'AtoT', 'CtoA', 'CtoG', 'CtoT', 'GtoA', 'GtoC',
+             'GtoT', 'TtoA', 'TtoC', 'TtoG']
+
+# compare Autosome versus X for each sequence class
+command = "mutation_nbr -1 %(A1)s -2 %(A2)s -o %(out)s"
+
+for direction in directions:
+    for seq_class in "intergenic intron missense synonymous".split():
+        a1_path = !find ../data/ensembl_snps_79/counts/A/$seq_class/directions -name *$direction*.txt
+        a2_path = !find ../data/ensembl_snps_79/counts/X/$seq_class/directions -name *$direction*.txt
+        a1_path, a2_path = a1_path[0], a2_path[0]
+        o_path = "../results/ensembl_snps_79/A_vs_X/%s/directions/%s" % (seq_class, direction)
+        cmnd = command % dict(A1=a1_path, A2=a2_path, out=o_path)
+        print "=" * 60
+        print cmnd
+        !$cmnd
+        print
+
+# compare Melanoma versus Autosome intron for position influences
+command = "mutation_nbr -1 %(A)s -2 %(C)s -o %(out)s"
+
+for direction in directions:
+    a_path = !find ../data/ensembl_snps_79/counts/A/intron/directions -name *$direction*.txt
+    c_path = !find ../data/ensembl_snps_79/counts/malignant_melanoma/directions -name *$direction*.txt
+    a_path, c_path = a_path[0], c_path[0]
+    o_path = "../results/ensembl_snps_79/Aintron_vs_Melanoma/directions/%s" % direction
+    cmnd = command % dict(A=a_path, C=c_path, out=o_path)
+    print "=" * 60
+    print cmnd
+    !$cmnd
+    print
+
+# compare Autosome intergenic versus intron
+command = "mutation_nbr -1 %(A1)s -2 %(A2)s -o %(out)s"
+
+for direction in directions:
+    a1_path = !find ../data/ensembl_snps_79/counts/A/intergenic/directions -name *$direction*.txt
+    a2_path = !find ../data/ensembl_snps_79/counts/A/intron/directions -name *$direction*.txt
+    a1_path, a2_path = a1_path[0], a2_path[0]
+    o_path = "../results/ensembl_snps_79/Aintergenic_vs_Aintron/directions/%s" % direction
+    cmnd = command % dict(A1=a1_path, A2=a2_path, out=o_path)
+    print "=" * 60
+    print cmnd
+    !$cmnd
+    print

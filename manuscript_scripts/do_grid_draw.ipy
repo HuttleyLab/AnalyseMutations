@@ -1,0 +1,7 @@
+#!/usr/bin/env ipython
+
+paths = !find ../results -name json1_paths.cfg
+
+for path in paths:
+    print path
+    !mutation_grid --paths_cfg $path --sample_size
