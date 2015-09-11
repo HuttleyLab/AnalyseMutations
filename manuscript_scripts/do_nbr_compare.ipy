@@ -1,7 +1,31 @@
 #!/usr/bin/env ipython
 
+import re
+
 directions = ['AtoC', 'AtoG', 'AtoT', 'CtoA', 'CtoG', 'CtoT', 'GtoA', 'GtoC',
              'GtoT', 'TtoA', 'TtoC', 'TtoG']
+
+pattern = re.compile("(%s)" % '|'.join(directions))
+
+# compare Autosome directions for strand symmetry
+command = "mutation_nbr -1 %(A1)s --strand_symmetry -o %(out)s"
+
+for chrom in "A X".split():
+    for seq_class in "intergenic intron missense synonymous".split():
+        paths = !find ../data/ensembl_snps_79/counts/$chrom/$seq_class/directions_strand_symmetric -name *.txt
+        for path in paths:
+            direction = pattern.findall(path)
+            if len(direction) != 1:
+                continue
+            
+            direction = direction[0]
+            o_path = "../results/ensembl_snps_79/%s/%s/directions_strand_symmetric/%s" % (chrom, seq_class, direction)
+            
+            cmnd = command % dict(A1=path, out=o_path)
+            print "=" * 60
+            print cmnd
+            !$cmnd
+            print
 
 # compare Autosome versus X for each sequence class
 command = "mutation_nbr -1 %(A1)s -2 %(A2)s -o %(out)s"
