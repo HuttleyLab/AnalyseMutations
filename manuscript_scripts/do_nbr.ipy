@@ -72,8 +72,8 @@ for cancer in "carcinoma malignant_melanoma".split():
         print
 
 # raw directions, strand symmetric
-counts_dir_template = "../data/ensembl_snps_79/counts/%(cancer)s/directions"
-outpath_template = "../results/ensembl_snps_79/%(cancer)s/directions/%(direction)s"
+counts_dir_template = "../data/ensembl_snps_79/counts/%(cancer)s/directions_strand_symmetric"
+outpath_template = "../results/ensembl_snps_79/%(cancer)s/directions_strand_symmetric/%(direction)s"
 
 for cancer in "carcinoma malignant_melanoma".split():
     sample = dict(cancer=cancer)
@@ -88,3 +88,4 @@ for cancer in "carcinoma malignant_melanoma".split():
         print command
         !$command
         print
+
