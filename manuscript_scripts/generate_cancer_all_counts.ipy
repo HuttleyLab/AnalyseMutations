@@ -20,3 +20,8 @@ for cancer in "carcinoma malignant_melanoma".split():
     print "\rDoing all_counts %s" % cmnd,
     r = !all_counts $cmnd
 
+    cmnd = command_template % (counts_pattern, outdirname)
+    cmnd += " --strand_symmetric --split_dir %s" % outdirname.replace("combined_strand_symmetric", "directions_strand_symmetric")
+    print "\rDoing all_counts %s" % cmnd
+    r = !all_counts $cmnd
+    print
