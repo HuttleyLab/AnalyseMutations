@@ -110,11 +110,16 @@ def get_basic_snp_dump_data(snp, genic=False):
 
 def read_snp_records(genome, pickled, effect):
     effect = unicode(effect)
+    if effect.startswith('exon'):
+        effect = set(['missense_variant', 'synonymous_variant'])
+    else:
+        effect = set([effect])
+    
     infile = {'gz': gzip.open}.get(pickled.split('.')[-1], open)(pickled)
     while True:
         try:
             record = cPickle.load(infile)
-            if effect not in record['consequence_types']:
+            if not effect & record['consequence_types']:
                 continue
             
             snp = Variation(genome, genome.CoreDb, Effect=None,
@@ -195,6 +200,7 @@ script_info['required_options'] = [
     # see http://asia.ensembl.org/info/docs/variation/predicted_data.html
     make_option('-c','--snp_effect', default=None,
      choices=['missense_variant', 'synonymous_variant', 'intron_variant',
+             'exon_variant',
              'intergenic_variant'], help='SNP effect.'),
     ]
 
