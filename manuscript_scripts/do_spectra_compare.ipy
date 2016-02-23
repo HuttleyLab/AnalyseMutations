@@ -9,21 +9,21 @@ from itertools import combinations
 command = "mutation_spectra "\
     "-1 %(A)s --strand_symmetry -o ../results/ensembl_snps_79/%(cancer)s/combined_strand_symmetric/"
 
-for cancer in ["carcinoma", "malignant_melanoma"]:
-    a_combined = !find ../data/ensembl_snps_79/counts/$cancer/combined_strand_symmetric -name "combined_counts.txt"
-    a_combined = a_combined[0]
-    sample = {"cancer": cancer, "A": a_combined}
-    cmnd = command % sample
-    print '=' * 30
-    print cmnd
-    !$cmnd
-    print
+cancer = "malignant_melanoma"
+a_combined = !find ../data/ensembl_snps_79/counts/$cancer/combined_strand_symmetric -name "combined_counts.txt"
+a_combined = a_combined[0]
+sample = {"cancer": cancer, "A": a_combined}
+cmnd = command % sample
+print '=' * 30
+print cmnd
+!$cmnd
+print
 
 ## GERMLINE
 command = "mutation_spectra "\
     "-1 %(A)s --strand_symmetry -o ../results/ensembl_snps_79/%(chrom)s/%(seq_class)s/combined_strand_symmetric/"
 
-seq_classes = "intergenic intron missense synonymous".split()
+seq_classes = "intergenic intron exon".split()
 for chrom in ["A","X"]:
     for seq_class in seq_classes:
         a_combined = !find ../data/ensembl_snps_79/counts/$chrom/$seq_class/combined_strand_symmetric -name "combined_counts.txt"
@@ -42,7 +42,7 @@ for chrom in ["A","X"]:
 command = "mutation_spectra "\
     "-1 %(A)s -2 %(B)s -o ../results/ensembl_snps_79/A/%(class_a)s_vs_%(class_b)s/"
 
-seq_classes = "intergenic intron missense synonymous".split()
+seq_classes = "intergenic intron exon".split()
 for s1, s2 in combinations(seq_classes, 2):
     a_combined = !find ../data/ensembl_snps_79/counts/A/$s1/combined -name "combined_counts.txt"
     b_combined = !find ../data/ensembl_snps_79/counts/A/$s2/combined -name "combined_counts.txt"
@@ -59,7 +59,7 @@ for s1, s2 in combinations(seq_classes, 2):
 command = "mutation_spectra "\
     "-1 %(A)s -2 %(X)s -o ../results/ensembl_snps_79/A_vs_X/%(seq_class)s"
 
-for seq_class in "intergenic intron missense synonymous".split():
+for seq_class in "intergenic intron exon".split():
     x_combined = !find ../data/ensembl_snps_79/counts/X/$seq_class/combined -name "combined_counts.txt"
     a_combined = !find ../data/ensembl_snps_79/counts/A/$seq_class/combined -name "combined_counts.txt"
     x_combined = x_combined[0]
@@ -73,28 +73,11 @@ for seq_class in "intergenic intron missense synonymous".split():
 
 # Autosome intron versus Melanoma
 command = "mutation_spectra "\
-    "-1 %(A)s -2 %(C)s -o ../results/ensembl_snps_79/Aintron_vs_Melanoma/"
+    "-1 %(A)s -2 %(C)s -o ../results/ensembl_snps_79/Aexon_vs_Melanoma/"
 
-a_combined = !find ../data/ensembl_snps_79/counts/A/intron/combined -name "combined_counts.txt"
+a_combined = !find ../data/ensembl_snps_79/counts/A/exon/combined -name "combined_counts.txt"
 a_combined = a_combined[0]
 c_combined = !find ../data/counts/malignant_melanoma/combined -name "combined_counts.txt"
-c_combined = c_combined[0]
-
-sample = {"A":a_combined, "C":c_combined}
-cmnd = command % sample
-print
-print '=' * 30
-print cmnd
-!$cmnd
-print
-
-# Autosome intron versus carcinoma
-command = "mutation_spectra "\
-    "-1 %(A)s -2 %(C)s -o ../results/ensembl_snps_79/Aintron_vs_Carcinoma/"
-
-a_combined = !find ../data/ensembl_snps_79/counts/A/intron/combined -name "combined_counts.txt"
-a_combined = a_combined[0]
-c_combined = !find ../data/counts/carcinoma/combined -name "combined_counts.txt"
 c_combined = c_combined[0]
 
 sample = {"A":a_combined, "C":c_combined}
