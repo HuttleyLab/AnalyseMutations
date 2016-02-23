@@ -3,10 +3,10 @@
 directions = ['AtoC', 'AtoG', 'AtoT', 'CtoA', 'CtoG', 'CtoT', 'GtoA', 'GtoC',
              'GtoT', 'TtoA', 'TtoC', 'TtoG']
 command = " -f 2 -a %(align_file_path)s "\
-    "-o ../data/ensembl_snps_79/counts/%(cancer)s/directions --direction=%(direction)s -F"
+    "-o ../data/ensembl_snps_79/counts/%(cancer)s/directions --direction=%(direction)s --step=%(step)s -F"
 
 for cancer in ["malignant_melanoma", "carcinoma"]:
-    sample = dict(cancer=cancer)
+    sample = dict(cancer=cancer, step=3) # make all sampling frame-3 based
     for direction in directions:
         sample.update(dict(direction=direction))
 
