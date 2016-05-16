@@ -1,7 +1,30 @@
 #!/usr/bin/env ipython
 
-paths = !find ../results -name json1_paths.cfg
+import os
+
+## FOR THE NEIGHBOUR EFFECTS
+paths = !find ../results/ensembl_snps_79/A/intergenic -name json1_paths.cfg
 
 for path in paths:
-    print path
-    !mutation_grid --paths_cfg $path --sample_size
+    !mutation_draw  --sample_size nbr_grid --paths_cfg $path
+
+paths = !find ../results/ensembl_snps_79/malignant_melanoma -name json1_paths.cfg
+for path in paths:
+    !mutation_draw  --sample_size nbr_grid --paths_cfg $path
+
+## FOR THE SPECTRA EFFECTS
+### Autosomal versus X for intergenic regions
+paths = !find ../results/ensembl_snps_79/A_vs_X/intergenic/spectra_analysis.json
+assert len(paths) == 1, paths
+path = paths[0]
+figpath = os.path.join(os.path.dirname(path), "spectra_grid.pdf")
+
+!mutation_draw --figpath=$figpath spectra_grid --json_path=$path --group_label=group
+
+### Malignant melanoma, strand assymmetry
+paths = !find ../results/ensembl_snps_79/malignant_melanoma/combined_strand_symmetric/spectra_analysis.json 
+assert len(paths) == 1, paths
+path = paths[0]
+figpath = os.path.join(os.path.dirname(path), "spectra_grid.pdf")
+
+!mutation_draw --plot_cfg=spectra_plots.cfg --figpath=$figpath spectra_grid --json_path $path --group_label=strand
