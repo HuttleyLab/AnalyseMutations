@@ -3,7 +3,7 @@
 in_path = "../data/ensembl_snps_79/GERMLINE_flanks_match_ref.txt.gz"
 out_path = "../data/ensembl_snps_79/raw"
 
-cmnd_template = "python sample_snp.py -r 79 -o %s -s %s -c " % (out_path, in_path)
+cmnd_template = "python sample_snp.py -F -r 79 -o %s -s %s -c " % (out_path, in_path)
 
 for variant_class in ["exon_variant", "intergenic_variant", "intron_variant"]:
     cmnd = cmnd_template + variant_class

@@ -1,7 +1,7 @@
 """sampling SNP data from Ensembl"""
 import os, sys, cPickle, gzip
 
-from optparse import make_option
+import click
 
 from cogent import DNA
 from cogent.core.moltype import IUPAC_DNA_complements
@@ -130,23 +130,37 @@ def read_snp_records(genome, pickled, effect):
     infile.close()
     
 
-def main(script_info):
-    option_parser, opts, args =\
-       parse_command_line_parameters(**script_info)
+@click.command()
+@click.option('-r', '--release', default=None, help='Ensembl release.')
+@click.option('-o', '--output', default=None, type=click.Path(resolve_path=True), help='Path to write files.')
+@click.option('-s', '--snp_records', default=None, type=click.Path(resolve_path=True),
+    help='Path to pickled SNP data dump from Ensembl.')
+@click.option('-c', '--snp_effect', default=None,
+    type=click.Choice(['missense_variant', 'synonymous_variant', 'intron_variant',
+             'exon_variant', 'intergenic_variant']),
+        help='SNP effect.')
+@click.option('-l','--limit', default=None, type=int,
+        help='Number of results to return.')
+@click.option('-F', '--force_overwrite', is_flag=True, help='Overwrite existing files.')
+@click.option('-D', '--dry_run', is_flag=True, help='Do a dry run of the analysis without writing output.')
+@click.option('--verbose', is_flag=True, help='Verbose output.')
+def main(release, output, snp_records, snp_effect, limit, force_overwrite, dry_run, verbose):
+    output_filename = os.path.join(output, '%s_%s.txt.gz' % (snp_effect,
+                    release))
     
-    output_filename = os.path.join(opts.output, '%s_%s.txt.gz' % (opts.snp_effect,
-                    opts.release))
+    if os.path.exists(output_filename) and not force_overwrite:
+        print "File exists, exiting.."
     
-    genic = not opts.snp_effect.startswith('intergenic')
+    genic = not snp_effect.startswith('intergenic')
     
-    path.create_path(opts.output)
+    path.create_path(output)
     
     print 'Will write to %s' % output_filename
     
     account = HostAccount(*os.environ['ENSEMBL_ACCOUNT'].split())
-    human = Genome('human', Release=opts.release, account=account)
+    human = Genome('human', Release=release, account=account)
     
-    reader = read_snp_records(human, opts.snp_records, opts.snp_effect)
+    reader = read_snp_records(human, snp_records, snp_effect)
     
     outfile = util.open_(output_filename, 'w')
     chroms = '12345678910111213141516171819202122XY'
@@ -166,8 +180,8 @@ def main(script_info):
             print
             continue
         
-        if location not in chroms or not is_valid(snp, opts.verbose):
-            if opts.verbose:
+        if location not in chroms or not is_valid(snp, verbose):
+            if verbose:
                 print "NOT VALID"
                 print snp
                 print snp.AlleleFreqs
@@ -188,33 +202,5 @@ def main(script_info):
     print "num written", num
     outfile.close()
 
-
-script_info = {}
-script_info['brief_description'] = ""
-script_info['script_description'] = "annotater."
-
-script_info['required_options'] = [
-     make_option('-r','--release', help='Ensembl release number.'),
-     make_option('-o','--output', help='Path to write data.'),
-     make_option('-s','--snp_records', help='Path to pickled SNP data dump from Ensembl.'),
-    # see http://asia.ensembl.org/info/docs/variation/predicted_data.html
-    make_option('-c','--snp_effect', default=None,
-     choices=['missense_variant', 'synonymous_variant', 'intron_variant',
-             'exon_variant',
-             'intergenic_variant'], help='SNP effect.'),
-    ]
-
-script_info['optional_options'] = [
-    make_option('-l','--limit', default=None, type=int,
-        help='Number of results to return.'),
-    make_option('-D','--dry_run', action='store_true', default=False,
-        help='Do a dry run of the analysis without writing output.'),
-    ]
-
-script_info['version'] = '0.1'
-script_info['authors'] = 'Gavin Huttley'
-
-
 if __name__ == "__main__":
-    main(script_info)
-    
+    main()
