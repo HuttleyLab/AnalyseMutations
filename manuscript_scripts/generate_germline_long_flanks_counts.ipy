@@ -1,0 +1,29 @@
+#!/usr/bin/env ipython
+
+directions = ['AtoG', 'CtoT']
+
+###########
+## GERMLINE
+###########
+#
+## flank size of 10, for a first order analysis to detect the limit of neighbourhoods
+# command_template = " -f 10 -a %(align_file_path)s "\
+   # "-o ../data/ensembl_snps_79/counts/long_flanks/A/intergenic/directions --direction=%(direction)s --step=1 -F"
+
+command_template = " -f 10 -a %(align_file_path)s "\
+   "-o ../data/delme/A/intergenic/directions --direction=%(direction)s --step=1 -F"
+
+for direction in directions:
+   sample = dict(direction=direction)
+   # find the align file for this direction
+   find_cmnd = "find ../data/ensembl_snps_79/aligns/A/intergenic -name '*%(direction)s*fa*'" % sample
+   fns = !$find_cmnd
+   assert len(fns) == 1, fns
+   sample.update(dict(align_file_path=fns[0]))
+
+   new_command = command_template % sample
+   print "=" * 20
+   print "Doing chrom=A, seq_class=intergenic, direction=%s" % (direction)
+   print "aln_to_counts", new_command
+   !aln_to_counts $new_command
+   print

@@ -1,0 +1,29 @@
+#!/usr/bin/env ipython
+
+import os, glob
+
+# Just doing the transition mutations
+directions = ['AtoG', 'CtoT']
+
+###################
+# germline analyses
+###################
+
+### long flanks only ###
+
+counts_dir = "../data/ensembl_snps_79/counts/long_flanks/A/intergenic/directions"
+outpath_template = "../results/ensembl_snps_79/long_flanks/A/intergenic/directions/%(direction)s"
+
+command_template = "mutation_analysis -1 %(infile)s -o %(outfile)s nbr --first_order --plot_cfg=wide_plots.cfg"
+
+for direction in directions:
+    fn = glob.glob1(counts_dir, "*%s.txt" % direction)
+    assert len(fn) == 1, fn
+    fn = os.path.join(counts_dir, fn[0])
+    sample = dict(direction=direction)
+    outpath = outpath_template % sample
+    command = command_template % dict(infile=fn, outfile=outpath)
+    print "=" * 40
+    print command
+    !$command
+    print
