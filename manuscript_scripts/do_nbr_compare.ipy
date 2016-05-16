@@ -9,7 +9,7 @@ directions = ['AtoC', 'AtoG', 'AtoT', 'CtoA', 'CtoG', 'CtoT', 'GtoA', 'GtoC',
 pattern = re.compile("(%s)" % '|'.join(directions))
 
 # compare ausotome sequence classes
-command = "mutation_nbr -1 %(S1)s -2 %(S2)s -o %(out)s"
+command = "mutation_analysis -1 %(S1)s -2 %(S2)s -o %(out)s nbr"
 
 for seq_class1, seq_class2 in combinations("intergenic intron exon".split(), 2):
     paths1 = !find ../data/ensembl_snps_79/counts/A/$seq_class1/directions -name *.txt
@@ -27,7 +27,7 @@ for seq_class1, seq_class2 in combinations("intergenic intron exon".split(), 2):
     
 
 # compare Autosome directions for strand symmetry
-command = "mutation_nbr -1 %(A1)s --strand_symmetry -o %(out)s"
+command = "mutation_analysis -1 %(A1)s --strand_symmetry -o %(out)s nbr"
 
 for chrom in "A X".split():
     for seq_class in "intergenic intron exon".split():
@@ -47,7 +47,7 @@ for chrom in "A X".split():
             print
 
 # compare Autosome versus X for each sequence class
-command = "mutation_nbr -1 %(A1)s -2 %(A2)s -o %(out)s"
+command = "mutation_analysis -1 %(A1)s -2 %(A2)s -o %(out)s nbr"
 
 for direction in directions:
     for seq_class in "intergenic intron exon".split():
@@ -62,7 +62,7 @@ for direction in directions:
         print
 
 # compare Melanoma versus Autosome exon for position influences
-command = "mutation_nbr -1 %(A)s -2 %(C)s -o %(out)s"
+command = "mutation_analysis -1 %(A)s -2 %(C)s -o %(out)s nbr"
 
 for direction in directions:
     a_path = !find ../data/ensembl_snps_79/counts/A/exon/directions -name *$direction*.txt

@@ -27,7 +27,7 @@ for chrom_class in "A X".split():
             d = direction.findall(fn)[0]
             sample.update(dict(direction=d))
             outpath = outpath_template % sample
-            command = "mutation_nbr --plot_cfg=plots.cfg -1 %s -o %s" % (fn, outpath)
+            command = "mutation_analysis -1 %s -o %s nbr --plot_cfg=plots.cfg" % (fn, outpath)
             print "=" * 40
             print command
             !$command
@@ -45,7 +45,7 @@ for chrom_class in "A X".split():
             d = direction.findall(fn)[0]
             sample.update(dict(direction=d))
             outpath = outpath_template % sample
-            command = "mutation_nbr --plot_cfg=plots.cfg -1 %s -o %s --strand_symmetry" % (fn, outpath)
+            command = "mutation_analysis -1 %s -o %s --strand_symmetry  nbr --plot_cfg=plots.cfg" % (fn, outpath)
             print "=" * 40
             print command
             !$command
@@ -67,7 +67,7 @@ for fn in fns:
     d = direction.findall(fn)[0]
     sample.update(dict(direction=d))
     outpath = outpath_template % sample
-    command = "mutation_nbr --plot_cfg=plots.cfg -1 %s -o %s" % (fn, outpath)
+    command = "mutation_analysis -1 %s -o %s nbr --plot_cfg=plots.cfg " % (fn, outpath)
     print "=" * 40
     print command
     !$command
@@ -85,7 +85,7 @@ for fn in fns:
     d = direction.findall(fn)[0]
     sample.update(dict(direction=d))
     outpath = outpath_template % sample
-    command = "mutation_nbr  --plot_cfg=plots.cfg -1 %s -o %s" % (fn, outpath)
+    command = "mutation_analysis -1 %s -o %s nbr  --plot_cfg=plots.cfg" % (fn, outpath)
     print "=" * 40
     print command
     !$command

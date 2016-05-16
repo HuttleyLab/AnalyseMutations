@@ -6,8 +6,9 @@ from itertools import combinations
 # STRAND SYMMETRY
 
 ## SOMATIC
-command = "mutation_spectra "\
-    "-1 %(A)s --strand_symmetry -o ../results/ensembl_snps_79/%(cancer)s/combined_strand_symmetric/"
+# strand symmetry
+command = "mutation_analysis "\
+    "-1 %(A)s --strand_symmetry -o ../results/ensembl_snps_79/%(cancer)s/combined_strand_symmetric/ spectra"
 
 cancer = "malignant_melanoma"
 a_combined = !find ../data/ensembl_snps_79/counts/$cancer/combined_strand_symmetric -name "combined_counts.txt"
@@ -20,8 +21,8 @@ print cmnd
 print
 
 ## GERMLINE
-command = "mutation_spectra "\
-    "-1 %(A)s --strand_symmetry -o ../results/ensembl_snps_79/%(chrom)s/%(seq_class)s/combined_strand_symmetric/"
+command = "mutation_analysis "\
+    "-1 %(A)s --strand_symmetry -o ../results/ensembl_snps_79/%(chrom)s/%(seq_class)s/combined_strand_symmetric/  spectra"
 
 seq_classes = "intergenic intron exon".split()
 for chrom in ["A","X"]:
@@ -39,8 +40,8 @@ for chrom in ["A","X"]:
 # BETWEEN GROUPS
 ## germline
 # Autosomes between classes
-command = "mutation_spectra "\
-    "-1 %(A)s -2 %(B)s -o ../results/ensembl_snps_79/A/%(class_a)s_vs_%(class_b)s/"
+command = "mutation_analysis "\
+    "-1 %(A)s -2 %(B)s -o ../results/ensembl_snps_79/A/%(class_a)s_vs_%(class_b)s/  spectra"
 
 seq_classes = "intergenic intron exon".split()
 for s1, s2 in combinations(seq_classes, 2):
@@ -56,8 +57,8 @@ for s1, s2 in combinations(seq_classes, 2):
     print
 
 # Autosomes versus X-chromosome
-command = "mutation_spectra "\
-    "-1 %(A)s -2 %(X)s -o ../results/ensembl_snps_79/A_vs_X/%(seq_class)s"
+command = "mutation_analysis "\
+    "-1 %(A)s -2 %(X)s -o ../results/ensembl_snps_79/A_vs_X/%(seq_class)s  spectra"
 
 for seq_class in "intergenic intron exon".split():
     x_combined = !find ../data/ensembl_snps_79/counts/X/$seq_class/combined -name "combined_counts.txt"
@@ -72,8 +73,8 @@ for seq_class in "intergenic intron exon".split():
     print
 
 # Autosome intron versus Melanoma
-command = "mutation_spectra "\
-    "-1 %(A)s -2 %(C)s -o ../results/ensembl_snps_79/Aexon_vs_Melanoma/"
+command = "mutation_analysis "\
+    "-1 %(A)s -2 %(C)s -o ../results/ensembl_snps_79/Aexon_vs_Melanoma/  spectra"
 
 a_combined = !find ../data/ensembl_snps_79/counts/A/exon/combined -name "combined_counts.txt"
 a_combined = a_combined[0]
