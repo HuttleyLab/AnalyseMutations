@@ -4,7 +4,7 @@ import collections
 import csv
 import re
 
-from optparse import make_option
+import click
 
 from cogent import DNA, Sequence, LoadTable
 from cogent.parse.fasta import MinimalFastaParser
@@ -88,27 +88,36 @@ def get_flanks(chrom, location, flank_size):
 
 assert get_flanks('AAA--X--TTT', 5, 2) == '--X--'
 
-def main(script_info):
-    option_parser, opts, args =\
-       parse_command_line_parameters(**script_info)
-    
+
+@click.command()
+@click.option('--snp_path', required=True, help='SNP dump path.')
+@click.option('--chroms_path', required=True, default=None,
+            type=click.Path(resolve_path=True), help='path to Chrom seq fasta files')
+@click.option('-o','--output', required=True, help='Path to write data.')
+@click.option('-l','--limit', default=None, type=int,
+        help='Number of results to return.')
+@click.option('-F', '--force_overwrite', is_flag=True, help='Overwrite existing files.')
+@click.option('-D', '--dry_run', is_flag=True, help='Do a dry run of the analysis without writing output.')
+@click.option('--verbose', is_flag=True, help='Verbose output.')
+def main(snp_path, chroms_path, output, limit, force_overwrite, dry_run, verbose):
+    """associate the flanks with SNP records."""
     chroms = {}
     flank_size = 300
-    genic = 'missense' in opts.snp_path or 'syn' in opts.snp_path
-    record_reader = read_snp_dump(opts.snp_path, genic=genic, limit=opts.limit)
+    genic = 'missense' in snp_path or 'syn' in snp_path
+    record_reader = read_snp_dump(snp_path, genic=genic, limit=limit)
     
-    LOGGER.input_file(opts.snp_path)
+    LOGGER.input_file(snp_path)
     
     ancestral_mismatch = 0
     ref_mismatch = 0
     written = 0
     
-    out_dir = abspath(opts.output)
-    out_path = os.path.join(out_dir, os.path.basename(opts.snp_path))
+    out_dir = abspath(output)
+    out_path = os.path.join(out_dir, os.path.basename(snp_path))
     runlog_path = "%s.log" % out_path.split('.')[0]
     LOGGER.log_file_path = runlog_path
     
-    if not opts.dry_run:
+    if not dry_run:
         create_path(out_dir)
         outfile = gzip.open(out_path, 'w')
     
@@ -124,7 +133,7 @@ def main(script_info):
             gene_strand = snp_strand
         
         if record.Location.Chrom not in chroms:
-            chrom_path = os.path.join(opts.chroms_path,
+            chrom_path = os.path.join(chroms_path,
                             "Chr%s.fa.gz" % record.Location.Chrom)
             
             LOGGER.input_file(chrom_path)
@@ -172,7 +181,7 @@ def main(script_info):
                                    flank5, flank3, genic=genic)
         output = map(str, output)
         output = '\t'.join(output) + '\n'
-        if not opts.dry_run:
+        if not dry_run:
             outfile.write(output)
             written += 1
         
@@ -193,28 +202,8 @@ def main(script_info):
     LOGGER.write("\n" + str(table), label="summary statistics")
 
 
-script_info = {}
-script_info['brief_description'] = ""
-script_info['script_description'] = "associate the flanks with SNP records."
-
-script_info['required_options'] = [
-     make_option('--snp_path', help='SNP dump path.'),
-     make_option('--chroms_path', help='Chrom path.'),
-     make_option('-o','--output', help='Path to write data.'),
-    # see http://asia.ensembl.org/info/docs/variation/predicted_data.html
-    ]
-
-script_info['optional_options'] = [
-    make_option('-l','--limit', default=None, type=int,
-        help='Number of results to return.'),
-    make_option('-D','--dry_run', action='store_true', default=False,
-        help='Do a dry run of the analysis without writing output.'),
-    ]
-
-script_info['version'] = '0.1'
-script_info['authors'] = 'Gavin Huttley'
 
 
 if __name__ == "__main__":
-    main(script_info)
+    main()
     

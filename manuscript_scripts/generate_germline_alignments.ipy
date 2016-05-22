@@ -1,16 +1,17 @@
 #!/usr/bin/env ipython
 directions = ['AtoC', 'AtoG', 'AtoT', 'CtoA', 'CtoG', 'CtoT', 'GtoA', 'GtoC',
              'GtoT', 'TtoA', 'TtoC', 'TtoG']
-command = "-i /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/with_flanks/%(seq_class)s_variant_79.txt.gz "\
+command = "-i /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/raw_with_flanks/%(seq_class)s_variant_79.txt.gz "\
 "-o ../data/ensembl_snps_79/aligns/%(chrom_class)s/%(seq_class)s/directions --direction=%(direction)s --chrom_class=%(chrom_class)s -F"
 for chrom_class in "A X".split():
-    for seq_class in "intergenic intron missense synonymous".split():
+    for seq_class in "intergenic intron exon".split():
         sample = dict(seq_class=seq_class, chrom_class=chrom_class)
         for direction in directions:
             sample.update(dict(direction=direction))
             new_command = command % sample
             print "=" * 20
-            print "Doing chrom=%s, seq_class=%s, direction=%s" % (chrom_class, seq_class, direction)
+            print "Doing chrom=%s, seq_class=%s, direction=%s" % (chrom_class,
+                                                                    seq_class, direction)
             r = !python snptables_to_aln.py {new_command}
             if 'Error:' in ''.join(r):
                 print r
