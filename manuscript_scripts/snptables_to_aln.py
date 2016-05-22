@@ -225,7 +225,7 @@ def main(opts):
         LOGGER.output_file(outfilename)
     msg = "Wrote %d records to %s" % (num, outfilename)
     print msg
-    LOGGER.write(msg + "\n", label="completed")
+    LOGGER.log_message(msg + "\n", label="completed")
 
 script_info = {}
 script_info['brief_description'] = ""
@@ -272,7 +272,7 @@ if __name__ == "__main__":
     opts.output_path = abspath(opts.output_path)
     
     if not opts.dry_run:
-        LOGGER.write("%s" % str(vars(opts)), label="vars")
+        LOGGER.log_message("%s" % str(vars(opts)), label="vars")
     
     
     start_time = time.time()
@@ -283,4 +283,4 @@ if __name__ == "__main__":
     # determine runtime
     duration = time.time() - start_time
     if not opts.dry_run:
-        LOGGER.write("%.2f" % (duration/60.), label="run duration (minutes)")
+        LOGGER.log_message("%.2f" % (duration/60.), label="run duration (minutes)")

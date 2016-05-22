@@ -199,7 +199,7 @@ def main(snp_path, chroms_path, output, limit, force_overwrite, dry_run, verbose
     
     print table
     
-    LOGGER.write("\n" + str(table), label="summary statistics")
+    LOGGER.log_message("\n" + str(table), label="summary statistics")
 
 
 
