@@ -1,0 +1,16 @@
+#!/usr/bin/env ipython
+import os
+
+cmnd_template = "python germline_flanks.py --chroms_path %(chroms)s --snp_path %(snp_path)s --output %(output)s -F"
+in_dirname = "../data/ensembl_snps_79/raw/"
+out_dirname = "../data/ensembl_snps_79/raw_with_flanks/"
+
+fns = !ls $in_dirname
+for fn in fns:
+    inpath = os.path.join(in_dirname, fn)
+    args = dict(snp_path=inpath, output=out_dirname, chroms="../data/chroms79")
+    cmnd = cmnd_template % args
+    print "#" * 40
+    print cmnd
+    !$cmnd
+    print
