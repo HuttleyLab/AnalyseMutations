@@ -11,4 +11,3 @@ for variant_class in ["exon_variant", "intergenic_variant", "intron_variant"]:
     print cmnd
     print
     !$cmnd
-    
