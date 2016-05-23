@@ -12,6 +12,7 @@ for chrom_class in "A X".split():
             print "=" * 20
             print "Doing chrom=%s, seq_class=%s, direction=%s" % (chrom_class,
                                                                     seq_class, direction)
+            print new_command
             r = !python snptables_to_aln.py {new_command}
             if 'Error:' in ''.join(r):
                 print r
