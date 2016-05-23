@@ -2,14 +2,14 @@
 
 directions = ['AtoC', 'AtoG', 'AtoT', 'CtoA', 'CtoG', 'CtoT', 'GtoA', 'GtoC',
              'GtoT', 'TtoA', 'TtoC', 'TtoG']
-steps=dict(intergenic=1, intron=1, missense=3, synonymous=3)
+steps=dict(intergenic=1, intron=1, exon=3)
 
 # standard flank size of 2
 command = " -f 2 -a %(align_file_path)s "\
     "-o ../data/ensembl_snps_79/counts/%(chrom_class)s/%(seq_class)s/directions --direction=%(direction)s --step=%(step)s -F"
 
 for chrom_class in "A X".split():
-    for seq_class in "intergenic intron missense synonymous".split():
+    for seq_class in "intergenic intron exon".split():
         sample = dict(seq_class=seq_class, chrom_class=chrom_class, step=steps[seq_class])
         for direction in directions:
             sample.update(dict(direction=direction))

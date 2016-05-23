@@ -4,7 +4,7 @@ import os
 command_template = '-F --counts_pattern="%s" --output_path=%s'
 
 for chrom_class in ["A", "X"]:
-    for seq_class in "intergenic intron missense synonymous".split():
+    for seq_class in "intergenic intron exon".split():
         dirname = os.path.join("../data/ensembl_snps_79/counts", chrom_class, seq_class, "directions")
         fns = !find $dirname -name *.txt
         assert len(fns) == 12, dirname
