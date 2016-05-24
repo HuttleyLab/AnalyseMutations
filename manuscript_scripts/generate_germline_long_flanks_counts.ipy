@@ -1,6 +1,7 @@
 #!/usr/bin/env ipython
 
-directions = ['AtoG', 'CtoT']
+directions = ['AtoC', 'AtoG', 'AtoT', 'CtoA', 'CtoG', 'CtoT', 'GtoA', 'GtoC',
+             'GtoT', 'TtoA', 'TtoC', 'TtoG']
 
 ###########
 ## GERMLINE

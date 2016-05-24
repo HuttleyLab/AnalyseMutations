@@ -3,8 +3,8 @@
 import os, glob
 
 # Just doing the transition mutations
-directions = ['AtoG', 'CtoT']
-
+directions = ['AtoC', 'AtoG', 'AtoT', 'CtoA', 'CtoG', 'CtoT', 'GtoA', 'GtoC',
+             'GtoT', 'TtoA', 'TtoC', 'TtoG']
 ###################
 # germline analyses
 ###################
