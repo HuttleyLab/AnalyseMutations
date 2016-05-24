@@ -11,7 +11,7 @@ directions = ['AtoG', 'CtoT']
    # "-o ../data/ensembl_snps_79/counts/long_flanks/A/intergenic/directions --direction=%(direction)s --step=1 -F"
 
 command_template = " -f 10 -a %(align_file_path)s "\
-   "-o ../data/delme/A/intergenic/directions --direction=%(direction)s --step=1 -F"
+   "-o ../data/ensembl_snps_79/counts/long_flanks/directions --direction=%(direction)s --step=1 -F"
 
 for direction in directions:
    sample = dict(direction=direction)
