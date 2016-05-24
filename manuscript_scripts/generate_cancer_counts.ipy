@@ -5,21 +5,21 @@ directions = ['AtoC', 'AtoG', 'AtoT', 'CtoA', 'CtoG', 'CtoT', 'GtoA', 'GtoC',
 command = " -f 2 -a %(align_file_path)s "\
     "-o ../data/ensembl_snps_79/counts/%(cancer)s/directions --direction=%(direction)s --step=%(step)s -F"
 
-for cancer in ["malignant_melanoma", "carcinoma"]:
-    sample = dict(cancer=cancer, step=3) # make all sampling frame-3 based
-    for direction in directions:
-        sample.update(dict(direction=direction))
+cancer = "malignant_melanoma"
+sample = dict(cancer=cancer, step=3) # make all sampling frame-3 based
+for direction in directions:
+    sample.update(dict(direction=direction))
 
-        # find the align file for this direction
-        find_cmnd = "find ../data/ensembl_snps_79/aligns/%(cancer)s/directions -name '*%(direction)s*fas*'" % sample
-        fns = !$find_cmnd
-        assert len(fns) == 1, fns
-        sample.update(dict(align_file_path=fns[0]))
+    # find the align file for this direction
+    find_cmnd = "find ../data/ensembl_snps_79/aligns/%(cancer)s/directions -name '*%(direction)s*fas*'" % sample
+    fns = !$find_cmnd
+    assert len(fns) == 1, fns
+    sample.update(dict(align_file_path=fns[0]))
 
-        new_command = command % sample
-        print "=" * 20
-        print "Doing cancer=%s, direction=%s" % (cancer, direction)
-        print new_command
-        !aln_to_counts $new_command
-        print
+    new_command = command % sample
+    print "=" * 20
+    print "Doing cancer=%s, direction=%s" % (cancer, direction)
+    print new_command
+    !aln_to_counts $new_command
+    print
 

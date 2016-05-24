@@ -3,25 +3,29 @@ import os
 
 command_template = '-F --counts_pattern="%s" --output_path=%s'
 
-for cancer in "carcinoma malignant_melanoma".split():
-    dirname = os.path.join("../data/ensembl_snps_79/counts", cancer, "directions")
-    fns = !find $dirname -name *.txt
-    assert len(fns) == 12, dirname
-    counts_pattern = os.path.join(dirname, '*.txt')
-    # do the strand assymetric combined counts
-    outdirname = dirname.replace("directions", "combined")
-    cmnd = command_template % (counts_pattern, outdirname)
-    print "\rDoing all_counts %s" % cmnd,
-    r = !all_counts $cmnd
-    # do the strand symmetric counts
-    outdirname = dirname.replace("directions", "combined_strand_symmetric")
-    cmnd = command_template % (counts_pattern, outdirname)
-    cmnd += " --strand_symmetric"
-    print "\rDoing all_counts %s" % cmnd,
-    r = !all_counts $cmnd
+dirname = os.path.join("../data/ensembl_snps_79/counts/malignant_melanoma/directions")
+fns = !find $dirname -name *.txt
+assert len(fns) == 12, dirname
+counts_pattern = os.path.join(dirname, '*.txt')
 
-    cmnd = command_template % (counts_pattern, outdirname)
-    cmnd += " --strand_symmetric --split_dir %s" % outdirname.replace("combined_strand_symmetric", "directions_strand_symmetric")
-    print "\rDoing all_counts %s" % cmnd
-    r = !all_counts $cmnd
-    print
+# do the strand assymetric combined counts
+print "STRAND ASSYMMETRIC COUNTS"
+outdirname = dirname.replace("directions", "combined")
+cmnd = command_template % (counts_pattern, outdirname)
+print "\nDoing all_counts %s" % cmnd
+r = !all_counts $cmnd
+
+# do the strand symmetric counts
+print "\nSTRAND SYMMETRIC COUNTS"
+outdirname = dirname.replace("directions", "combined_strand_symmetric")
+cmnd = command_template % (counts_pattern, outdirname)
+cmnd += " --strand_symmetric"
+print "\nDoing all_counts %s" % cmnd
+r = !all_counts $cmnd
+
+print "\nDOING directions_strand_symmetric"
+cmnd = command_template % (counts_pattern, outdirname)
+cmnd += " --strand_symmetric --split_dir %s" % outdirname.replace("combined_strand_symmetric", "directions_strand_symmetric")
+print "\nDoing all_counts %s" % cmnd
+r = !all_counts $cmnd
+print
