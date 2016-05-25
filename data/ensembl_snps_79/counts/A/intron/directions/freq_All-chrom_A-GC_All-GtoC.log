@@ -1,0 +1,10 @@
+2016-05-23 22:10:21	Thales.local:3721	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
+2016-05-23 22:10:21	Thales.local:3721	INFO	python : 2.7.10
+2016-05-23 22:10:21	Thales.local:3721	INFO	user : gavin
+2016-05-23 22:10:21	Thales.local:3721	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/aln_to_counts -f 2 -a ../data/ensembl_snps_79/aligns/A/intron/directions/freq_All-chrom_A-GC_All-GtoC.fasta.gz -o ../data/ensembl_snps_79/counts/A/intron/directions --direction=GtoC --step=1 -F
+2016-05-23 22:10:21	Thales.local:3721	INFO	vars : {'direction': 'GtoC', 'align_path': '/Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/aligns/A/intron/directions/freq_All-chrom_A-GC_All-GtoC.fasta.gz', 'dry_run': False, 'randomise': False, 'flank_size': 2, 'step': '1', 'seed': '1464005421.75', 'output_path': '/Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/A/intron/directions', 'force_overwrite': True, 'verbose': False}
+2016-05-23 22:10:22	Thales.local:3721	INFO	align_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/aligns/A/intron/directions/freq_All-chrom_A-GC_All-GtoC.fasta.gz
+2016-05-23 22:10:22	Thales.local:3721	INFO	align_path md5sum : cf613f1327e5c1ce684eb1ad1bee468d
+2016-05-23 22:10:55	Thales.local:3721	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/A/intron/directions/freq_All-chrom_A-GC_All-GtoC.txt
+2016-05-23 22:10:55	Thales.local:3721	INFO	output_file_path md5sum : e187a3ce4a780fc66310f97557c59c34
+2016-05-23 22:10:55	Thales.local:3721	INFO	run duration (minutes) : 0.55

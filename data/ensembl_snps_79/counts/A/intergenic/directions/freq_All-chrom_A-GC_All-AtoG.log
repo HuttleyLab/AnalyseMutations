@@ -1,0 +1,10 @@
+2016-05-23 21:48:04	Thales.local:3473	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
+2016-05-23 21:48:04	Thales.local:3473	INFO	python : 2.7.10
+2016-05-23 21:48:04	Thales.local:3473	INFO	user : gavin
+2016-05-23 21:48:04	Thales.local:3473	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/aln_to_counts -f 2 -a ../data/ensembl_snps_79/aligns/A/intergenic/directions/freq_All-chrom_A-GC_All-AtoG.fasta.gz -o ../data/ensembl_snps_79/counts/A/intergenic/directions --direction=AtoG --step=1 -F
+2016-05-23 21:48:04	Thales.local:3473	INFO	vars : {'direction': 'AtoG', 'align_path': '/Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/aligns/A/intergenic/directions/freq_All-chrom_A-GC_All-AtoG.fasta.gz', 'dry_run': False, 'randomise': False, 'flank_size': 2, 'step': '1', 'seed': '1464004084.33', 'output_path': '/Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/A/intergenic/directions', 'force_overwrite': True, 'verbose': False}
+2016-05-23 21:48:05	Thales.local:3473	INFO	align_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/aligns/A/intergenic/directions/freq_All-chrom_A-GC_All-AtoG.fasta.gz
+2016-05-23 21:48:05	Thales.local:3473	INFO	align_path md5sum : 9f56a95ef59d30969633e0bf3010add8
+2016-05-23 21:49:34	Thales.local:3473	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/A/intergenic/directions/freq_All-chrom_A-GC_All-AtoG.txt
+2016-05-23 21:49:34	Thales.local:3473	INFO	output_file_path md5sum : 4cac0979b7af8355c7d27193a8b70cdd
+2016-05-23 21:49:34	Thales.local:3473	INFO	run duration (minutes) : 1.49

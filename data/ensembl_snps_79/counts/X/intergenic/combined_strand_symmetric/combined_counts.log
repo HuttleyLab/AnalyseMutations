@@ -1,0 +1,44 @@
+2016-05-24 17:34:22	Thales.local:9309	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
+2016-05-24 17:34:22	Thales.local:9309	INFO	python : 2.7.10
+2016-05-24 17:34:22	Thales.local:9309	INFO	user : gavin
+2016-05-24 17:34:22	Thales.local:9309	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/all_counts -F --counts_pattern=../data/ensembl_snps_79/counts/X/intergenic/directions/*.txt --output_path=../data/ensembl_snps_79/counts/X/intergenic/combined_strand_symmetric --strand_symmetric --split_dir ../data/ensembl_snps_79/counts/X/intergenic/directions_strand_symmetric
+2016-05-24 17:34:22	Thales.local:9309	INFO	vars : {'strand_symmetric': True, 'counts_pattern': '../data/ensembl_snps_79/counts/X/intergenic/directions/*.txt', 'verbose': False, 'dry_run': False, 'split_dir': '../data/ensembl_snps_79/counts/X/intergenic/directions_strand_symmetric', 'force_overwrite': True, 'output_path': '/Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intergenic/combined_strand_symmetric'}
+2016-05-24 17:34:22	Thales.local:9309	INFO	count_file : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intergenic/directions/freq_All-chrom_X-GC_All-AtoC.txt
+2016-05-24 17:34:22	Thales.local:9309	INFO	count_file md5sum : e936bb03d035446ebfc20e1aa5ac3f06
+2016-05-24 17:34:22	Thales.local:9309	INFO	count_file : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intergenic/directions/freq_All-chrom_X-GC_All-AtoG.txt
+2016-05-24 17:34:22	Thales.local:9309	INFO	count_file md5sum : 62acbe9cf497f33ba05c19452743b0d9
+2016-05-24 17:34:22	Thales.local:9309	INFO	count_file : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intergenic/directions/freq_All-chrom_X-GC_All-AtoT.txt
+2016-05-24 17:34:22	Thales.local:9309	INFO	count_file md5sum : 914c7c2cfd55a5aaff527d728c44c4ad
+2016-05-24 17:34:22	Thales.local:9309	INFO	count_file : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intergenic/directions/freq_All-chrom_X-GC_All-CtoA.txt
+2016-05-24 17:34:22	Thales.local:9309	INFO	count_file md5sum : 02867a278aaa51c467c5f9a6ee642fd8
+2016-05-24 17:34:22	Thales.local:9309	INFO	count_file : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intergenic/directions/freq_All-chrom_X-GC_All-CtoG.txt
+2016-05-24 17:34:22	Thales.local:9309	INFO	count_file md5sum : 1a210c05247151ee8170ca248fbb65da
+2016-05-24 17:34:22	Thales.local:9309	INFO	count_file : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intergenic/directions/freq_All-chrom_X-GC_All-CtoT.txt
+2016-05-24 17:34:22	Thales.local:9309	INFO	count_file md5sum : fd05555ad92b7b683b7c33d9f7b07e69
+2016-05-24 17:34:22	Thales.local:9309	INFO	count_file : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intergenic/directions/freq_All-chrom_X-GC_All-GtoA.txt
+2016-05-24 17:34:22	Thales.local:9309	INFO	count_file md5sum : 0675e75299df8a314a044980893e2724
+2016-05-24 17:34:22	Thales.local:9309	INFO	count_file : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intergenic/directions/freq_All-chrom_X-GC_All-GtoC.txt
+2016-05-24 17:34:22	Thales.local:9309	INFO	count_file md5sum : 00d4df5955c5cf1a49b415df0696d12f
+2016-05-24 17:34:22	Thales.local:9309	INFO	count_file : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intergenic/directions/freq_All-chrom_X-GC_All-GtoT.txt
+2016-05-24 17:34:22	Thales.local:9309	INFO	count_file md5sum : d85a8071523e52b02d8a4b23531a56c3
+2016-05-24 17:34:22	Thales.local:9309	INFO	count_file : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intergenic/directions/freq_All-chrom_X-GC_All-TtoA.txt
+2016-05-24 17:34:22	Thales.local:9309	INFO	count_file md5sum : b416e9563c728ac053016299c98196ba
+2016-05-24 17:34:22	Thales.local:9309	INFO	count_file : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intergenic/directions/freq_All-chrom_X-GC_All-TtoC.txt
+2016-05-24 17:34:22	Thales.local:9309	INFO	count_file md5sum : dcf529a8ccc1d815aa6537f086d54d7a
+2016-05-24 17:34:22	Thales.local:9309	INFO	count_file : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intergenic/directions/freq_All-chrom_X-GC_All-TtoG.txt
+2016-05-24 17:34:22	Thales.local:9309	INFO	count_file md5sum : daf17fb4446abed38ab7d7535f706142
+2016-05-24 17:34:23	Thales.local:9309	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intergenic/combined_strand_symmetric/combined_counts.txt
+2016-05-24 17:34:23	Thales.local:9309	INFO	output_file_path md5sum : 58920daf5c5bb541826e86471293172d
+2016-05-24 17:34:23	Thales.local:9309	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intergenic/directions_strand_symmetric/freq_All-chrom_X-GC_All-CtoG.txt
+2016-05-24 17:34:23	Thales.local:9309	INFO	output_file_path md5sum : e784b0c547f64d9135a1254d7f12e195
+2016-05-24 17:34:23	Thales.local:9309	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intergenic/directions_strand_symmetric/freq_All-chrom_X-GC_All-CtoA.txt
+2016-05-24 17:34:23	Thales.local:9309	INFO	output_file_path md5sum : c0456b206b6f15908aed6a182d586359
+2016-05-24 17:34:23	Thales.local:9309	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intergenic/directions_strand_symmetric/freq_All-chrom_X-GC_All-AtoT.txt
+2016-05-24 17:34:23	Thales.local:9309	INFO	output_file_path md5sum : fbd8117b59a8840d5b57cf252c4aad7f
+2016-05-24 17:34:23	Thales.local:9309	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intergenic/directions_strand_symmetric/freq_All-chrom_X-GC_All-CtoT.txt
+2016-05-24 17:34:23	Thales.local:9309	INFO	output_file_path md5sum : 78f9bbe00366114b9398048ea28a66d6
+2016-05-24 17:34:23	Thales.local:9309	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intergenic/directions_strand_symmetric/freq_All-chrom_X-GC_All-AtoC.txt
+2016-05-24 17:34:23	Thales.local:9309	INFO	output_file_path md5sum : 89dfc776b8e77067e2fe00feda89c37c
+2016-05-24 17:34:23	Thales.local:9309	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intergenic/directions_strand_symmetric/freq_All-chrom_X-GC_All-AtoG.txt
+2016-05-24 17:34:23	Thales.local:9309	INFO	output_file_path md5sum : 57e53e61743d29ec4bbeb6cbef49f858
+2016-05-24 17:34:23	Thales.local:9309	INFO	run duration (minutes) : 0.02
