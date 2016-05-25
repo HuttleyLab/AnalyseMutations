@@ -23,4 +23,5 @@ draw_results
 data/align*
 data/cosmic*
 repo_operation*
-old_results*
+*old*
+results_old*
