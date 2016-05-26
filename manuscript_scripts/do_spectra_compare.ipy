@@ -72,13 +72,13 @@ for seq_class in "intergenic intron exon".split():
     !$cmnd
     print
 
-# Autosome intron versus Melanoma
+# Autosome exon versus Melanoma
 command = "mutation_analysis "\
     "-1 %(A)s -2 %(C)s -o ../results/ensembl_snps_79/Aexon_vs_Melanoma/  spectra"
 
 a_combined = !find ../data/ensembl_snps_79/counts/A/exon/combined -name "combined_counts.txt"
 a_combined = a_combined[0]
-c_combined = !find ../data/counts/malignant_melanoma/combined -name "combined_counts.txt"
+c_combined = !find ../data/ensembl_snps_79/counts/malignant_melanoma/combined -name "combined_counts.txt"
 c_combined = c_combined[0]
 
 sample = {"A":a_combined, "C":c_combined}
