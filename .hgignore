@@ -22,6 +22,14 @@ draw_results
 *manuscript outline.oo3*
 data/align*
 data/cosmic*
+data/ensembl_snps_79/aligns*
+data/OLD*
+ENU*
+*wpu
+data/chroms79*
 repo_operation*
+data/ensembl_snps_79/cosmic*
 *old*
 results_old*
+data/ensembl_snps_79/GERMLINE_flanks_match_ref.txt.gz
+*raw*
