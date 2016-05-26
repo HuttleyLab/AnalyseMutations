@@ -1,0 +1,24 @@
+#!/usr/bin/env ipython
+
+# Script to enable reproducibility of results in maunscript by Zhu et al
+# Derived data sets that contain SNPs and their flanks are copied into place so the downstream analysis workflows can be replicated.
+
+import shutil, os, glob
+
+def create_path(path):
+    if os.path.exists(path):
+        return
+    os.makedirs(path)
+
+# shutil.copytree(os.path.expanduser("~/DevRepos/AnalyseMutations/data/Chroms79"), "data/Chroms79")
+
+# for outpath in ["data/ensembl_snps_79/cosmic_raw/COSMIC_flanks_malignant_melanoma.txt.gz"]:
+    # dirname = os.path.dirname(outpath)
+    # create_path(dirname)
+    # shutil.copy(os.path.expanduser("~/DevRepos/AnalyseMutations/data/ensembl_snps_79/cosmic_raw/COSMIC_flanks_malignant_melanoma.txt.gz"),
+# dirname)
+
+# print "Copying germline raw_with_flanks"
+# shutil.copytree(os.path.expanduser("~/DevRepos/AnalyseMutations/data/ensembl_snps_79/raw_with_flanks"),
+            # "data/ensembl_snps_79/raw_with_flanks")
+# 
