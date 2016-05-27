@@ -1,0 +1,11 @@
+2016-05-27 10:13:29	thales.uds.anu.edu.au:25469	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
+2016-05-27 10:13:29	thales.uds.anu.edu.au:25469	INFO	python : 2.7.10
+2016-05-27 10:13:29	thales.uds.anu.edu.au:25469	INFO	user : gavin
+2016-05-27 10:13:29	thales.uds.anu.edu.au:25469	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/aln_to_counts -f 2 -a ../data/ensembl_snps_79/aligns/X/intron/directions/freq_All-chrom_X-GC_All-TtoC.fasta.gz -o ../data/ensembl_snps_79/counts/X/intron/directions --direction=TtoC --step=1 -F
+2016-05-27 10:13:29	thales.uds.anu.edu.au:25469	INFO	vars : {'direction': 'TtoC', 'align_path': u'../data/ensembl_snps_79/aligns/X/intron/directions/freq_All-chrom_X-GC_All-TtoC.fasta.gz', 'dry_run': False, 'randomise': False, 'flank_size': 2, 'step': '1', 'seed': None, 'force_overwrite': True, 'output_path': u'../data/ensembl_snps_79/counts/X/intron/directions'}
+2016-05-27 10:13:29	thales.uds.anu.edu.au:25469	INFO	align_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/aligns/X/intron/directions/freq_All-chrom_X-GC_All-TtoC.fasta.gz
+2016-05-27 10:13:29	thales.uds.anu.edu.au:25469	INFO	align_path md5sum : b24318fc9c4d9e6840ac632c29332eb9
+2016-05-27 10:13:29	thales.uds.anu.edu.au:25469	INFO	random_number_seed : 1464308009.88
+2016-05-27 10:13:30	thales.uds.anu.edu.au:25469	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intron/directions/freq_All-chrom_X-GC_All-TtoC.txt
+2016-05-27 10:13:30	thales.uds.anu.edu.au:25469	INFO	output_file_path md5sum : 95e220c8c596168ebad85406588bde0f
+2016-05-27 10:13:30	thales.uds.anu.edu.au:25469	INFO	run duration (minutes) : 0.02

@@ -1,0 +1,44 @@
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	python : 2.7.10
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	user : gavin
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/all_counts -F --counts_pattern=../data/ensembl_snps_79/counts/X/intron/directions/*.txt --output_path=../data/ensembl_snps_79/counts/X/intron/combined_strand_symmetric --strand_symmetric --split_dir ../data/ensembl_snps_79/counts/X/intron/directions_strand_symmetric
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	vars : {'strand_symmetric': True, 'counts_pattern': u'../data/ensembl_snps_79/counts/X/intron/directions/*.txt', 'dry_run': False, 'split_dir': u'../data/ensembl_snps_79/counts/X/intron/directions_strand_symmetric', 'output_path': u'../data/ensembl_snps_79/counts/X/intron/combined_strand_symmetric', 'force_overwrite': True}
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	count_file : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intron/directions/freq_All-chrom_X-GC_All-AtoC.txt
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	count_file md5sum : e5da6a54a007595145b78ea60d650f0a
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	count_file : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intron/directions/freq_All-chrom_X-GC_All-AtoG.txt
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	count_file md5sum : 3c017aff47ed089898b554e8e76bd0bf
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	count_file : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intron/directions/freq_All-chrom_X-GC_All-AtoT.txt
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	count_file md5sum : fbb8ba6137117d4d3a27d2983753ac6a
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	count_file : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intron/directions/freq_All-chrom_X-GC_All-CtoA.txt
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	count_file md5sum : d7e0edb8ccc3fea3f3a5ecaf9ba6a256
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	count_file : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intron/directions/freq_All-chrom_X-GC_All-CtoG.txt
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	count_file md5sum : 8f5e25fa3ba7637afbd7635c5f0ca682
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	count_file : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intron/directions/freq_All-chrom_X-GC_All-CtoT.txt
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	count_file md5sum : 4bbd37b746b7cb2f76b3021fee4f8586
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	count_file : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intron/directions/freq_All-chrom_X-GC_All-GtoA.txt
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	count_file md5sum : 61e11697325dcb65089475dc12edeb1c
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	count_file : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intron/directions/freq_All-chrom_X-GC_All-GtoC.txt
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	count_file md5sum : 5a58f9c7126219bf5d5316b58463fbe4
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	count_file : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intron/directions/freq_All-chrom_X-GC_All-GtoT.txt
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	count_file md5sum : 039b8a5ce8c1149383f62ec12e018bbd
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	count_file : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intron/directions/freq_All-chrom_X-GC_All-TtoA.txt
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	count_file md5sum : 49172298c37c42e37a23303b2bb5a15c
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	count_file : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intron/directions/freq_All-chrom_X-GC_All-TtoC.txt
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	count_file md5sum : 95e220c8c596168ebad85406588bde0f
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	count_file : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intron/directions/freq_All-chrom_X-GC_All-TtoG.txt
+2016-05-27 10:19:17	thales.uds.anu.edu.au:25778	INFO	count_file md5sum : fe12669e0e2bd0a88f7b98bd3de36231
+2016-05-27 10:19:18	thales.uds.anu.edu.au:25778	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intron/combined_strand_symmetric/combined_counts.txt
+2016-05-27 10:19:18	thales.uds.anu.edu.au:25778	INFO	output_file_path md5sum : e0e66acc850dacc3e08cfa2c1ba02771
+2016-05-27 10:19:18	thales.uds.anu.edu.au:25778	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intron/directions_strand_symmetric/freq_All-chrom_X-GC_All-CtoG.txt
+2016-05-27 10:19:18	thales.uds.anu.edu.au:25778	INFO	output_file_path md5sum : ff38ef3201b0ec081131df654da0e1b1
+2016-05-27 10:19:18	thales.uds.anu.edu.au:25778	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intron/directions_strand_symmetric/freq_All-chrom_X-GC_All-CtoA.txt
+2016-05-27 10:19:18	thales.uds.anu.edu.au:25778	INFO	output_file_path md5sum : 616dd013e10fd84f8cd2ee4483cf2394
+2016-05-27 10:19:18	thales.uds.anu.edu.au:25778	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intron/directions_strand_symmetric/freq_All-chrom_X-GC_All-AtoT.txt
+2016-05-27 10:19:18	thales.uds.anu.edu.au:25778	INFO	output_file_path md5sum : 7fbf794f9857a2fe6346521121db213e
+2016-05-27 10:19:18	thales.uds.anu.edu.au:25778	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intron/directions_strand_symmetric/freq_All-chrom_X-GC_All-CtoT.txt
+2016-05-27 10:19:18	thales.uds.anu.edu.au:25778	INFO	output_file_path md5sum : 569b7582b32263a702108dd03cc89976
+2016-05-27 10:19:18	thales.uds.anu.edu.au:25778	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intron/directions_strand_symmetric/freq_All-chrom_X-GC_All-AtoC.txt
+2016-05-27 10:19:18	thales.uds.anu.edu.au:25778	INFO	output_file_path md5sum : a79e47887a5b73cbe1aa72034a2fe1be
+2016-05-27 10:19:18	thales.uds.anu.edu.au:25778	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intron/directions_strand_symmetric/freq_All-chrom_X-GC_All-AtoG.txt
+2016-05-27 10:19:18	thales.uds.anu.edu.au:25778	INFO	output_file_path md5sum : 308559b84a4d8410cdbbcf118ed56383
+2016-05-27 10:19:18	thales.uds.anu.edu.au:25778	INFO	run duration (minutes) : 0.02

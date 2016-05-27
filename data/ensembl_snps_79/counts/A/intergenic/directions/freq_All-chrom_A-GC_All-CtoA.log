@@ -1,10 +1,11 @@
-2016-05-23 21:49:56	Thales.local:3508	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
-2016-05-23 21:49:56	Thales.local:3508	INFO	python : 2.7.10
-2016-05-23 21:49:56	Thales.local:3508	INFO	user : gavin
-2016-05-23 21:49:56	Thales.local:3508	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/aln_to_counts -f 2 -a ../data/ensembl_snps_79/aligns/A/intergenic/directions/freq_All-chrom_A-GC_All-CtoA.fasta.gz -o ../data/ensembl_snps_79/counts/A/intergenic/directions --direction=CtoA --step=1 -F
-2016-05-23 21:49:56	Thales.local:3508	INFO	vars : {'direction': 'CtoA', 'align_path': '/Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/aligns/A/intergenic/directions/freq_All-chrom_A-GC_All-CtoA.fasta.gz', 'dry_run': False, 'randomise': False, 'flank_size': 2, 'step': '1', 'seed': '1464004196.62', 'output_path': '/Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/A/intergenic/directions', 'force_overwrite': True, 'verbose': False}
-2016-05-23 21:49:56	Thales.local:3508	INFO	align_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/aligns/A/intergenic/directions/freq_All-chrom_A-GC_All-CtoA.fasta.gz
-2016-05-23 21:49:56	Thales.local:3508	INFO	align_path md5sum : d14b49baf59b3e372ab4ad09a27cc68b
-2016-05-23 21:50:22	Thales.local:3508	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/A/intergenic/directions/freq_All-chrom_A-GC_All-CtoA.txt
-2016-05-23 21:50:22	Thales.local:3508	INFO	output_file_path md5sum : 74616a6814ef32e2be4902b6daf315b0
-2016-05-23 21:50:22	Thales.local:3508	INFO	run duration (minutes) : 0.43
+2016-05-27 09:46:20	thales.uds.anu.edu.au:24657	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
+2016-05-27 09:46:20	thales.uds.anu.edu.au:24657	INFO	python : 2.7.10
+2016-05-27 09:46:20	thales.uds.anu.edu.au:24657	INFO	user : gavin
+2016-05-27 09:46:20	thales.uds.anu.edu.au:24657	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/aln_to_counts -f 2 -a ../data/ensembl_snps_79/aligns/A/intergenic/directions/freq_All-chrom_A-GC_All-CtoA.fasta.gz -o ../data/ensembl_snps_79/counts/A/intergenic/directions --direction=CtoA --step=1 -F
+2016-05-27 09:46:20	thales.uds.anu.edu.au:24657	INFO	vars : {'direction': 'CtoA', 'align_path': u'../data/ensembl_snps_79/aligns/A/intergenic/directions/freq_All-chrom_A-GC_All-CtoA.fasta.gz', 'dry_run': False, 'randomise': False, 'flank_size': 2, 'step': '1', 'seed': None, 'force_overwrite': True, 'output_path': u'../data/ensembl_snps_79/counts/A/intergenic/directions'}
+2016-05-27 09:46:20	thales.uds.anu.edu.au:24657	INFO	align_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/aligns/A/intergenic/directions/freq_All-chrom_A-GC_All-CtoA.fasta.gz
+2016-05-27 09:46:20	thales.uds.anu.edu.au:24657	INFO	align_path md5sum : d14b49baf59b3e372ab4ad09a27cc68b
+2016-05-27 09:46:20	thales.uds.anu.edu.au:24657	INFO	random_number_seed : 1464306380.04
+2016-05-27 09:46:46	thales.uds.anu.edu.au:24657	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/A/intergenic/directions/freq_All-chrom_A-GC_All-CtoA.txt
+2016-05-27 09:46:46	thales.uds.anu.edu.au:24657	INFO	output_file_path md5sum : 253ef825f616fe96b8aedb3386481235
+2016-05-27 09:46:46	thales.uds.anu.edu.au:24657	INFO	run duration (minutes) : 0.44

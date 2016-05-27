@@ -1,0 +1,11 @@
+2016-05-27 10:19:53	thales.uds.anu.edu.au:25927	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
+2016-05-27 10:19:53	thales.uds.anu.edu.au:25927	INFO	python : 2.7.10
+2016-05-27 10:19:53	thales.uds.anu.edu.au:25927	INFO	user : gavin
+2016-05-27 10:19:53	thales.uds.anu.edu.au:25927	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/aln_to_counts -f 2 -a ../data/ensembl_snps_79/aligns/malignant_melanoma/directions/freq_All-chrom_All-GC_All-TtoC.fasta.gz -o ../data/ensembl_snps_79/counts/malignant_melanoma/directions --direction=TtoC --step=3 -F
+2016-05-27 10:19:53	thales.uds.anu.edu.au:25927	INFO	vars : {'direction': 'TtoC', 'align_path': u'../data/ensembl_snps_79/aligns/malignant_melanoma/directions/freq_All-chrom_All-GC_All-TtoC.fasta.gz', 'dry_run': False, 'randomise': False, 'flank_size': 2, 'step': '3', 'seed': None, 'force_overwrite': True, 'output_path': u'../data/ensembl_snps_79/counts/malignant_melanoma/directions'}
+2016-05-27 10:19:53	thales.uds.anu.edu.au:25927	INFO	align_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/aligns/malignant_melanoma/directions/freq_All-chrom_All-GC_All-TtoC.fasta.gz
+2016-05-27 10:19:53	thales.uds.anu.edu.au:25927	INFO	align_path md5sum : 87d4a74e81b1dc120b9a12c731608d2f
+2016-05-27 10:19:53	thales.uds.anu.edu.au:25927	INFO	random_number_seed : 1464308393.03
+2016-05-27 10:19:53	thales.uds.anu.edu.au:25927	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/malignant_melanoma/directions/freq_All-chrom_All-GC_All-TtoC.txt
+2016-05-27 10:19:53	thales.uds.anu.edu.au:25927	INFO	output_file_path md5sum : a48997f7eb33f9c9eade8a35c715a9c1
+2016-05-27 10:19:53	thales.uds.anu.edu.au:25927	INFO	run duration (minutes) : 0.01
