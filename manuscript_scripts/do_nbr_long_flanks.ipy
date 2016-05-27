@@ -17,7 +17,7 @@ outpath_template = "../results/ensembl_snps_79/long_flanks/directions/%(directio
 command_template = "mutation_analysis -1 %(infile)s -o %(outfile)s nbr --first_order --plot_cfg=wide_plots.cfg"
 
 for direction in directions:
-    fn = glob.glob1(counts_dir, "*%s.txt" % direction)
+    fn = glob.glob1(counts_dir, "*%s.txt.gz" % direction)
     assert len(fn) == 1, fn
     fn = os.path.join(counts_dir, fn[0])
     sample = dict(direction=direction)
