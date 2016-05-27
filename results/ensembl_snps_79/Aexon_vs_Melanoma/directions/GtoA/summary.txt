@@ -1,0 +1,16 @@
+Position	RE	Deviance	df	prob	formula
+pos2	0.027466605852925128	21719.82284352931	3	0	count ~ group * mut * base - group : mut : base
+pos3	0.00496698639330887	3927.7537642096418	3	0	count ~ group * mut * base - group : mut : base
+pos0	0.0023798382476338687	1881.9094507579298	3	0	count ~ group * mut * base - group : mut : base
+pos1	0.010739637129887087	8492.604332475072	3	0	count ~ group * mut * base - group : mut : base
+pos1:pos2	0.0017029993146966897	1346.6841740813306	9	2.5508682410272464e-284	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
+pos1:pos3	0.0004936828776657938	390.3905965375351	9	1.5366484085732045e-78	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
+pos2:pos3	0.0012680482321104406	1002.7370366024373	9	4.4295626450699735e-210	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
+pos0:pos3	0.0002180247526399409	172.40786969459134	9	1.9435310224922743e-32	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
+pos0:pos2	0.0005185036521997747	410.0181700573202	9	9.9698510832809906e-83	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
+pos0:pos1	0.0005242095506289822	414.5302347699815	9	1.0850777651152238e-83	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
+pos0:pos1:pos3	9.925968761206315e-05	78.4917816923664	27	6.3785797710286304e-07	count ~ group * mut * base1 * base2 * base3 - group : mut : base1 : base2 : base3
+pos0:pos1:pos2	0.00011576036285538619	91.54005365587945	27	6.0320375197536242e-09	count ~ group * mut * base1 * base2 * base3 - group : mut : base1 : base2 : base3
+pos0:pos2:pos3	6.693185232381626e-05	52.92783472580883	27	0.0020533229249043898	count ~ group * mut * base1 * base2 * base3 - group : mut : base1 : base2 : base3
+pos1:pos2:pos3	0.00024727260487468743	195.53625230196633	27	1.7492765164820807e-27	count ~ group * mut * base1 * base2 * base3 - group : mut : base1 : base2 : base3
+pos0:pos1:pos2:pos3	0.0001804324344792389	142.6809170780167	81	2.8204568404340996e-05	count ~ group * mut * base1 * base2 * base3 * base4 - group : mut : base1 : base2 : base3 : base4

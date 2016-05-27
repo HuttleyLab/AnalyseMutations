@@ -1,0 +1,17 @@
+2016-05-27 13:50:54	thales.uds.anu.edu.au:30895	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
+2016-05-27 13:50:54	thales.uds.anu.edu.au:30895	INFO	python : 2.7.10
+2016-05-27 13:50:54	thales.uds.anu.edu.au:30895	INFO	user : gavin
+2016-05-27 13:50:54	thales.uds.anu.edu.au:30895	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/mutation_analysis -1 ../data/ensembl_snps_79/counts/A/exon/directions_strand_symmetric/freq_All-chrom_A-GC_All-AtoT.txt --strand_symmetry -o ../results/ensembl_snps_79/A/exon/directions_strand_symmetric/AtoT nbr
+2016-05-27 13:50:54	thales.uds.anu.edu.au:30895	INFO	vars : {'verbose': False, 'dry_run': False, 'format': 'pdf', 'group_ref': None, 'first_order': False, 'group_label': None, 'strand_symmetry': True, 'plot_cfg': None, 'force_overwrite': False, 'cfg_context': <mutation_motif.mutation_analysis.Config object at 0x1079972d0>, 'outpath': u'../results/ensembl_snps_79/A/exon/directions_strand_symmetric/AtoT', 'countsfile2': None, 'countsfile': u'../data/ensembl_snps_79/counts/A/exon/directions_strand_symmetric/freq_All-chrom_A-GC_All-AtoT.txt'}
+2016-05-27 13:50:54	thales.uds.anu.edu.au:30895	INFO	countsfile1_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/A/exon/directions_strand_symmetric/freq_All-chrom_A-GC_All-AtoT.txt
+2016-05-27 13:50:54	thales.uds.anu.edu.au:30895	INFO	countsfile1_path md5sum : 5f12af770259263fa2354e5f92570043
+2016-05-27 13:50:55	thales.uds.anu.edu.au:30895	INFO	analysis1 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A/exon/directions_strand_symmetric/AtoT/1.json
+2016-05-27 13:50:55	thales.uds.anu.edu.au:30895	INFO	analysis1 md5sum : 0d1f95a045833a3e80610f8ad6986128
+2016-05-27 13:50:55	thales.uds.anu.edu.au:30895	INFO	analysis2 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A/exon/directions_strand_symmetric/AtoT/2.json
+2016-05-27 13:50:55	thales.uds.anu.edu.au:30895	INFO	analysis2 md5sum : e0e3ab043102c4e1566a83b65debe074
+2016-05-27 13:50:57	thales.uds.anu.edu.au:30895	INFO	analysis3 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A/exon/directions_strand_symmetric/AtoT/3.json
+2016-05-27 13:50:57	thales.uds.anu.edu.au:30895	INFO	analysis3 md5sum : cd593ed0e31a1d25b3f96225269e3455
+2016-05-27 13:51:02	thales.uds.anu.edu.au:30895	INFO	analysis4 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A/exon/directions_strand_symmetric/AtoT/4.json
+2016-05-27 13:51:02	thales.uds.anu.edu.au:30895	INFO	analysis4 md5sum : 3d05b48f58e28616e04ba732d7bf700a
+2016-05-27 13:51:06	thales.uds.anu.edu.au:30895	INFO	summary : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A/exon/directions_strand_symmetric/AtoT/summary.txt
+2016-05-27 13:51:06	thales.uds.anu.edu.au:30895	INFO	summary md5sum : b13bd69d0143f11b1466b3da7294bb28

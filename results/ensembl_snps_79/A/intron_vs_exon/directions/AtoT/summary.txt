@@ -1,0 +1,16 @@
+Position	RE	Deviance	df	prob	formula
+pos2	0.00018168319394062867	184.81250527306204	3	8.0558479930779674e-40	count ~ group * mut * base - group : mut : base
+pos3	0.00016956959806382262	172.4902648208739	3	3.6900607208868383e-37	count ~ group * mut * base - group : mut : base
+pos0	9.250025530327989e-05	94.09347970062358	3	2.8915084042462813e-20	count ~ group * mut * base - group : mut : base
+pos1	0.00012535039789145967	127.50943314474216	3	1.861042988437314e-27	count ~ group * mut * base - group : mut : base
+pos1:pos2	0.00010779628285204957	109.65296602789327	9	1.7301266313062621e-19	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
+pos1:pos3	5.740056073273544e-05	58.38922799079607	9	2.7365170741510719e-09	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
+pos2:pos3	0.0001673844162217043	170.2674454067069	9	5.4276899965096148e-32	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
+pos0:pos3	4.695360349068447e-05	47.76233235720802	9	2.8289689365014525e-07	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
+pos0:pos2	2.536598235590894e-05	25.802886036007116	9	0.0022002919520681071	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
+pos0:pos1	7.394823522706057e-05	75.22191963061147	9	1.4286194365679394e-12	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
+pos0:pos1:pos3	5.9532051040663116e-05	60.5574310877875	27	0.00022283807322072446	count ~ group * mut * base1 * base2 * base3 - group : mut : base1 : base2 : base3
+pos0:pos1:pos2	3.800722011408325e-05	38.66185647332822	27	0.067980592079130375	count ~ group * mut * base1 * base2 * base3 - group : mut : base1 : base2 : base3
+pos0:pos2:pos3	5.48022414266168e-05	55.746155232948844	27	0.00092529322502149752	count ~ group * mut * base1 * base2 * base3 - group : mut : base1 : base2 : base3
+pos1:pos2:pos3	6.716603301900116e-05	68.32290077172044	27	1.9394895784591863e-05	count ~ group * mut * base1 * base2 * base3 - group : mut : base1 : base2 : base3
+pos0:pos1:pos2:pos3	9.552581229345876e-05	97.1711488844013	81	0.10634130677560437	count ~ group * mut * base1 * base2 * base3 * base4 - group : mut : base1 : base2 : base3 : base4

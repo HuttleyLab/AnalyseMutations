@@ -1,0 +1,17 @@
+2016-05-27 11:59:11	thales.uds.anu.edu.au:27930	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
+2016-05-27 11:59:11	thales.uds.anu.edu.au:27930	INFO	python : 2.7.10
+2016-05-27 11:59:11	thales.uds.anu.edu.au:27930	INFO	user : gavin
+2016-05-27 11:59:11	thales.uds.anu.edu.au:27930	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/mutation_analysis -1 ../data/ensembl_snps_79/counts/X/intergenic/directions/freq_All-chrom_X-GC_All-CtoG.txt -o ../results/ensembl_snps_79/X/intergenic/directions/CtoG nbr --plot_cfg=plots.cfg
+2016-05-27 11:59:11	thales.uds.anu.edu.au:27930	INFO	vars : {'verbose': False, 'dry_run': False, 'format': 'pdf', 'group_ref': None, 'first_order': False, 'group_label': None, 'strand_symmetry': False, 'plot_cfg': u'plots.cfg', 'force_overwrite': False, 'cfg_context': <mutation_motif.mutation_analysis.Config object at 0x116137310>, 'outpath': u'../results/ensembl_snps_79/X/intergenic/directions/CtoG', 'countsfile2': None, 'countsfile': u'../data/ensembl_snps_79/counts/X/intergenic/directions/freq_All-chrom_X-GC_All-CtoG.txt'}
+2016-05-27 11:59:11	thales.uds.anu.edu.au:27930	INFO	countsfile1_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intergenic/directions/freq_All-chrom_X-GC_All-CtoG.txt
+2016-05-27 11:59:11	thales.uds.anu.edu.au:27930	INFO	countsfile1_path md5sum : 0e0cfb65a6a3d32868a0535eaec6a12e
+2016-05-27 11:59:11	thales.uds.anu.edu.au:27930	INFO	analysis1 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/X/intergenic/directions/CtoG/1.json
+2016-05-27 11:59:11	thales.uds.anu.edu.au:27930	INFO	analysis1 md5sum : 54c7977c0cabe25d13819f48c3d8c97b
+2016-05-27 11:59:11	thales.uds.anu.edu.au:27930	INFO	analysis2 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/X/intergenic/directions/CtoG/2.json
+2016-05-27 11:59:11	thales.uds.anu.edu.au:27930	INFO	analysis2 md5sum : 5b3b3baef06d5c21f1b9aec7a59effc6
+2016-05-27 11:59:13	thales.uds.anu.edu.au:27930	INFO	analysis3 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/X/intergenic/directions/CtoG/3.json
+2016-05-27 11:59:13	thales.uds.anu.edu.au:27930	INFO	analysis3 md5sum : 461b374a283a10ccb998d2ff7b166182
+2016-05-27 11:59:17	thales.uds.anu.edu.au:27930	INFO	analysis4 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/X/intergenic/directions/CtoG/4.json
+2016-05-27 11:59:17	thales.uds.anu.edu.au:27930	INFO	analysis4 md5sum : 00a4d52dbd53c730571b70077c95eff3
+2016-05-27 11:59:22	thales.uds.anu.edu.au:27930	INFO	summary : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/X/intergenic/directions/CtoG/summary.txt
+2016-05-27 11:59:22	thales.uds.anu.edu.au:27930	INFO	summary md5sum : a60bb79eb70e20996868303eccddd9fe

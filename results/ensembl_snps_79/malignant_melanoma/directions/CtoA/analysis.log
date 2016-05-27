@@ -1,0 +1,17 @@
+2016-05-27 12:13:22	thales.uds.anu.edu.au:29115	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
+2016-05-27 12:13:22	thales.uds.anu.edu.au:29115	INFO	python : 2.7.10
+2016-05-27 12:13:22	thales.uds.anu.edu.au:29115	INFO	user : gavin
+2016-05-27 12:13:22	thales.uds.anu.edu.au:29115	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/mutation_analysis -1 ../data/ensembl_snps_79/counts/malignant_melanoma/directions/freq_All-chrom_All-GC_All-CtoA.txt -o ../results/ensembl_snps_79/malignant_melanoma/directions/CtoA nbr --plot_cfg=plots.cfg
+2016-05-27 12:13:22	thales.uds.anu.edu.au:29115	INFO	vars : {'verbose': False, 'dry_run': False, 'format': 'pdf', 'group_ref': None, 'first_order': False, 'group_label': None, 'strand_symmetry': False, 'plot_cfg': u'plots.cfg', 'force_overwrite': False, 'cfg_context': <mutation_motif.mutation_analysis.Config object at 0x10fc5a310>, 'outpath': u'../results/ensembl_snps_79/malignant_melanoma/directions/CtoA', 'countsfile2': None, 'countsfile': u'../data/ensembl_snps_79/counts/malignant_melanoma/directions/freq_All-chrom_All-GC_All-CtoA.txt'}
+2016-05-27 12:13:22	thales.uds.anu.edu.au:29115	INFO	countsfile1_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/malignant_melanoma/directions/freq_All-chrom_All-GC_All-CtoA.txt
+2016-05-27 12:13:22	thales.uds.anu.edu.au:29115	INFO	countsfile1_path md5sum : ab807c7c98a4fe064808a037796c7f88
+2016-05-27 12:13:22	thales.uds.anu.edu.au:29115	INFO	analysis1 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/malignant_melanoma/directions/CtoA/1.json
+2016-05-27 12:13:22	thales.uds.anu.edu.au:29115	INFO	analysis1 md5sum : 292d3f8e4c0575442869a5ec0ed7909f
+2016-05-27 12:13:23	thales.uds.anu.edu.au:29115	INFO	analysis2 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/malignant_melanoma/directions/CtoA/2.json
+2016-05-27 12:13:23	thales.uds.anu.edu.au:29115	INFO	analysis2 md5sum : 77b6d33cee6eb3956fbb95e597d47d69
+2016-05-27 12:13:24	thales.uds.anu.edu.au:29115	INFO	analysis3 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/malignant_melanoma/directions/CtoA/3.json
+2016-05-27 12:13:24	thales.uds.anu.edu.au:29115	INFO	analysis3 md5sum : 85600a8344aaa68fa07a6b9702b94aa4
+2016-05-27 12:13:28	thales.uds.anu.edu.au:29115	INFO	analysis4 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/malignant_melanoma/directions/CtoA/4.json
+2016-05-27 12:13:28	thales.uds.anu.edu.au:29115	INFO	analysis4 md5sum : bc4bc883dec5ee463987d7a65ef63cde
+2016-05-27 12:13:32	thales.uds.anu.edu.au:29115	INFO	summary : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/malignant_melanoma/directions/CtoA/summary.txt
+2016-05-27 12:13:32	thales.uds.anu.edu.au:29115	INFO	summary md5sum : b31c32883dc47686bf7b54a5cdf684ca

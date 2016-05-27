@@ -1,0 +1,21 @@
+2016-05-27 14:11:10	thales.uds.anu.edu.au:32106	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
+2016-05-27 14:11:10	thales.uds.anu.edu.au:32106	INFO	python : 2.7.10
+2016-05-27 14:11:10	thales.uds.anu.edu.au:32106	INFO	user : gavin
+2016-05-27 14:11:10	thales.uds.anu.edu.au:32106	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/mutation_analysis -1 ../data/ensembl_snps_79/counts/A/exon/directions/freq_All-chrom_A-GC_All-TtoG.txt -2 ../data/ensembl_snps_79/counts/malignant_melanoma/directions/freq_All-chrom_All-GC_All-TtoG.txt -o ../results/ensembl_snps_79/Aexon_vs_Melanoma/directions/TtoG nbr
+2016-05-27 14:11:10	thales.uds.anu.edu.au:32106	INFO	vars : {'verbose': False, 'dry_run': False, 'format': 'pdf', 'group_ref': None, 'first_order': False, 'group_label': None, 'strand_symmetry': False, 'plot_cfg': None, 'force_overwrite': False, 'cfg_context': <mutation_motif.mutation_analysis.Config object at 0x10bc5d2d0>, 'outpath': u'../results/ensembl_snps_79/Aexon_vs_Melanoma/directions/TtoG', 'countsfile2': u'../data/ensembl_snps_79/counts/malignant_melanoma/directions/freq_All-chrom_All-GC_All-TtoG.txt', 'countsfile': u'../data/ensembl_snps_79/counts/A/exon/directions/freq_All-chrom_A-GC_All-TtoG.txt'}
+2016-05-27 14:11:10	thales.uds.anu.edu.au:32106	INFO	countsfile1_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/A/exon/directions/freq_All-chrom_A-GC_All-TtoG.txt
+2016-05-27 14:11:10	thales.uds.anu.edu.au:32106	INFO	countsfile1_path md5sum : 58039596f9a04d18b9e3c335292b10ed
+2016-05-27 14:11:10	thales.uds.anu.edu.au:32106	INFO	countsfile2_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/malignant_melanoma/directions/freq_All-chrom_All-GC_All-TtoG.txt
+2016-05-27 14:11:10	thales.uds.anu.edu.au:32106	INFO	countsfile2_path md5sum : fdf5a1d9ab335bbe19bb3bb6dd9ebb82
+2016-05-27 14:11:10	thales.uds.anu.edu.au:32106	INFO	group_counts : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/Aexon_vs_Melanoma/directions/TtoG/group_counts_table.txt
+2016-05-27 14:11:10	thales.uds.anu.edu.au:32106	INFO	group_counts md5sum : 2b49dc40ff47a2385c4336e97650057b
+2016-05-27 14:11:10	thales.uds.anu.edu.au:32106	INFO	analysis1 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/Aexon_vs_Melanoma/directions/TtoG/1.json
+2016-05-27 14:11:10	thales.uds.anu.edu.au:32106	INFO	analysis1 md5sum : dab53fa74f8caa0b0e685583163d8001
+2016-05-27 14:11:11	thales.uds.anu.edu.au:32106	INFO	analysis2 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/Aexon_vs_Melanoma/directions/TtoG/2.json
+2016-05-27 14:11:11	thales.uds.anu.edu.au:32106	INFO	analysis2 md5sum : 58d1cb0f2ee1af1279446244b88dde2c
+2016-05-27 14:11:12	thales.uds.anu.edu.au:32106	INFO	analysis3 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/Aexon_vs_Melanoma/directions/TtoG/3.json
+2016-05-27 14:11:12	thales.uds.anu.edu.au:32106	INFO	analysis3 md5sum : 4e586c2ea0f399a34904889fb696d3e9
+2016-05-27 14:11:25	thales.uds.anu.edu.au:32106	INFO	analysis4 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/Aexon_vs_Melanoma/directions/TtoG/4.json
+2016-05-27 14:11:25	thales.uds.anu.edu.au:32106	INFO	analysis4 md5sum : 3d6dfd4303f27b9ca29d7872e1f87443
+2016-05-27 14:11:28	thales.uds.anu.edu.au:32106	INFO	summary : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/Aexon_vs_Melanoma/directions/TtoG/summary.txt
+2016-05-27 14:11:28	thales.uds.anu.edu.au:32106	INFO	summary md5sum : 243a7a85002d7f214d156423d7f3e425

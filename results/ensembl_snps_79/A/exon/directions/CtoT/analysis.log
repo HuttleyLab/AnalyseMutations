@@ -1,0 +1,17 @@
+2016-05-27 11:49:51	thales.uds.anu.edu.au:27284	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
+2016-05-27 11:49:51	thales.uds.anu.edu.au:27284	INFO	python : 2.7.10
+2016-05-27 11:49:51	thales.uds.anu.edu.au:27284	INFO	user : gavin
+2016-05-27 11:49:51	thales.uds.anu.edu.au:27284	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/mutation_analysis -1 ../data/ensembl_snps_79/counts/A/exon/directions/freq_All-chrom_A-GC_All-CtoT.txt -o ../results/ensembl_snps_79/A/exon/directions/CtoT nbr --plot_cfg=plots.cfg
+2016-05-27 11:49:51	thales.uds.anu.edu.au:27284	INFO	vars : {'verbose': False, 'dry_run': False, 'format': 'pdf', 'group_ref': None, 'first_order': False, 'group_label': None, 'strand_symmetry': False, 'plot_cfg': u'plots.cfg', 'force_overwrite': False, 'cfg_context': <mutation_motif.mutation_analysis.Config object at 0x10bc53310>, 'outpath': u'../results/ensembl_snps_79/A/exon/directions/CtoT', 'countsfile2': None, 'countsfile': u'../data/ensembl_snps_79/counts/A/exon/directions/freq_All-chrom_A-GC_All-CtoT.txt'}
+2016-05-27 11:49:51	thales.uds.anu.edu.au:27284	INFO	countsfile1_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/A/exon/directions/freq_All-chrom_A-GC_All-CtoT.txt
+2016-05-27 11:49:51	thales.uds.anu.edu.au:27284	INFO	countsfile1_path md5sum : acabd07dcd5dd81e9bee6178671b5548
+2016-05-27 11:49:51	thales.uds.anu.edu.au:27284	INFO	analysis1 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A/exon/directions/CtoT/1.json
+2016-05-27 11:49:51	thales.uds.anu.edu.au:27284	INFO	analysis1 md5sum : 4b405e6fa0c6d899ab32a3e1362a1cad
+2016-05-27 11:49:52	thales.uds.anu.edu.au:27284	INFO	analysis2 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A/exon/directions/CtoT/2.json
+2016-05-27 11:49:52	thales.uds.anu.edu.au:27284	INFO	analysis2 md5sum : 321cba5d480ff2563cb065d26c468552
+2016-05-27 11:49:53	thales.uds.anu.edu.au:27284	INFO	analysis3 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A/exon/directions/CtoT/3.json
+2016-05-27 11:49:53	thales.uds.anu.edu.au:27284	INFO	analysis3 md5sum : d16710feaf40bb01ebaf3fb60ee64333
+2016-05-27 11:49:56	thales.uds.anu.edu.au:27284	INFO	analysis4 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A/exon/directions/CtoT/4.json
+2016-05-27 11:49:56	thales.uds.anu.edu.au:27284	INFO	analysis4 md5sum : cd90143dfcbae4719bacadb012c465de
+2016-05-27 11:50:00	thales.uds.anu.edu.au:27284	INFO	summary : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A/exon/directions/CtoT/summary.txt
+2016-05-27 11:50:00	thales.uds.anu.edu.au:27284	INFO	summary md5sum : 58af36d2e42fa3d573e7882a4d78265b

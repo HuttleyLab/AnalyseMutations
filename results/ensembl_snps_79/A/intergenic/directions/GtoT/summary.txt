@@ -1,0 +1,16 @@
+Position	RE	Deviance	df	prob	formula
+pos2	0.0037954185490411884	3730.4409834816033	3	0	count ~ mut * base - mut : base
+pos3	0.004277213396782872	4203.987503429949	3	0	count ~ mut * base - mut : base
+pos0	0.001806817581318641	1775.884864326466	3	0	count ~ mut * base - mut : base
+pos1	0.009329384435160269	9169.665373630325	3	0	count ~ mut * base - mut : base
+pos1:pos2	0.004539201315275608	4461.49018875809	9	0	count ~ mut * base1 * base2 - mut : base1 : base2
+pos1:pos3	0.0007379947209827308	725.3602513595065	9	2.4373133264034864e-150	count ~ mut * base1 * base2 - mut : base1 : base2
+pos2:pos3	0.002721803606798763	2675.2063290503684	9	0	count ~ mut * base1 * base2 - mut : base1 : base2
+pos0:pos3	0.00027109640245659845	266.4552320465415	9	3.3257536318403385e-52	count ~ mut * base1 * base2 - mut : base1 : base2
+pos0:pos2	0.0010051086569138209	987.9011967074563	9	7.003430266059248e-207	count ~ mut * base1 * base2 - mut : base1 : base2
+pos0:pos1	0.00333876974572145	3281.610007674699	9	0	count ~ mut * base1 * base2 - mut : base1 : base2
+pos0:pos1:pos3	0.00033920702854448883	333.3998042158072	27	1.5060401788051767e-54	count ~ mut * base1 * base2 * base3 - mut : base1 : base2 : base3
+pos0:pos1:pos2	0.0014757880841897045	1450.5225921883768	27	3.5777370490828755e-289	count ~ mut * base1 * base2 * base3 - mut : base1 : base2 : base3
+pos0:pos2:pos3	0.00022489069013705788	221.04056152191146	27	2.3073677671681765e-32	count ~ mut * base1 * base2 * base3 - mut : base1 : base2 : base3
+pos1:pos2:pos3	0.0007416521887303399	728.9551032592765	27	3.2529235809326647e-136	count ~ mut * base1 * base2 * base3 - mut : base1 : base2 : base3
+pos0:pos1:pos2:pos3	0.000265165026470729	260.6254012175501	81	9.8505091938862083e-21	count ~ mut * base1 * base2 * base3 * base4 - mut : base1 : base2 : base3 : base4

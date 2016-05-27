@@ -1,0 +1,11 @@
+2016-05-27 14:44:27	thales.uds.anu.edu.au:32517	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
+2016-05-27 14:44:27	thales.uds.anu.edu.au:32517	INFO	python : 2.7.10
+2016-05-27 14:44:27	thales.uds.anu.edu.au:32517	INFO	user : gavin
+2016-05-27 14:44:27	thales.uds.anu.edu.au:32517	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/mutation_analysis -1 ../data/ensembl_snps_79/counts/long_flanks/directions/freq_All-chrom_A-GC_All-AtoT.txt.gz -o ../results/ensembl_snps_79/long_flanks/directions/AtoT nbr --first_order --plot_cfg=wide_plots.cfg
+2016-05-27 14:44:27	thales.uds.anu.edu.au:32517	INFO	vars : {'verbose': False, 'dry_run': False, 'format': 'pdf', 'group_ref': None, 'first_order': True, 'group_label': None, 'strand_symmetry': False, 'plot_cfg': u'wide_plots.cfg', 'force_overwrite': False, 'cfg_context': <mutation_motif.mutation_analysis.Config object at 0x10d56d310>, 'outpath': u'../results/ensembl_snps_79/long_flanks/directions/AtoT', 'countsfile2': None, 'countsfile': u'../data/ensembl_snps_79/counts/long_flanks/directions/freq_All-chrom_A-GC_All-AtoT.txt.gz'}
+2016-05-27 14:44:31	thales.uds.anu.edu.au:32517	INFO	countsfile1_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/long_flanks/directions/freq_All-chrom_A-GC_All-AtoT.txt.gz
+2016-05-27 14:44:31	thales.uds.anu.edu.au:32517	INFO	countsfile1_path md5sum : f3fe4ae0704a87cfb6fd7c271a68ad8a
+2016-05-27 14:44:49	thales.uds.anu.edu.au:32517	INFO	analysis1 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/long_flanks/directions/AtoT/1.json
+2016-05-27 14:44:49	thales.uds.anu.edu.au:32517	INFO	analysis1 md5sum : 9b3f28a5e73aa58fffac5d3916e19446
+2016-05-27 14:44:49	thales.uds.anu.edu.au:32517	INFO	summary : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/long_flanks/directions/AtoT/summary.txt
+2016-05-27 14:44:49	thales.uds.anu.edu.au:32517	INFO	summary md5sum : 1327a1737c701e69f16b8126a1875957

@@ -1,0 +1,16 @@
+Position	RE	Deviance	df	prob	formula
+pos2	2.868081796569234e-07	0.3075054051336856	3	0.95861079109472713	count ~ strand * mut * base - strand : mut : base
+pos3	1.2640646258701032e-06	1.3552845855313933	3	0.71604891304469653	count ~ strand * mut * base - strand : mut : base
+pos0	2.1877343844920377e-06	2.345610048614521	3	0.50383958546759766	count ~ strand * mut * base - strand : mut : base
+pos1	2.225342283158758e-06	2.3859318836806267	3	0.49625877064249713	count ~ strand * mut * base - strand : mut : base
+pos1:pos2	8.314394122672283e-06	8.914394060140806	9	0.44521367310861748	count ~ strand * mut * base1 * base2 - strand : mut : base1 : base2
+pos1:pos3	8.168661487481395e-06	8.758144775064002	9	0.4598925750160231	count ~ strand * mut * base1 * base2 - strand : mut : base1 : base2
+pos2:pos3	4.983249373693462e-06	5.3428605814966765	9	0.80345493188596051	count ~ strand * mut * base1 * base2 - strand : mut : base1 : base2
+pos0:pos3	1.190124781259751e-05	12.760089459745796	9	0.17376582050620598	count ~ strand * mut * base1 * base2 - strand : mut : base1 : base2
+pos0:pos2	7.843441081151834e-06	8.409455163332074	9	0.49346664954852093	count ~ strand * mut * base1 * base2 - strand : mut : base1 : base2
+pos0:pos1	1.0461185394538648e-05	11.216106377350135	9	0.26118638291205143	count ~ strand * mut * base1 * base2 - strand : mut : base1 : base2
+pos0:pos1:pos3	2.837741277941705e-05	30.425240395230905	27	0.29538906873876786	count ~ strand * mut * base1 * base2 * base3 - strand : mut : base1 : base2 : base3
+pos0:pos1:pos2	1.7918114614186116e-05	19.211157437204243	27	0.86217908108012864	count ~ strand * mut * base1 * base2 * base3 - strand : mut : base1 : base2 : base3
+pos0:pos2:pos3	1.9174324711826813e-05	20.558020680331083	27	0.8065419243240507	count ~ strand * mut * base1 * base2 * base3 - strand : mut : base1 : base2 : base3
+pos1:pos2:pos3	1.974982687069873e-05	21.17505337699583	27	0.7780213597658816	count ~ strand * mut * base1 * base2 * base3 - strand : mut : base1 : base2 : base3
+pos0:pos1:pos2:pos3	7.1431636294502e-05	76.58642889605845	81	0.61814742668980616	count ~ strand * mut * base1 * base2 * base3 * base4 - strand : mut : base1 : base2 : base3 : base4

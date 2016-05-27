@@ -1,0 +1,12 @@
+2016-05-27 14:57:45	thales.uds.anu.edu.au:34383	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
+2016-05-27 14:57:45	thales.uds.anu.edu.au:34383	INFO	python : 2.7.10
+2016-05-27 14:57:45	thales.uds.anu.edu.au:34383	INFO	user : gavin
+2016-05-27 14:57:45	thales.uds.anu.edu.au:34383	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/mutation_analysis -1 ../data/ensembl_snps_79/counts/X/intron/combined_strand_symmetric/combined_counts.txt --strand_symmetry -o ../results/ensembl_snps_79/X/intron/combined_strand_symmetric/ spectra
+2016-05-27 14:57:45	thales.uds.anu.edu.au:34383	INFO	vars : {'verbose': False, 'dry_run': False, 'strand_symmetry': True, 'force_overwrite': False, 'outpath': u'../results/ensembl_snps_79/X/intron/combined_strand_symmetric/', 'countsfile2': None, 'countsfile': u'../data/ensembl_snps_79/counts/X/intron/combined_strand_symmetric/combined_counts.txt'}
+2016-05-27 14:57:45	thales.uds.anu.edu.au:34383	INFO	input_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intron/combined_strand_symmetric/combined_counts.txt
+2016-05-27 14:57:45	thales.uds.anu.edu.au:34383	INFO	input_file_path md5sum : e0e66acc850dacc3e08cfa2c1ba02771
+2016-05-27 14:57:46	thales.uds.anu.edu.au:34383	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/X/intron/combined_strand_symmetric/spectra_analysis.json
+2016-05-27 14:57:46	thales.uds.anu.edu.au:34383	INFO	output_file_path md5sum : 9254bc6bc5013036260a468e99161066
+2016-05-27 14:57:46	thales.uds.anu.edu.au:34383	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/X/intron/combined_strand_symmetric/spectra_summary.txt
+2016-05-27 14:57:46	thales.uds.anu.edu.au:34383	INFO	output_file_path md5sum : 050a861577734a493167bbe899b68cec
+2016-05-27 14:57:46	thales.uds.anu.edu.au:34383	INFO	significance : ['RE=0.000083', 'Dev=6.72', 'df=2', 'p=0.0346845595918']

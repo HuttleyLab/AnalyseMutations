@@ -1,0 +1,14 @@
+2016-05-27 14:58:02	thales.uds.anu.edu.au:34485	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
+2016-05-27 14:58:02	thales.uds.anu.edu.au:34485	INFO	python : 2.7.10
+2016-05-27 14:58:02	thales.uds.anu.edu.au:34485	INFO	user : gavin
+2016-05-27 14:58:02	thales.uds.anu.edu.au:34485	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/mutation_analysis -1 ../data/ensembl_snps_79/counts/A/exon/combined/combined_counts.txt -2 ../data/ensembl_snps_79/counts/X/exon/combined/combined_counts.txt -o ../results/ensembl_snps_79/A_vs_X/exon spectra
+2016-05-27 14:58:02	thales.uds.anu.edu.au:34485	INFO	vars : {'verbose': False, 'dry_run': False, 'strand_symmetry': False, 'force_overwrite': False, 'outpath': u'../results/ensembl_snps_79/A_vs_X/exon', 'countsfile2': u'../data/ensembl_snps_79/counts/X/exon/combined/combined_counts.txt', 'countsfile': u'../data/ensembl_snps_79/counts/A/exon/combined/combined_counts.txt'}
+2016-05-27 14:58:02	thales.uds.anu.edu.au:34485	INFO	input_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/A/exon/combined/combined_counts.txt
+2016-05-27 14:58:02	thales.uds.anu.edu.au:34485	INFO	input_file_path md5sum : 15659f6307e46675cbe70636317f6e98
+2016-05-27 14:58:02	thales.uds.anu.edu.au:34485	INFO	input_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/exon/combined/combined_counts.txt
+2016-05-27 14:58:02	thales.uds.anu.edu.au:34485	INFO	input_file_path md5sum : 7ce20642d1f5af489c8e56e011a229cf
+2016-05-27 14:58:04	thales.uds.anu.edu.au:34485	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A_vs_X/exon/spectra_analysis.json
+2016-05-27 14:58:04	thales.uds.anu.edu.au:34485	INFO	output_file_path md5sum : 1a2083deeee807b5f954467eae40ef85
+2016-05-27 14:58:04	thales.uds.anu.edu.au:34485	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A_vs_X/exon/spectra_summary.txt
+2016-05-27 14:58:04	thales.uds.anu.edu.au:34485	INFO	output_file_path md5sum : c14b841f6b3ddd2155f1dd84de352281
+2016-05-27 14:58:04	thales.uds.anu.edu.au:34485	INFO	significance : ['RE=0.000009', 'Dev=3.14', 'df=2', 'p=0.208216393388']
