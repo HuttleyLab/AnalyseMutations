@@ -4,8 +4,7 @@ Analysing mutations with log-linear models
 
 This repository contains scripts used to generate the samples and perform the analyses reported in *Statistical methods for identifying sequence motifs affecting point mutations* by Zhu, Neeman, Yap and Huttley. Running all these scripts requires the MutationMotif Python library and all of its dependencies. In addition, an install of Jupyter notebook is required. (Note, scripts ending in ``.ipy`` and ``.ipynb`` require Jupyter/Ipython.)
 
-As the repository also includes the counts data from which all analyses were conducted, running all scripts listed under the "Analysis of..." sections should reproduce exactly the tables and figures reported in the manuscript. As the production of those counts data involves pseudo-random sampling of "reference" locations, re-running the analysis (after executing the ``populate_data.ipy`` script to obtain the required base information) will produce slightly different results but ones consistent with the inferences drawn in the manuscript. If you wish to examine the robustness of the analyses, having
- run the script ``populate_data.ipy``, you can re-start the analysis by generating counts data again.
+As the repository also includes the counts data from which all analyses were conducted, running all scripts listed under the "Analysis of..." sections should reproduce exactly the tables and figures reported in the manuscript. As the production of those counts data involves pseudo-random sampling of "reference" locations, re-running the analysis (after executing the ``populate_data.ipy`` script to obtain the required precursor data) will produce slightly different results but ones consistent with the inferences drawn in the manuscript. If you wish to examine the robustness of the analyses, having run the script ``populate_data.ipy``, you can re-start the analysis by generating counts data again.
 
 **************************
 Sampling the germline data
