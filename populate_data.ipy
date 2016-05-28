@@ -10,15 +10,19 @@ def create_path(path):
         return
     os.makedirs(path)
 
-# shutil.copytree(os.path.expanduser("~/DevRepos/AnalyseMutations/data/Chroms79"), "data/Chroms79")
+create_path("data/ensembl_snps_79")
 
-# for outpath in ["data/ensembl_snps_79/cosmic_raw/COSMIC_flanks_malignant_melanoma.txt.gz"]:
-    # dirname = os.path.dirname(outpath)
-    # create_path(dirname)
-    # shutil.copy(os.path.expanduser("~/DevRepos/AnalyseMutations/data/ensembl_snps_79/cosmic_raw/COSMIC_flanks_malignant_melanoma.txt.gz"),
-# dirname)
+!curl -O https://zenodo.org/record/53164/files/chroms79.tar.gz
+!tar -zxf chroms79.tar.gz
+!mv chroms79 data/.
+!rm chroms79.tar.gz
 
-# print "Copying germline raw_with_flanks"
-# shutil.copytree(os.path.expanduser("~/DevRepos/AnalyseMutations/data/ensembl_snps_79/raw_with_flanks"),
-            # "data/ensembl_snps_79/raw_with_flanks")
-# 
+!curl -O https://zenodo.org/record/53158/files/cosmic_raw.tar.gz
+!tar -zxf cosmic_raw.tar.gz
+!mv cosmic_raw data/ensembl_snps_79/.
+!rm cosmic_raw.tar.gz
+
+!curl -O https://zenodo.org/record/53158/files/raw_with_flanks.tar.gz
+!tar -zxf raw_with_flanks.tar.gz
+!mv raw_with_flanks data/ensembl_snps_79/.
+!rm raw_with_flanks.tar.gz
