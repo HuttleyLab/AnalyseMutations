@@ -33,3 +33,4 @@ results_old*
 data/ensembl_snps_79/GERMLINE_flanks_match_ref.txt.gz
 *raw*
 *.graffle
+figures
