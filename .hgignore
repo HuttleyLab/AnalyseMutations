@@ -9,7 +9,6 @@ syntax:glob
 *.rej
 *.orig
 *.wpr
-*.pdf
 _build/*
 build
 *htmlcov*

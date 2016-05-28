@@ -1,14 +1,14 @@
-2016-05-27 14:57:57	thales.uds.anu.edu.au:34455	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
-2016-05-27 14:57:57	thales.uds.anu.edu.au:34455	INFO	python : 2.7.10
-2016-05-27 14:57:57	thales.uds.anu.edu.au:34455	INFO	user : gavin
-2016-05-27 14:57:57	thales.uds.anu.edu.au:34455	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/mutation_analysis -1 ../data/ensembl_snps_79/counts/A/intergenic/combined/combined_counts.txt -2 ../data/ensembl_snps_79/counts/X/intergenic/combined/combined_counts.txt -o ../results/ensembl_snps_79/A_vs_X/intergenic spectra
-2016-05-27 14:57:57	thales.uds.anu.edu.au:34455	INFO	vars : {'verbose': False, 'dry_run': False, 'strand_symmetry': False, 'force_overwrite': False, 'outpath': u'../results/ensembl_snps_79/A_vs_X/intergenic', 'countsfile2': u'../data/ensembl_snps_79/counts/X/intergenic/combined/combined_counts.txt', 'countsfile': u'../data/ensembl_snps_79/counts/A/intergenic/combined/combined_counts.txt'}
-2016-05-27 14:57:57	thales.uds.anu.edu.au:34455	INFO	input_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/A/intergenic/combined/combined_counts.txt
-2016-05-27 14:57:57	thales.uds.anu.edu.au:34455	INFO	input_file_path md5sum : 68ddf4c0452328afa44083b4a3c7f028
-2016-05-27 14:57:57	thales.uds.anu.edu.au:34455	INFO	input_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intergenic/combined/combined_counts.txt
-2016-05-27 14:57:57	thales.uds.anu.edu.au:34455	INFO	input_file_path md5sum : 4082c16a617f0c69e06ae13dfad935d2
-2016-05-27 14:57:58	thales.uds.anu.edu.au:34455	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A_vs_X/intergenic/spectra_analysis.json
-2016-05-27 14:57:58	thales.uds.anu.edu.au:34455	INFO	output_file_path md5sum : b4d251729328f4de76a5cae619e23d9c
-2016-05-27 14:57:58	thales.uds.anu.edu.au:34455	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A_vs_X/intergenic/spectra_summary.txt
-2016-05-27 14:57:58	thales.uds.anu.edu.au:34455	INFO	output_file_path md5sum : 8fdba1201ad024967ede5ca2e1385717
-2016-05-27 14:57:58	thales.uds.anu.edu.au:34455	INFO	significance : ['RE=0.000013', 'Dev=37.70', 'df=2', 'p=6.50742362171e-09']
+2016-05-28 12:17:56	Thales.local:48344	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
+2016-05-28 12:17:56	Thales.local:48344	INFO	python : 2.7.10
+2016-05-28 12:17:56	Thales.local:48344	INFO	user : gavin
+2016-05-28 12:17:56	Thales.local:48344	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/mutation_analysis -1 ../data/ensembl_snps_79/counts/A/intergenic/combined/combined_counts.txt -2 ../data/ensembl_snps_79/counts/X/intergenic/combined/combined_counts.txt -o ../results/ensembl_snps_79/A_vs_X/intergenic spectra
+2016-05-28 12:17:56	Thales.local:48344	INFO	vars : {'verbose': False, 'dry_run': False, 'strand_symmetry': False, 'force_overwrite': False, 'outpath': u'../results/ensembl_snps_79/A_vs_X/intergenic', 'countsfile2': u'../data/ensembl_snps_79/counts/X/intergenic/combined/combined_counts.txt', 'countsfile': u'../data/ensembl_snps_79/counts/A/intergenic/combined/combined_counts.txt'}
+2016-05-28 12:17:56	Thales.local:48344	INFO	input_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/A/intergenic/combined/combined_counts.txt
+2016-05-28 12:17:56	Thales.local:48344	INFO	input_file_path md5sum : 68ddf4c0452328afa44083b4a3c7f028
+2016-05-28 12:17:56	Thales.local:48344	INFO	input_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intergenic/combined/combined_counts.txt
+2016-05-28 12:17:56	Thales.local:48344	INFO	input_file_path md5sum : 4082c16a617f0c69e06ae13dfad935d2
+2016-05-28 12:17:58	Thales.local:48344	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A_vs_X/intergenic/spectra_analysis.json
+2016-05-28 12:17:58	Thales.local:48344	INFO	output_file_path md5sum : b4d251729328f4de76a5cae619e23d9c
+2016-05-28 12:17:58	Thales.local:48344	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A_vs_X/intergenic/spectra_summary.txt
+2016-05-28 12:17:58	Thales.local:48344	INFO	output_file_path md5sum : 8fdba1201ad024967ede5ca2e1385717
+2016-05-28 12:17:58	Thales.local:48344	INFO	significance : ['RE=0.000013', 'Dev=37.70', 'df=2', 'p=6.50742362171e-09']

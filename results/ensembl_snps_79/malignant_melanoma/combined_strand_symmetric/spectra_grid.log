@@ -1,11 +1,11 @@
-2016-05-27 15:02:14	thales.uds.anu.edu.au:34601	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
-2016-05-27 15:02:14	thales.uds.anu.edu.au:34601	INFO	python : 2.7.10
-2016-05-27 15:02:14	thales.uds.anu.edu.au:34601	INFO	user : gavin
-2016-05-27 15:02:14	thales.uds.anu.edu.au:34601	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/mutation_draw --plot_cfg=spectra_plots.cfg --figpath=../results/ensembl_snps_79/malignant_melanoma/combined_strand_symmetric/spectra_grid.pdf spectra_grid --json_path ../results/ensembl_snps_79/malignant_melanoma/combined_strand_symmetric/spectra_analysis.json --group_label=strand
-2016-05-27 15:02:14	thales.uds.anu.edu.au:34601	INFO	vars : {'dry_run': False, 'format': 'pdf', 'group_label': u'strand', 'sample_size': False, 'plot_cfg': u'spectra_plots.cfg', 'force_overwrite': False, 'json_path': u'../results/ensembl_snps_79/malignant_melanoma/combined_strand_symmetric/spectra_analysis.json', 'figpath': u'../results/ensembl_snps_79/malignant_melanoma/combined_strand_symmetric/spectra_grid.pdf'}
-2016-05-27 15:02:14	thales.uds.anu.edu.au:34601	INFO	input_file_path : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/malignant_melanoma/combined_strand_symmetric/spectra_analysis.json
-2016-05-27 15:02:14	thales.uds.anu.edu.au:34601	INFO	input_file_path md5sum : 440daea59d761e49e9a00c4ed91bf943
-2016-05-27 15:02:14	thales.uds.anu.edu.au:34601	INFO	input_file_path : /Users/gavin/DevRepos/AnalyseMutations/manuscript_scripts/spectra_plots.cfg
-2016-05-27 15:02:14	thales.uds.anu.edu.au:34601	INFO	input_file_path md5sum : 6a7e55ca8e4de977fb6429ae5440ceab
-2016-05-27 15:02:14	thales.uds.anu.edu.au:34601	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/malignant_melanoma/combined_strand_symmetric/spectra_grid.pdf
-2016-05-27 15:02:14	thales.uds.anu.edu.au:34601	INFO	output_file_path md5sum : f1e748a19da92c59c627e5bf2d492a08
+2016-05-28 12:18:23	Thales.local:48445	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
+2016-05-28 12:18:23	Thales.local:48445	INFO	python : 2.7.10
+2016-05-28 12:18:23	Thales.local:48445	INFO	user : gavin
+2016-05-28 12:18:23	Thales.local:48445	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/mutation_draw --plot_cfg=spectra_plots.cfg --figpath=../results/ensembl_snps_79/malignant_melanoma/combined_strand_symmetric/spectra_grid.pdf spectra_grid --json_path ../results/ensembl_snps_79/malignant_melanoma/combined_strand_symmetric/spectra_analysis.json --group_label=strand
+2016-05-28 12:18:23	Thales.local:48445	INFO	vars : {'dry_run': False, 'format': 'pdf', 'group_label': u'strand', 'sample_size': False, 'plot_cfg': u'spectra_plots.cfg', 'force_overwrite': False, 'json_path': u'../results/ensembl_snps_79/malignant_melanoma/combined_strand_symmetric/spectra_analysis.json', 'figpath': u'../results/ensembl_snps_79/malignant_melanoma/combined_strand_symmetric/spectra_grid.pdf'}
+2016-05-28 12:18:23	Thales.local:48445	INFO	input_file_path : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/malignant_melanoma/combined_strand_symmetric/spectra_analysis.json
+2016-05-28 12:18:23	Thales.local:48445	INFO	input_file_path md5sum : 440daea59d761e49e9a00c4ed91bf943
+2016-05-28 12:18:23	Thales.local:48445	INFO	input_file_path : /Users/gavin/DevRepos/AnalyseMutations/manuscript_scripts/spectra_plots.cfg
+2016-05-28 12:18:23	Thales.local:48445	INFO	input_file_path md5sum : 6a7e55ca8e4de977fb6429ae5440ceab
+2016-05-28 12:18:23	Thales.local:48445	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/malignant_melanoma/combined_strand_symmetric/spectra_grid.pdf
+2016-05-28 12:18:23	Thales.local:48445	INFO	output_file_path md5sum : 693ac9166f8febfab05e59adcd587043

@@ -1,11 +1,11 @@
-2016-05-27 14:45:46	thales.uds.anu.edu.au:32569	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
-2016-05-27 14:45:46	thales.uds.anu.edu.au:32569	INFO	python : 2.7.10
-2016-05-27 14:45:46	thales.uds.anu.edu.au:32569	INFO	user : gavin
-2016-05-27 14:45:46	thales.uds.anu.edu.au:32569	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/mutation_analysis -1 ../data/ensembl_snps_79/counts/long_flanks/directions/freq_All-chrom_A-GC_All-CtoT.txt.gz -o ../results/ensembl_snps_79/long_flanks/directions/CtoT nbr --first_order --plot_cfg=wide_plots.cfg
-2016-05-27 14:45:46	thales.uds.anu.edu.au:32569	INFO	vars : {'verbose': False, 'dry_run': False, 'format': 'pdf', 'group_ref': None, 'first_order': True, 'group_label': None, 'strand_symmetry': False, 'plot_cfg': u'wide_plots.cfg', 'force_overwrite': False, 'cfg_context': <mutation_motif.mutation_analysis.Config object at 0x1129d1310>, 'outpath': u'../results/ensembl_snps_79/long_flanks/directions/CtoT', 'countsfile2': None, 'countsfile': u'../data/ensembl_snps_79/counts/long_flanks/directions/freq_All-chrom_A-GC_All-CtoT.txt.gz'}
-2016-05-27 14:46:07	thales.uds.anu.edu.au:32569	INFO	countsfile1_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/long_flanks/directions/freq_All-chrom_A-GC_All-CtoT.txt.gz
-2016-05-27 14:46:07	thales.uds.anu.edu.au:32569	INFO	countsfile1_path md5sum : d87268930e5fced61b5c84d17b5b9341
-2016-05-27 14:47:34	thales.uds.anu.edu.au:32569	INFO	analysis1 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/long_flanks/directions/CtoT/1.json
-2016-05-27 14:47:34	thales.uds.anu.edu.au:32569	INFO	analysis1 md5sum : 1021b8b837b4bed7d3642293eeba2f80
-2016-05-27 14:47:34	thales.uds.anu.edu.au:32569	INFO	summary : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/long_flanks/directions/CtoT/summary.txt
-2016-05-27 14:47:34	thales.uds.anu.edu.au:32569	INFO	summary md5sum : c87ee08f27a2b941f91063bd5fcd3930
+2016-05-28 11:43:10	Thales.local:46424	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
+2016-05-28 11:43:10	Thales.local:46424	INFO	python : 2.7.10
+2016-05-28 11:43:10	Thales.local:46424	INFO	user : gavin
+2016-05-28 11:43:10	Thales.local:46424	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/mutation_analysis -1 ../data/ensembl_snps_79/counts/long_flanks/directions/freq_All-chrom_A-GC_All-CtoT.txt.gz -o ../results/ensembl_snps_79/long_flanks/directions/CtoT nbr --first_order --plot_cfg=wide_plots.cfg
+2016-05-28 11:43:10	Thales.local:46424	INFO	vars : {'verbose': False, 'dry_run': False, 'format': 'pdf', 'group_ref': None, 'first_order': True, 'group_label': None, 'strand_symmetry': False, 'plot_cfg': u'wide_plots.cfg', 'force_overwrite': False, 'cfg_context': <mutation_motif.mutation_analysis.Config object at 0x113ed1250>, 'outpath': u'../results/ensembl_snps_79/long_flanks/directions/CtoT', 'countsfile2': None, 'countsfile': u'../data/ensembl_snps_79/counts/long_flanks/directions/freq_All-chrom_A-GC_All-CtoT.txt.gz'}
+2016-05-28 11:43:36	Thales.local:46424	INFO	countsfile1_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/long_flanks/directions/freq_All-chrom_A-GC_All-CtoT.txt.gz
+2016-05-28 11:43:36	Thales.local:46424	INFO	countsfile1_path md5sum : d87268930e5fced61b5c84d17b5b9341
+2016-05-28 11:45:15	Thales.local:46424	INFO	analysis1 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/long_flanks/directions/CtoT/1.json
+2016-05-28 11:45:15	Thales.local:46424	INFO	analysis1 md5sum : 1021b8b837b4bed7d3642293eeba2f80
+2016-05-28 11:45:16	Thales.local:46424	INFO	summary : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/long_flanks/directions/CtoT/summary.txt
+2016-05-28 11:45:16	Thales.local:46424	INFO	summary md5sum : c87ee08f27a2b941f91063bd5fcd3930

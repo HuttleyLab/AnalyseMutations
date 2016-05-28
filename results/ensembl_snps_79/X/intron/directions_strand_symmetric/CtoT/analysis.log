@@ -1,17 +1,17 @@
-2016-05-27 13:55:13	thales.uds.anu.edu.au:31136	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
-2016-05-27 13:55:13	thales.uds.anu.edu.au:31136	INFO	python : 2.7.10
-2016-05-27 13:55:13	thales.uds.anu.edu.au:31136	INFO	user : gavin
-2016-05-27 13:55:13	thales.uds.anu.edu.au:31136	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/mutation_analysis -1 ../data/ensembl_snps_79/counts/X/intron/directions_strand_symmetric/freq_All-chrom_X-GC_All-CtoT.txt --strand_symmetry -o ../results/ensembl_snps_79/X/intron/directions_strand_symmetric/CtoT nbr
-2016-05-27 13:55:13	thales.uds.anu.edu.au:31136	INFO	vars : {'verbose': False, 'dry_run': False, 'format': 'pdf', 'group_ref': None, 'first_order': False, 'group_label': None, 'strand_symmetry': True, 'plot_cfg': None, 'force_overwrite': False, 'cfg_context': <mutation_motif.mutation_analysis.Config object at 0x10d5502d0>, 'outpath': u'../results/ensembl_snps_79/X/intron/directions_strand_symmetric/CtoT', 'countsfile2': None, 'countsfile': u'../data/ensembl_snps_79/counts/X/intron/directions_strand_symmetric/freq_All-chrom_X-GC_All-CtoT.txt'}
-2016-05-27 13:55:13	thales.uds.anu.edu.au:31136	INFO	countsfile1_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intron/directions_strand_symmetric/freq_All-chrom_X-GC_All-CtoT.txt
-2016-05-27 13:55:13	thales.uds.anu.edu.au:31136	INFO	countsfile1_path md5sum : 569b7582b32263a702108dd03cc89976
-2016-05-27 13:55:13	thales.uds.anu.edu.au:31136	INFO	analysis1 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/X/intron/directions_strand_symmetric/CtoT/1.json
-2016-05-27 13:55:13	thales.uds.anu.edu.au:31136	INFO	analysis1 md5sum : 95f7f7868fda92fce9f2d1d79ceed2ee
-2016-05-27 13:55:13	thales.uds.anu.edu.au:31136	INFO	analysis2 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/X/intron/directions_strand_symmetric/CtoT/2.json
-2016-05-27 13:55:13	thales.uds.anu.edu.au:31136	INFO	analysis2 md5sum : c51fdc039301992228ce07f525cdfd4a
-2016-05-27 13:55:15	thales.uds.anu.edu.au:31136	INFO	analysis3 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/X/intron/directions_strand_symmetric/CtoT/3.json
-2016-05-27 13:55:15	thales.uds.anu.edu.au:31136	INFO	analysis3 md5sum : bdb666281c7015b951ed9f8ac584516b
-2016-05-27 13:55:21	thales.uds.anu.edu.au:31136	INFO	analysis4 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/X/intron/directions_strand_symmetric/CtoT/4.json
-2016-05-27 13:55:21	thales.uds.anu.edu.au:31136	INFO	analysis4 md5sum : ef60e1571fa63684006ef72f248699c6
-2016-05-27 13:55:25	thales.uds.anu.edu.au:31136	INFO	summary : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/X/intron/directions_strand_symmetric/CtoT/summary.txt
-2016-05-27 13:55:25	thales.uds.anu.edu.au:31136	INFO	summary md5sum : 3726c6fd97d69bfa043d95c55681a6a9
+2016-05-28 11:55:15	Thales.local:47230	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
+2016-05-28 11:55:15	Thales.local:47230	INFO	python : 2.7.10
+2016-05-28 11:55:15	Thales.local:47230	INFO	user : gavin
+2016-05-28 11:55:15	Thales.local:47230	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/mutation_analysis -1 ../data/ensembl_snps_79/counts/X/intron/directions_strand_symmetric/freq_All-chrom_X-GC_All-CtoT.txt --strand_symmetry -o ../results/ensembl_snps_79/X/intron/directions_strand_symmetric/CtoT nbr
+2016-05-28 11:55:15	Thales.local:47230	INFO	vars : {'verbose': False, 'dry_run': False, 'format': 'pdf', 'group_ref': None, 'first_order': False, 'group_label': None, 'strand_symmetry': True, 'plot_cfg': None, 'force_overwrite': False, 'cfg_context': <mutation_motif.mutation_analysis.Config object at 0x10f313210>, 'outpath': u'../results/ensembl_snps_79/X/intron/directions_strand_symmetric/CtoT', 'countsfile2': None, 'countsfile': u'../data/ensembl_snps_79/counts/X/intron/directions_strand_symmetric/freq_All-chrom_X-GC_All-CtoT.txt'}
+2016-05-28 11:55:15	Thales.local:47230	INFO	countsfile1_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/intron/directions_strand_symmetric/freq_All-chrom_X-GC_All-CtoT.txt
+2016-05-28 11:55:15	Thales.local:47230	INFO	countsfile1_path md5sum : 569b7582b32263a702108dd03cc89976
+2016-05-28 11:55:15	Thales.local:47230	INFO	analysis1 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/X/intron/directions_strand_symmetric/CtoT/1.json
+2016-05-28 11:55:15	Thales.local:47230	INFO	analysis1 md5sum : 95f7f7868fda92fce9f2d1d79ceed2ee
+2016-05-28 11:55:16	Thales.local:47230	INFO	analysis2 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/X/intron/directions_strand_symmetric/CtoT/2.json
+2016-05-28 11:55:16	Thales.local:47230	INFO	analysis2 md5sum : c51fdc039301992228ce07f525cdfd4a
+2016-05-28 11:55:17	Thales.local:47230	INFO	analysis3 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/X/intron/directions_strand_symmetric/CtoT/3.json
+2016-05-28 11:55:17	Thales.local:47230	INFO	analysis3 md5sum : bdb666281c7015b951ed9f8ac584516b
+2016-05-28 11:55:23	Thales.local:47230	INFO	analysis4 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/X/intron/directions_strand_symmetric/CtoT/4.json
+2016-05-28 11:55:23	Thales.local:47230	INFO	analysis4 md5sum : ef60e1571fa63684006ef72f248699c6
+2016-05-28 11:55:27	Thales.local:47230	INFO	summary : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/X/intron/directions_strand_symmetric/CtoT/summary.txt
+2016-05-28 11:55:27	Thales.local:47230	INFO	summary md5sum : 3726c6fd97d69bfa043d95c55681a6a9

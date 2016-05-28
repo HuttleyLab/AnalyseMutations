@@ -1,11 +1,11 @@
-2016-05-27 15:02:26	thales.uds.anu.edu.au:34618	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
-2016-05-27 15:02:26	thales.uds.anu.edu.au:34618	INFO	python : 2.7.10
-2016-05-27 15:02:26	thales.uds.anu.edu.au:34618	INFO	user : gavin
-2016-05-27 15:02:26	thales.uds.anu.edu.au:34618	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/mutation_draw --plot_cfg mi_plot.cfg mi --json_path ../results/ensembl_snps_79/A/intergenic/directions/CtoT/1.json
-2016-05-27 15:02:26	thales.uds.anu.edu.au:34618	INFO	input_file_path : /Users/gavin/DevRepos/AnalyseMutations/manuscript_scripts/mi_plot.cfg
-2016-05-27 15:02:26	thales.uds.anu.edu.au:34618	INFO	input_file_path md5sum : e9b3478a247de129a88fe10752bc645c
-2016-05-27 15:02:26	thales.uds.anu.edu.au:34618	INFO	vars : {'dry_run': False, 'format': 'pdf', 'sample_size': False, 'plot_cfg': u'mi_plot.cfg', 'force_overwrite': False, 'json_path': u'/Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A/intergenic/directions/CtoT/1.json', 'figpath': None}
-2016-05-27 15:02:26	thales.uds.anu.edu.au:34618	INFO	input_file_path : /Users/gavin/DevRepos/AnalyseMutations/manuscript_scripts/mi_plot.cfg
-2016-05-27 15:02:26	thales.uds.anu.edu.au:34618	INFO	input_file_path md5sum : e9b3478a247de129a88fe10752bc645c
-2016-05-27 15:02:26	thales.uds.anu.edu.au:34618	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A/intergenic/directions/CtoT/MI.pdf
-2016-05-27 15:02:26	thales.uds.anu.edu.au:34618	INFO	output_file_path md5sum : b0793d58f9cc3eb30bbc638c223de1de
+2016-05-28 12:18:36	Thales.local:48462	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
+2016-05-28 12:18:36	Thales.local:48462	INFO	python : 2.7.10
+2016-05-28 12:18:36	Thales.local:48462	INFO	user : gavin
+2016-05-28 12:18:36	Thales.local:48462	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/mutation_draw --plot_cfg mi_plot.cfg mi --json_path ../results/ensembl_snps_79/A/intergenic/directions/CtoT/1.json
+2016-05-28 12:18:36	Thales.local:48462	INFO	input_file_path : /Users/gavin/DevRepos/AnalyseMutations/manuscript_scripts/mi_plot.cfg
+2016-05-28 12:18:36	Thales.local:48462	INFO	input_file_path md5sum : e9b3478a247de129a88fe10752bc645c
+2016-05-28 12:18:36	Thales.local:48462	INFO	vars : {'dry_run': False, 'format': 'pdf', 'sample_size': False, 'plot_cfg': u'mi_plot.cfg', 'force_overwrite': False, 'json_path': u'/Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A/intergenic/directions/CtoT/1.json', 'figpath': None}
+2016-05-28 12:18:36	Thales.local:48462	INFO	input_file_path : /Users/gavin/DevRepos/AnalyseMutations/manuscript_scripts/mi_plot.cfg
+2016-05-28 12:18:36	Thales.local:48462	INFO	input_file_path md5sum : e9b3478a247de129a88fe10752bc645c
+2016-05-28 12:18:36	Thales.local:48462	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A/intergenic/directions/CtoT/MI.pdf
+2016-05-28 12:18:36	Thales.local:48462	INFO	output_file_path md5sum : 5d318c2a83db462d700961dbc1a8de1d
