@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[justification=centering]{subcaption}
+\usepackage{subfig}
+\usepackage[pdftex]{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{geometry}
+ \geometry{
+ paperheight=16cm,
+ paperwidth=16cm,
+ left=5mm,
+ top=5mm,
+ right=5mm,
+ bottom=5mm
+ }
+ 
+ \renewcommand{\thesubfigure}{\Alph{subfigure}}
+ 
+\begin{document}
+
+\begin{figure}
+    \centering
+    
+    \captionsetup[subfigure]{font={Large,bf},labelformat=simple}
+%     \hspace*{\fill}
+    \begin{subfigure}[b]{0.385\textwidth}
+        \centering
+        \includegraphics[width=\textwidth,left]{A_intergenic_freq_All-chrom_A-GC_All-CtoT_summary}
+        \caption{}
+        \label{fig:c-t:summary}
+    \end{subfigure}
+    \hspace{1em}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{A_intergenic_freq_All-chrom_A-GC_All-CtoT_1}
+        \caption{}
+        \label{fig:c-t:1}
+    \end{subfigure}
+    \vfill
+%     \hspace{\fill}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{A_intergenic_freq_All-chrom_A-GC_All-CtoT_2}
+        \caption{}
+        \label{fig:c-t:2}
+    \end{subfigure}
+    \hspace{1em}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+         \includegraphics[width=\textwidth]{A_intergenic_freq_All-chrom_A-GC_All-CtoT_3}
+        \caption{}
+        \label{fig:c-t:3}
+    \end{subfigure}
+\end{figure}
+
+\end{document}
