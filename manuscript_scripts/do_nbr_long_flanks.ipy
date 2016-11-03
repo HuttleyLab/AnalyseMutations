@@ -14,7 +14,7 @@ directions = ['AtoC', 'AtoG', 'AtoT', 'CtoA', 'CtoG', 'CtoT', 'GtoA', 'GtoC',
 counts_dir = "../data/ensembl_snps_79/counts/long_flanks/directions"
 outpath_template = "../results/ensembl_snps_79/long_flanks/directions/%(direction)s"
 
-command_template = "mutation_analysis -1 %(infile)s -o %(outfile)s nbr --first_order --plot_cfg=wide_plots.cfg"
+command_template = "mutation_analysis nbr -1 %(infile)s -o %(outfile)s --first_order --plot_cfg=wide_plots.cfg"
 
 for direction in directions:
     fn = glob.glob1(counts_dir, "*%s.txt.gz" % direction)
@@ -23,7 +23,7 @@ for direction in directions:
     sample = dict(direction=direction)
     outpath = outpath_template % sample
     command = command_template % dict(infile=fn, outfile=outpath)
-    print "=" * 40
-    print command
+    print("=" * 40)
+    print(command)
     !$command
-    print
+    print()

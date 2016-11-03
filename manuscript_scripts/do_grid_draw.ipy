@@ -6,15 +6,15 @@ import os
 # copy the json1_paths.cfg file to the root dir
 base_dir = "../results/ensembl_snps_79/A/intergenic/directions/"
 json_path = os.path.join(base_dir, "json1_paths.cfg")
-print json_path
+print(json_path)
 !cp json1_paths.cfg  $json_path
-!mutation_draw  --sample_size nbr_grid --paths_cfg $json_path
+!mutation_draw nbr_grid --sample_size --paths_cfg $json_path
 
 base_dir = "../results/ensembl_snps_79/malignant_melanoma/directions/"
 json_path = os.path.join(base_dir, "json1_paths.cfg")
-print json_path
+print(json_path)
 !cp json1_paths.cfg $json_path
-!mutation_draw  --sample_size nbr_grid --paths_cfg $json_path
+!mutation_draw nbr_grid --sample_size --paths_cfg $json_path
 
 ## FOR THE SPECTRA EFFECTS
 ### Autosomal versus X for intergenic regions
@@ -23,7 +23,7 @@ assert len(paths) == 1, paths
 path = paths[0]
 figpath = os.path.join(os.path.dirname(path), "spectra_grid.pdf")
 
-!mutation_draw --figpath=$figpath spectra_grid --json_path=$path --group_label=group
+!mutation_draw spectra_grid --figpath=$figpath --json_path=$path --group_label=group
 
 ### Malignant melanoma, strand assymmetry
 paths = !find ../results/ensembl_snps_79/malignant_melanoma/combined_strand_symmetric/spectra_analysis.json 
@@ -31,4 +31,4 @@ assert len(paths) == 1, paths
 path = paths[0]
 figpath = os.path.join(os.path.dirname(path), "spectra_grid.pdf")
 
-!mutation_draw --plot_cfg=spectra_plots.cfg --figpath=$figpath spectra_grid --json_path $path --group_label=strand
+!mutation_draw spectra_grid --plot_cfg=spectra_plots.cfg --figpath=$figpath --json_path $path --group_label=strand

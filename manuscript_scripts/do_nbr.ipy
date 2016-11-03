@@ -21,17 +21,17 @@ for chrom_class in "A X".split():
     for seq_class in "exon intergenic intron".split():
         sample = dict(seq_class=seq_class, chrom_class=chrom_class)
         counts_dir = counts_dir_template % sample
-        print counts_dir
+        print(counts_dir)
         fns = !find $counts_dir -name *.txt
         for fn in fns:
             d = direction.findall(fn)[0]
             sample.update(dict(direction=d))
             outpath = outpath_template % sample
-            command = "mutation_analysis -1 %s -o %s nbr --plot_cfg=plots.cfg" % (fn, outpath)
-            print "=" * 40
-            print command
+            command = "mutation_analysis nbr -1 %s -o %s --plot_cfg=plots.cfg" % (fn, outpath)
+            print("=" * 40)
+            print(command)
             !$command
-            print
+            print()
 
 # raw direction, strand symmetric
 counts_dir_template = "../data/ensembl_snps_79/counts/%(chrom_class)s/%(seq_class)s/directions_strand_symmetric"
@@ -45,11 +45,11 @@ for chrom_class in "A X".split():
             d = direction.findall(fn)[0]
             sample.update(dict(direction=d))
             outpath = outpath_template % sample
-            command = "mutation_analysis -1 %s -o %s --strand_symmetry  nbr --plot_cfg=plots.cfg" % (fn, outpath)
-            print "=" * 40
-            print command
+            command = "mutation_analysis nbr -1 %s -o %s --strand_symmetry --plot_cfg=plots.cfg" % (fn, outpath)
+            print("=" * 40)
+            print(command)
             !$command
-            print
+            print()
 
 ###################
 # cancer analyses
@@ -67,11 +67,11 @@ for fn in fns:
     d = direction.findall(fn)[0]
     sample.update(dict(direction=d))
     outpath = outpath_template % sample
-    command = "mutation_analysis -1 %s -o %s nbr --plot_cfg=plots.cfg " % (fn, outpath)
-    print "=" * 40
-    print command
+    command = "mutation_analysis nbr -1 %s -o %s --plot_cfg=plots.cfg " % (fn, outpath)
+    print("=" * 40)
+    print(command)
     !$command
-    print
+    print()
 
 # raw directions, strand symmetric
 counts_dir_template = "../data/ensembl_snps_79/counts/%(cancer)s/directions_strand_symmetric"
@@ -85,9 +85,9 @@ for fn in fns:
     d = direction.findall(fn)[0]
     sample.update(dict(direction=d))
     outpath = outpath_template % sample
-    command = "mutation_analysis -1 %s -o %s nbr  --plot_cfg=plots.cfg" % (fn, outpath)
-    print "=" * 40
-    print command
+    command = "mutation_analysis nbr -1 %s -o %s  --plot_cfg=plots.cfg" % (fn, outpath)
+    print("=" * 40)
+    print(command)
     !$command
-    print
+    print()
 

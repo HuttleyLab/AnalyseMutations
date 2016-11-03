@@ -9,7 +9,7 @@ directions = ['AtoC', 'AtoG', 'AtoT', 'CtoA', 'CtoG', 'CtoT', 'GtoA', 'GtoC',
 pattern = re.compile("(%s)" % '|'.join(directions))
 
 # compare ausotome sequence classes
-command = "mutation_analysis -1 %(S1)s -2 %(S2)s -o %(out)s nbr"
+command = "mutation_analysis nbr -1 %(S1)s -2 %(S2)s -o %(out)s"
 
 for seq_class1, seq_class2 in combinations("intergenic intron exon".split(), 2):
     paths1 = !find ../data/ensembl_snps_79/counts/A/$seq_class1/directions -name *.txt
@@ -20,14 +20,14 @@ for seq_class1, seq_class2 in combinations("intergenic intron exon".split(), 2):
         path2 = [p for p in paths2 if direction in p][0]
         o_path = "../results/ensembl_snps_79/A/%s_vs_%s/directions/%s" % (seq_class1, seq_class2, direction)
         cmnd = command % dict(S1=path1, S2=path2, out=o_path)
-        print "=" * 60
-        print cmnd
+        print("=" * 60)
+        print(cmnd)
         !$cmnd
-        print
+        print()
     
 
 # compare Autosome directions for strand symmetry
-command = "mutation_analysis -1 %(A1)s --strand_symmetry -o %(out)s nbr"
+command = "mutation_analysis nbr -1 %(A1)s --strand_symmetry -o %(out)s"
 
 for chrom in "A X".split():
     for seq_class in "intergenic intron exon".split():
@@ -41,13 +41,13 @@ for chrom in "A X".split():
             o_path = "../results/ensembl_snps_79/%s/%s/directions_strand_symmetric/%s" % (chrom, seq_class, direction)
             
             cmnd = command % dict(A1=path, out=o_path)
-            print "=" * 60
-            print cmnd
+            print("=" * 60)
+            print(cmnd)
             !$cmnd
-            print
+            print()
 
 # compare Autosome versus X for each sequence class
-command = "mutation_analysis -1 %(A1)s -2 %(A2)s -o %(out)s nbr"
+command = "mutation_analysis nbr -1 %(A1)s -2 %(A2)s -o %(out)s"
 
 for direction in directions:
     for seq_class in "intergenic intron exon".split():
@@ -56,13 +56,13 @@ for direction in directions:
         a1_path, a2_path = a1_path[0], a2_path[0]
         o_path = "../results/ensembl_snps_79/A_vs_X/%s/directions/%s" % (seq_class, direction)
         cmnd = command % dict(A1=a1_path, A2=a2_path, out=o_path)
-        print "=" * 60
-        print cmnd
+        print("=" * 60)
+        print(cmnd)
         !$cmnd
-        print
+        print()
 
 # compare Melanoma versus Autosome exon for position influences
-command = "mutation_analysis -1 %(A)s -2 %(C)s -o %(out)s nbr"
+command = "mutation_analysis nbr -1 %(A)s -2 %(C)s -o %(out)s"
 
 for direction in directions:
     a_path = !find ../data/ensembl_snps_79/counts/A/exon/directions -name *$direction*.txt
@@ -70,8 +70,8 @@ for direction in directions:
     a_path, c_path = a_path[0], c_path[0]
     o_path = "../results/ensembl_snps_79/Aexon_vs_Melanoma/directions/%s" % direction
     cmnd = command % dict(A=a_path, C=c_path, out=o_path)
-    print "=" * 60
-    print cmnd
+    print("=" * 60)
+    print(cmnd)
     !$cmnd
-    print
+    print()
 

@@ -7,4 +7,4 @@ import os
 path = "../results/ensembl_snps_79/A/intergenic/directions/CtoT/1.json"
 cfg = "mi_plot.cfg"
 
-!mutation_draw --plot_cfg $cfg mi --json_path $path
+!mutation_draw mi --plot_cfg $cfg --json_path $path
