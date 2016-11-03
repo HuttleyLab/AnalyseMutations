@@ -58,9 +58,9 @@ This is a one off for demonstrating the conventional sequence logo approach does
 Repeating neighbour analyses using the genome as the reference
 **************************************************************
 
-``make_counts_genomic_control.py`` generates count files of observed and reference motifs where the reference is drawn from the entire genome. This script requires considerable RAM. It was run only for intergenic region autosomal and X-linked SNPs.
+``make_counts_with_genome_as_ref.py`` generates count files of observed and reference motifs where the reference is drawn from the entire genome. This script requires considerable RAM. It was run only for intergenic region autosomal and X-linked SNPs.
 
-The script ``test_genome_as_control.py`` script checks to ensure the counts for the observed motifs are identical between executing the make_counts_genomic_control.py script and the original scripts.
+The script ``test_genome_as_ref.py`` script checks to ensure the counts for the observed motifs are identical between executing the make_counts_genomic_control.py script and the original scripts.
 
 The ``do_nbr_genome_ref.ipy`` script performs the mutation neighbour effect analyses and compares the A with X results.
 
