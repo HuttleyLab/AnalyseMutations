@@ -1,0 +1,29 @@
+#!/usr/bin/env ipython
+import re
+
+directions = ['AtoC', 'AtoG', 'AtoT', 'CtoA', 'CtoG', 'CtoT', 'GtoA', 'GtoC',
+             'GtoT', 'TtoA', 'TtoC', 'TtoG']
+
+direction = re.compile("(%s)" % '|'.join(directions))
+
+###################
+# germline analyses
+###################
+
+### standard analysis
+
+counts_dir = "../../data/ensembl_snps_79/counts/genome_as_ref/A/exon/directions"
+outpath_template = "../../results/ensembl_snps_79/genome_as_ref/A/exon/directions/%(direction)s"
+
+fns = !find $counts_dir -name *.txt
+
+for fn in fns:
+    d = direction.findall(fn)[0]
+    sample = dict(direction=d)
+    outpath = outpath_template % sample
+    command = "mutation_analysis -1 %s -o %s nbr --plot_cfg=../plots.cfg" % (fn, outpath)
+    print("=" * 40)
+    print(command)
+    !$command
+    print()
+

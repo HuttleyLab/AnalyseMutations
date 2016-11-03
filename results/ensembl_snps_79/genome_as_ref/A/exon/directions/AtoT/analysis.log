@@ -1,0 +1,17 @@
+2016-11-02 16:18:56	thales.uds.anu.edu.au:48614	INFO	system_details : system=Darwin Kernel Version 16.1.0: Thu Oct 13 21:26:57 PDT 2016; root:xnu-3789.21.3~60/RELEASE_X86_64
+2016-11-02 16:18:56	thales.uds.anu.edu.au:48614	INFO	python : 3.5.1
+2016-11-02 16:18:56	thales.uds.anu.edu.au:48614	INFO	user : gavin
+2016-11-02 16:18:56	thales.uds.anu.edu.au:48614	INFO	command_string : /Users/gavin/miniconda2/envs/py35/bin/mutation_analysis -1 ../../data/ensembl_snps_79/counts/genome_as_ref/A/exon/directions/freq_All-chrom_A-GC_All-AtoT.txt -o ../../results/ensembl_snps_79/genome_as_ref/A/exon/directions/AtoT nbr --plot_cfg=../plots.cfg
+2016-11-02 16:18:56	thales.uds.anu.edu.au:48614	INFO	vars : {'group_label': None, 'plot_cfg': '../plots.cfg', 'format': 'pdf', 'countsfile2': None, 'verbose': False, 'cfg_context': <mutation_motif.mutation_analysis.Config object at 0x1024b75c0>, 'first_order': False, 'outpath': '../../results/ensembl_snps_79/genome_as_ref/A/exon/directions/AtoT', 'dry_run': False, 'countsfile': '../../data/ensembl_snps_79/counts/genome_as_ref/A/exon/directions/freq_All-chrom_A-GC_All-AtoT.txt', 'strand_symmetry': False, 'force_overwrite': False, 'group_ref': None}
+2016-11-02 16:18:56	thales.uds.anu.edu.au:48614	INFO	countsfile1_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/counts/genome_as_ref/A/exon/directions/freq_All-chrom_A-GC_All-AtoT.txt
+2016-11-02 16:18:56	thales.uds.anu.edu.au:48614	INFO	countsfile1_path md5sum : 147ca00b3544a7e6808a9540031ad49d
+2016-11-02 16:18:56	thales.uds.anu.edu.au:48614	INFO	analysis1 : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/genome_as_ref/A/exon/directions/AtoT/1.json
+2016-11-02 16:18:56	thales.uds.anu.edu.au:48614	INFO	analysis1 md5sum : 8e1103bf47dc2a848e7edeff30c3128b
+2016-11-02 16:18:56	thales.uds.anu.edu.au:48614	INFO	analysis2 : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/genome_as_ref/A/exon/directions/AtoT/2.json
+2016-11-02 16:18:56	thales.uds.anu.edu.au:48614	INFO	analysis2 md5sum : 7c8c587bf48ccce13e3912f17c0fcd1f
+2016-11-02 16:18:57	thales.uds.anu.edu.au:48614	INFO	analysis3 : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/genome_as_ref/A/exon/directions/AtoT/3.json
+2016-11-02 16:18:57	thales.uds.anu.edu.au:48614	INFO	analysis3 md5sum : 668c338511f19a42e56e7c19e95d58ca
+2016-11-02 16:18:59	thales.uds.anu.edu.au:48614	INFO	analysis4 : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/genome_as_ref/A/exon/directions/AtoT/4.json
+2016-11-02 16:18:59	thales.uds.anu.edu.au:48614	INFO	analysis4 md5sum : 0c6b9faf669b1c7cd81fb586f1245ef7
+2016-11-02 16:19:01	thales.uds.anu.edu.au:48614	INFO	summary : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/genome_as_ref/A/exon/directions/AtoT/summary.txt
+2016-11-02 16:19:01	thales.uds.anu.edu.au:48614	INFO	summary md5sum : 1967a5f50a546f062de373e75a8dc309

@@ -1,0 +1,56 @@
+2016-11-02 15:53:27	thales.uds.anu.edu.au:48284	INFO	system_details : system=Darwin Kernel Version 16.1.0: Thu Oct 13 21:26:57 PDT 2016; root:xnu-3789.21.3~60/RELEASE_X86_64
+2016-11-02 15:53:27	thales.uds.anu.edu.au:48284	INFO	python : 3.5.1
+2016-11-02 15:53:27	thales.uds.anu.edu.au:48284	INFO	user : gavin
+2016-11-02 15:53:27	thales.uds.anu.edu.au:48284	INFO	command_string : ./make_counts_with_genome_as_ref.py -a ../../data/ensembl_snps_79/aligns/A/exon/directions/*.gz -o ../../data/ensembl_snps_79/counts/genome_as_ref/A/exon/directions -f 2 -g ../../data/chroms79/genome.fa
+2016-11-02 15:53:27	thales.uds.anu.edu.au:48284	INFO	input_file_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/chroms79/genome.fa
+2016-11-02 15:53:27	thales.uds.anu.edu.au:48284	INFO	input_file_path md5sum : 9a7e207cb3dfa9d398169641f067348e
+2016-11-02 15:53:27	thales.uds.anu.edu.au:48284	INFO	vars : {'dry_run': False, 'seed': None, 'limit': None, 'flank_size': 2, 'output_path': '../../data/ensembl_snps_79/counts/genome_as_ref/A/exon/directions', 'step': '1', 'genome_path': '../../data/chroms79/genome.fa', 'align_pattern': '../../data/ensembl_snps_79/aligns/A/exon/directions/*.gz', 'force_overwrite': False}
+2016-11-02 15:53:27	thales.uds.anu.edu.au:48284	INFO	random_number_seed : 1478062378.637783
+2016-11-02 15:53:27	thales.uds.anu.edu.au:48284	INFO	align_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/aligns/A/exon/directions/freq_All-chrom_A-GC_All-AtoC.fasta.gz
+2016-11-02 15:53:27	thales.uds.anu.edu.au:48284	INFO	align_path md5sum : fbc7c1c94cb7fa0695e524d3686527b7
+2016-11-02 15:53:28	thales.uds.anu.edu.au:48284	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/counts/genome_as_ref/A/exon/directions/freq_All-chrom_A-GC_All-AtoC.txt
+2016-11-02 15:53:28	thales.uds.anu.edu.au:48284	INFO	output_file_path md5sum : 5b35a4a50956069a0613034209582f8f
+2016-11-02 15:53:28	thales.uds.anu.edu.au:48284	INFO	align_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/aligns/A/exon/directions/freq_All-chrom_A-GC_All-AtoG.fasta.gz
+2016-11-02 15:53:28	thales.uds.anu.edu.au:48284	INFO	align_path md5sum : 1d970ca83e7be31356a5f5e3c70c09bb
+2016-11-02 15:53:34	thales.uds.anu.edu.au:48284	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/counts/genome_as_ref/A/exon/directions/freq_All-chrom_A-GC_All-AtoG.txt
+2016-11-02 15:53:34	thales.uds.anu.edu.au:48284	INFO	output_file_path md5sum : f63937c24e80b3fa6dfd9ba97053810c
+2016-11-02 15:53:34	thales.uds.anu.edu.au:48284	INFO	align_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/aligns/A/exon/directions/freq_All-chrom_A-GC_All-AtoT.fasta.gz
+2016-11-02 15:53:34	thales.uds.anu.edu.au:48284	INFO	align_path md5sum : 766259814cbbd24093a2d6e8cf7412c9
+2016-11-02 15:53:35	thales.uds.anu.edu.au:48284	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/counts/genome_as_ref/A/exon/directions/freq_All-chrom_A-GC_All-AtoT.txt
+2016-11-02 15:53:35	thales.uds.anu.edu.au:48284	INFO	output_file_path md5sum : 147ca00b3544a7e6808a9540031ad49d
+2016-11-02 15:53:35	thales.uds.anu.edu.au:48284	INFO	align_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/aligns/A/exon/directions/freq_All-chrom_A-GC_All-CtoA.fasta.gz
+2016-11-02 15:53:35	thales.uds.anu.edu.au:48284	INFO	align_path md5sum : 5a008c93c7ce6f268985bc9934df8051
+2016-11-02 15:53:37	thales.uds.anu.edu.au:48284	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/counts/genome_as_ref/A/exon/directions/freq_All-chrom_A-GC_All-CtoA.txt
+2016-11-02 15:53:37	thales.uds.anu.edu.au:48284	INFO	output_file_path md5sum : a6ed079fa834c3e94c2991fe3eac9005
+2016-11-02 15:53:37	thales.uds.anu.edu.au:48284	INFO	align_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/aligns/A/exon/directions/freq_All-chrom_A-GC_All-CtoG.fasta.gz
+2016-11-02 15:53:37	thales.uds.anu.edu.au:48284	INFO	align_path md5sum : 5cb04d2ff8ce146e7eed2ee321375f34
+2016-11-02 15:53:39	thales.uds.anu.edu.au:48284	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/counts/genome_as_ref/A/exon/directions/freq_All-chrom_A-GC_All-CtoG.txt
+2016-11-02 15:53:39	thales.uds.anu.edu.au:48284	INFO	output_file_path md5sum : 8619cabd053903ed5ef8d758f518a058
+2016-11-02 15:53:40	thales.uds.anu.edu.au:48284	INFO	align_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/aligns/A/exon/directions/freq_All-chrom_A-GC_All-CtoT.fasta.gz
+2016-11-02 15:53:40	thales.uds.anu.edu.au:48284	INFO	align_path md5sum : f683a47c9ab558431565e89d6cefd4a2
+2016-11-02 15:53:59	thales.uds.anu.edu.au:48284	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/counts/genome_as_ref/A/exon/directions/freq_All-chrom_A-GC_All-CtoT.txt
+2016-11-02 15:53:59	thales.uds.anu.edu.au:48284	INFO	output_file_path md5sum : 4d8f35a283df519152b64fce39f95c77
+2016-11-02 15:53:59	thales.uds.anu.edu.au:48284	INFO	align_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/aligns/A/exon/directions/freq_All-chrom_A-GC_All-GtoA.fasta.gz
+2016-11-02 15:53:59	thales.uds.anu.edu.au:48284	INFO	align_path md5sum : 0efb9e786b745a879542d1fa8e45c793
+2016-11-02 15:54:18	thales.uds.anu.edu.au:48284	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/counts/genome_as_ref/A/exon/directions/freq_All-chrom_A-GC_All-GtoA.txt
+2016-11-02 15:54:18	thales.uds.anu.edu.au:48284	INFO	output_file_path md5sum : c0c2a2719f7b7d95dd04d88c029a3ba9
+2016-11-02 15:54:18	thales.uds.anu.edu.au:48284	INFO	align_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/aligns/A/exon/directions/freq_All-chrom_A-GC_All-GtoC.fasta.gz
+2016-11-02 15:54:18	thales.uds.anu.edu.au:48284	INFO	align_path md5sum : afa5bcab55e65dc05be221b206c7b577
+2016-11-02 15:54:20	thales.uds.anu.edu.au:48284	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/counts/genome_as_ref/A/exon/directions/freq_All-chrom_A-GC_All-GtoC.txt
+2016-11-02 15:54:20	thales.uds.anu.edu.au:48284	INFO	output_file_path md5sum : 4ecef1061b6ddf3adc33cb60b05adc6e
+2016-11-02 15:54:20	thales.uds.anu.edu.au:48284	INFO	align_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/aligns/A/exon/directions/freq_All-chrom_A-GC_All-GtoT.fasta.gz
+2016-11-02 15:54:20	thales.uds.anu.edu.au:48284	INFO	align_path md5sum : b82f02c158c49b818ba3bc1391fcccee
+2016-11-02 15:54:23	thales.uds.anu.edu.au:48284	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/counts/genome_as_ref/A/exon/directions/freq_All-chrom_A-GC_All-GtoT.txt
+2016-11-02 15:54:23	thales.uds.anu.edu.au:48284	INFO	output_file_path md5sum : 4c7f2c103d25649352cab7802e6109ba
+2016-11-02 15:54:23	thales.uds.anu.edu.au:48284	INFO	align_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/aligns/A/exon/directions/freq_All-chrom_A-GC_All-TtoA.fasta.gz
+2016-11-02 15:54:23	thales.uds.anu.edu.au:48284	INFO	align_path md5sum : e2df91d598bc42a33705b87158055b53
+2016-11-02 15:54:23	thales.uds.anu.edu.au:48284	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/counts/genome_as_ref/A/exon/directions/freq_All-chrom_A-GC_All-TtoA.txt
+2016-11-02 15:54:23	thales.uds.anu.edu.au:48284	INFO	output_file_path md5sum : 424e4fca597e0ccf170a928226f1de91
+2016-11-02 15:54:23	thales.uds.anu.edu.au:48284	INFO	align_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/aligns/A/exon/directions/freq_All-chrom_A-GC_All-TtoC.fasta.gz
+2016-11-02 15:54:23	thales.uds.anu.edu.au:48284	INFO	align_path md5sum : 62e234b11756bcde64fd84c4b0c1f177
+2016-11-02 15:54:29	thales.uds.anu.edu.au:48284	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/counts/genome_as_ref/A/exon/directions/freq_All-chrom_A-GC_All-TtoC.txt
+2016-11-02 15:54:29	thales.uds.anu.edu.au:48284	INFO	output_file_path md5sum : 8473771c0df896f52162fc746a1c5ab6
+2016-11-02 15:54:29	thales.uds.anu.edu.au:48284	INFO	align_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/aligns/A/exon/directions/freq_All-chrom_A-GC_All-TtoG.fasta.gz
+2016-11-02 15:54:29	thales.uds.anu.edu.au:48284	INFO	align_path md5sum : 06cb80bb0d3ede148679c800ea7073ef
+2016-11-02 15:54:30	thales.uds.anu.edu.au:48284	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/counts/genome_as_ref/A/exon/directions/freq_All-chrom_A-GC_All-TtoG.txt
+2016-11-02 15:54:30	thales.uds.anu.edu.au:48284	INFO	output_file_path md5sum : 05cefe87e4bb021c65aca8c22a3ba421
