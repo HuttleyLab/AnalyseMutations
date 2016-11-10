@@ -1,14 +1,14 @@
-2016-05-28 12:18:02	Thales.local:48372	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
-2016-05-28 12:18:02	Thales.local:48372	INFO	python : 2.7.10
-2016-05-28 12:18:02	Thales.local:48372	INFO	user : gavin
-2016-05-28 12:18:02	Thales.local:48372	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/mutation_analysis -1 ../data/ensembl_snps_79/counts/A/exon/combined/combined_counts.txt -2 ../data/ensembl_snps_79/counts/X/exon/combined/combined_counts.txt -o ../results/ensembl_snps_79/A_vs_X/exon spectra
-2016-05-28 12:18:02	Thales.local:48372	INFO	vars : {'verbose': False, 'dry_run': False, 'strand_symmetry': False, 'force_overwrite': False, 'outpath': u'../results/ensembl_snps_79/A_vs_X/exon', 'countsfile2': u'../data/ensembl_snps_79/counts/X/exon/combined/combined_counts.txt', 'countsfile': u'../data/ensembl_snps_79/counts/A/exon/combined/combined_counts.txt'}
-2016-05-28 12:18:02	Thales.local:48372	INFO	input_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/A/exon/combined/combined_counts.txt
-2016-05-28 12:18:02	Thales.local:48372	INFO	input_file_path md5sum : 15659f6307e46675cbe70636317f6e98
-2016-05-28 12:18:02	Thales.local:48372	INFO	input_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/exon/combined/combined_counts.txt
-2016-05-28 12:18:02	Thales.local:48372	INFO	input_file_path md5sum : 7ce20642d1f5af489c8e56e011a229cf
-2016-05-28 12:18:03	Thales.local:48372	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A_vs_X/exon/spectra_analysis.json
-2016-05-28 12:18:03	Thales.local:48372	INFO	output_file_path md5sum : 1a2083deeee807b5f954467eae40ef85
-2016-05-28 12:18:03	Thales.local:48372	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A_vs_X/exon/spectra_summary.txt
-2016-05-28 12:18:03	Thales.local:48372	INFO	output_file_path md5sum : c14b841f6b3ddd2155f1dd84de352281
-2016-05-28 12:18:03	Thales.local:48372	INFO	significance : ['RE=0.000009', 'Dev=3.14', 'df=2', 'p=0.208216393388']
+2016-11-03 14:46:42	Thales.local:61962	INFO	system_details : system=Darwin Kernel Version 16.1.0: Thu Oct 13 21:26:57 PDT 2016; root:xnu-3789.21.3~60/RELEASE_X86_64
+2016-11-03 14:46:42	Thales.local:61962	INFO	python : 3.5.1
+2016-11-03 14:46:42	Thales.local:61962	INFO	user : gavin
+2016-11-03 14:46:42	Thales.local:61962	INFO	command_string : /Users/gavin/miniconda2/envs/py35/bin/mutation_analysis spectra -1 ../data/ensembl_snps_79/counts/A/exon/combined/combined_counts.txt -2 ../data/ensembl_snps_79/counts/X/exon/combined/combined_counts.txt -o ../results/ensembl_snps_79/A_vs_X/exon
+2016-11-03 14:46:42	Thales.local:61962	INFO	vars : {'dry_run': False, 'force_overwrite': False, 'strand_symmetry': False, 'countsfile': '../data/ensembl_snps_79/counts/A/exon/combined/combined_counts.txt', 'countsfile2': '../data/ensembl_snps_79/counts/X/exon/combined/combined_counts.txt', 'verbose': False, 'outpath': '../results/ensembl_snps_79/A_vs_X/exon'}
+2016-11-03 14:46:42	Thales.local:61962	INFO	input_file_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/counts/A/exon/combined/combined_counts.txt
+2016-11-03 14:46:42	Thales.local:61962	INFO	input_file_path md5sum : 15659f6307e46675cbe70636317f6e98
+2016-11-03 14:46:42	Thales.local:61962	INFO	input_file_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/counts/X/exon/combined/combined_counts.txt
+2016-11-03 14:46:42	Thales.local:61962	INFO	input_file_path md5sum : 7ce20642d1f5af489c8e56e011a229cf
+2016-11-03 14:46:46	Thales.local:61962	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/A_vs_X/exon/spectra_analysis.json
+2016-11-03 14:46:46	Thales.local:61962	INFO	output_file_path md5sum : 2510111e1718bdeef11d3664d1ea0358
+2016-11-03 14:46:46	Thales.local:61962	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/A_vs_X/exon/spectra_summary.txt
+2016-11-03 14:46:46	Thales.local:61962	INFO	output_file_path md5sum : 328b7bb499bf0fb701fbc69dfb8129b2
+2016-11-03 14:46:46	Thales.local:61962	INFO	significance : ['RE=0.000007', 'Dev=2.26', 'df=2', 'p=0.323542801492']

@@ -1,9 +1,9 @@
-2016-05-28 12:18:21	Thales.local:48432	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
-2016-05-28 12:18:21	Thales.local:48432	INFO	python : 2.7.10
-2016-05-28 12:18:21	Thales.local:48432	INFO	user : gavin
-2016-05-28 12:18:21	Thales.local:48432	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/mutation_draw --figpath=../results/ensembl_snps_79/A_vs_X/intergenic/spectra_grid.pdf spectra_grid --json_path=../results/ensembl_snps_79/A_vs_X/intergenic/spectra_analysis.json --group_label=group
-2016-05-28 12:18:21	Thales.local:48432	INFO	vars : {'dry_run': False, 'format': 'pdf', 'group_label': u'group', 'sample_size': False, 'plot_cfg': None, 'force_overwrite': False, 'json_path': u'../results/ensembl_snps_79/A_vs_X/intergenic/spectra_analysis.json', 'figpath': u'../results/ensembl_snps_79/A_vs_X/intergenic/spectra_grid.pdf'}
-2016-05-28 12:18:21	Thales.local:48432	INFO	input_file_path : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A_vs_X/intergenic/spectra_analysis.json
-2016-05-28 12:18:21	Thales.local:48432	INFO	input_file_path md5sum : b4d251729328f4de76a5cae619e23d9c
-2016-05-28 12:18:22	Thales.local:48432	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A_vs_X/intergenic/spectra_grid.pdf
-2016-05-28 12:18:22	Thales.local:48432	INFO	output_file_path md5sum : c68940e32de1fab551c4b23c425d1584
+2016-11-10 11:39:59	thales.uds.anu.edu.au:93677	INFO	system_details : system=Darwin Kernel Version 16.1.0: Thu Oct 13 21:26:57 PDT 2016; root:xnu-3789.21.3~60/RELEASE_X86_64
+2016-11-10 11:39:59	thales.uds.anu.edu.au:93677	INFO	python : 3.5.1
+2016-11-10 11:39:59	thales.uds.anu.edu.au:93677	INFO	user : gavin
+2016-11-10 11:39:59	thales.uds.anu.edu.au:93677	INFO	command_string : /Users/gavin/miniconda2/envs/py35/bin/mutation_draw spectra_grid --figpath=../results/ensembl_snps_79/A_vs_X/intergenic/spectra_grid.pdf --json_path=../results/ensembl_snps_79/A_vs_X/intergenic/spectra_analysis.json --group_label=group
+2016-11-10 11:39:59	thales.uds.anu.edu.au:93677	INFO	vars : {'plot_cfg': None, 'group_label': 'group', 'json_path': '../results/ensembl_snps_79/A_vs_X/intergenic/spectra_analysis.json', 'force_overwrite': False, 'figpath': '../results/ensembl_snps_79/A_vs_X/intergenic/spectra_grid.pdf', 'format': 'pdf', 'dry_run': False, 'sample_size': False, 'no_type3': False}
+2016-11-10 11:39:59	thales.uds.anu.edu.au:93677	INFO	input_file_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/A_vs_X/intergenic/spectra_analysis.json
+2016-11-10 11:39:59	thales.uds.anu.edu.au:93677	INFO	input_file_path md5sum : cbf27259de7377b16462560de412e96d
+2016-11-10 11:40:00	thales.uds.anu.edu.au:93677	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/A_vs_X/intergenic/spectra_grid.pdf
+2016-11-10 11:40:00	thales.uds.anu.edu.au:93677	INFO	output_file_path md5sum : e6f0a678af227b496e8eede31258c46a

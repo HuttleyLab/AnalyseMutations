@@ -1,21 +1,21 @@
-2016-05-28 12:07:58	Thales.local:47937	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
-2016-05-28 12:07:58	Thales.local:47937	INFO	python : 2.7.10
-2016-05-28 12:07:58	Thales.local:47937	INFO	user : gavin
-2016-05-28 12:07:58	Thales.local:47937	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/mutation_analysis -1 ../data/ensembl_snps_79/counts/A/exon/directions/freq_All-chrom_A-GC_All-TtoG.txt -2 ../data/ensembl_snps_79/counts/X/exon/directions/freq_All-chrom_X-GC_All-TtoG.txt -o ../results/ensembl_snps_79/A_vs_X/exon/directions/TtoG nbr
-2016-05-28 12:07:58	Thales.local:47937	INFO	vars : {'verbose': False, 'dry_run': False, 'format': 'pdf', 'group_ref': None, 'first_order': False, 'group_label': None, 'strand_symmetry': False, 'plot_cfg': None, 'force_overwrite': False, 'cfg_context': <mutation_motif.mutation_analysis.Config object at 0x10edcb210>, 'outpath': u'../results/ensembl_snps_79/A_vs_X/exon/directions/TtoG', 'countsfile2': u'../data/ensembl_snps_79/counts/X/exon/directions/freq_All-chrom_X-GC_All-TtoG.txt', 'countsfile': u'../data/ensembl_snps_79/counts/A/exon/directions/freq_All-chrom_A-GC_All-TtoG.txt'}
-2016-05-28 12:07:58	Thales.local:47937	INFO	countsfile1_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/A/exon/directions/freq_All-chrom_A-GC_All-TtoG.txt
-2016-05-28 12:07:58	Thales.local:47937	INFO	countsfile1_path md5sum : 58039596f9a04d18b9e3c335292b10ed
-2016-05-28 12:07:58	Thales.local:47937	INFO	countsfile2_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/X/exon/directions/freq_All-chrom_X-GC_All-TtoG.txt
-2016-05-28 12:07:58	Thales.local:47937	INFO	countsfile2_path md5sum : 8fdeb0facdd361ecafc7cf847720f376
-2016-05-28 12:07:58	Thales.local:47937	INFO	group_counts : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A_vs_X/exon/directions/TtoG/group_counts_table.txt
-2016-05-28 12:07:58	Thales.local:47937	INFO	group_counts md5sum : 23173632d020b95df2ce4ba7175c5b67
-2016-05-28 12:07:58	Thales.local:47937	INFO	analysis1 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A_vs_X/exon/directions/TtoG/1.json
-2016-05-28 12:07:58	Thales.local:47937	INFO	analysis1 md5sum : 8efca9ede3376bd74fb75c97413e4496
-2016-05-28 12:07:58	Thales.local:47937	INFO	analysis2 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A_vs_X/exon/directions/TtoG/2.json
-2016-05-28 12:07:58	Thales.local:47937	INFO	analysis2 md5sum : 86e54824dfd89e01ba49a557f561c8d9
-2016-05-28 12:08:00	Thales.local:47937	INFO	analysis3 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A_vs_X/exon/directions/TtoG/3.json
-2016-05-28 12:08:00	Thales.local:47937	INFO	analysis3 md5sum : 04d6642a07335200659840477c9b6f78
-2016-05-28 12:08:17	Thales.local:47937	INFO	analysis4 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A_vs_X/exon/directions/TtoG/4.json
-2016-05-28 12:08:17	Thales.local:47937	INFO	analysis4 md5sum : 1b8260bbf470fb4f414fc2bec445e1ad
-2016-05-28 12:08:21	Thales.local:47937	INFO	summary : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A_vs_X/exon/directions/TtoG/summary.txt
-2016-05-28 12:08:21	Thales.local:47937	INFO	summary md5sum : 70aa2e52a6398732944b32c4d6ec5094
+2016-11-03 15:20:31	Thales.local:64955	INFO	system_details : system=Darwin Kernel Version 16.1.0: Thu Oct 13 21:26:57 PDT 2016; root:xnu-3789.21.3~60/RELEASE_X86_64
+2016-11-03 15:20:31	Thales.local:64955	INFO	python : 3.5.1
+2016-11-03 15:20:31	Thales.local:64955	INFO	user : gavin
+2016-11-03 15:20:31	Thales.local:64955	INFO	command_string : /Users/gavin/miniconda2/envs/py35/bin/mutation_analysis nbr -1 ../data/ensembl_snps_79/counts/A/exon/directions/freq_All-chrom_A-GC_All-TtoG.txt -2 ../data/ensembl_snps_79/counts/X/exon/directions/freq_All-chrom_X-GC_All-TtoG.txt -o ../results/ensembl_snps_79/A_vs_X/exon/directions/TtoG
+2016-11-03 15:20:31	Thales.local:64955	INFO	vars : {'first_order': False, 'no_type3': False, 'dry_run': False, 'countsfile2': '../data/ensembl_snps_79/counts/X/exon/directions/freq_All-chrom_X-GC_All-TtoG.txt', 'group_label': None, 'group_ref': None, 'format': 'pdf', 'plot_cfg': None, 'outpath': '../results/ensembl_snps_79/A_vs_X/exon/directions/TtoG', 'verbose': False, 'strand_symmetry': False, 'countsfile': '../data/ensembl_snps_79/counts/A/exon/directions/freq_All-chrom_A-GC_All-TtoG.txt'}
+2016-11-03 15:20:31	Thales.local:64955	INFO	countsfile1_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/counts/A/exon/directions/freq_All-chrom_A-GC_All-TtoG.txt
+2016-11-03 15:20:31	Thales.local:64955	INFO	countsfile1_path md5sum : 58039596f9a04d18b9e3c335292b10ed
+2016-11-03 15:20:31	Thales.local:64955	INFO	countsfile2_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/counts/X/exon/directions/freq_All-chrom_X-GC_All-TtoG.txt
+2016-11-03 15:20:31	Thales.local:64955	INFO	countsfile2_path md5sum : 8fdeb0facdd361ecafc7cf847720f376
+2016-11-03 15:20:31	Thales.local:64955	INFO	group_counts : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/A_vs_X/exon/directions/TtoG/group_counts_table.txt
+2016-11-03 15:20:31	Thales.local:64955	INFO	group_counts md5sum : 23173632d020b95df2ce4ba7175c5b67
+2016-11-03 15:20:31	Thales.local:64955	INFO	analysis1 : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/A_vs_X/exon/directions/TtoG/1.json
+2016-11-03 15:20:31	Thales.local:64955	INFO	analysis1 md5sum : 7315dcd8e2a3bba73f8167b67b2962b3
+2016-11-03 15:20:32	Thales.local:64955	INFO	analysis2 : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/A_vs_X/exon/directions/TtoG/2.json
+2016-11-03 15:20:32	Thales.local:64955	INFO	analysis2 md5sum : 040a4a8f46dfefffd3ce84adfaa3b932
+2016-11-03 15:20:34	Thales.local:64955	INFO	analysis3 : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/A_vs_X/exon/directions/TtoG/3.json
+2016-11-03 15:20:34	Thales.local:64955	INFO	analysis3 md5sum : 9652ea7a17ad8225372f0fe91fb1d9e0
+2016-11-03 15:20:59	Thales.local:64955	INFO	analysis4 : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/A_vs_X/exon/directions/TtoG/4.json
+2016-11-03 15:20:59	Thales.local:64955	INFO	analysis4 md5sum : ef35540edce4199c764bc39fe8243d4d
+2016-11-03 15:21:01	Thales.local:64955	INFO	summary : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/A_vs_X/exon/directions/TtoG/summary.txt
+2016-11-03 15:21:01	Thales.local:64955	INFO	summary md5sum : 537c8d5c151f09242832b970a7affd56

@@ -1,17 +1,17 @@
-2016-05-28 11:32:58	Thales.local:45954	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
-2016-05-28 11:32:58	Thales.local:45954	INFO	python : 2.7.10
-2016-05-28 11:32:58	Thales.local:45954	INFO	user : gavin
-2016-05-28 11:32:58	Thales.local:45954	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/mutation_analysis -1 ../data/ensembl_snps_79/counts/malignant_melanoma/directions/freq_All-chrom_All-GC_All-TtoA.txt -o ../results/ensembl_snps_79/malignant_melanoma/directions/TtoA nbr --plot_cfg=plots.cfg
-2016-05-28 11:32:58	Thales.local:45954	INFO	vars : {'verbose': False, 'dry_run': False, 'format': 'pdf', 'group_ref': None, 'first_order': False, 'group_label': None, 'strand_symmetry': False, 'plot_cfg': u'plots.cfg', 'force_overwrite': False, 'cfg_context': <mutation_motif.mutation_analysis.Config object at 0x11366d250>, 'outpath': u'../results/ensembl_snps_79/malignant_melanoma/directions/TtoA', 'countsfile2': None, 'countsfile': u'../data/ensembl_snps_79/counts/malignant_melanoma/directions/freq_All-chrom_All-GC_All-TtoA.txt'}
-2016-05-28 11:32:58	Thales.local:45954	INFO	countsfile1_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/malignant_melanoma/directions/freq_All-chrom_All-GC_All-TtoA.txt
-2016-05-28 11:32:58	Thales.local:45954	INFO	countsfile1_path md5sum : 2d17ad4842498829f3c50f68412f3858
-2016-05-28 11:32:58	Thales.local:45954	INFO	analysis1 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/malignant_melanoma/directions/TtoA/1.json
-2016-05-28 11:32:58	Thales.local:45954	INFO	analysis1 md5sum : b2bbcb4971b79fabd389eb4f1cd82b4e
-2016-05-28 11:32:58	Thales.local:45954	INFO	analysis2 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/malignant_melanoma/directions/TtoA/2.json
-2016-05-28 11:32:58	Thales.local:45954	INFO	analysis2 md5sum : 50499784b015b723459a127eaad4d443
-2016-05-28 11:32:59	Thales.local:45954	INFO	analysis3 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/malignant_melanoma/directions/TtoA/3.json
-2016-05-28 11:32:59	Thales.local:45954	INFO	analysis3 md5sum : b2a9a065bc6054922e68e25832788532
-2016-05-28 11:33:03	Thales.local:45954	INFO	analysis4 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/malignant_melanoma/directions/TtoA/4.json
-2016-05-28 11:33:03	Thales.local:45954	INFO	analysis4 md5sum : 8b6ad1d70ea83007205547efb9795f24
-2016-05-28 11:33:06	Thales.local:45954	INFO	summary : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/malignant_melanoma/directions/TtoA/summary.txt
-2016-05-28 11:33:06	Thales.local:45954	INFO	summary md5sum : 297e16bd084038bf0da7c74edc44c1d8
+2016-11-03 15:08:11	Thales.local:64048	INFO	system_details : system=Darwin Kernel Version 16.1.0: Thu Oct 13 21:26:57 PDT 2016; root:xnu-3789.21.3~60/RELEASE_X86_64
+2016-11-03 15:08:11	Thales.local:64048	INFO	python : 3.5.1
+2016-11-03 15:08:11	Thales.local:64048	INFO	user : gavin
+2016-11-03 15:08:11	Thales.local:64048	INFO	command_string : /Users/gavin/miniconda2/envs/py35/bin/mutation_analysis nbr -1 ../data/ensembl_snps_79/counts/malignant_melanoma/directions/freq_All-chrom_All-GC_All-TtoA.txt -o ../results/ensembl_snps_79/malignant_melanoma/directions/TtoA --plot_cfg=plots.cfg
+2016-11-03 15:08:11	Thales.local:64048	INFO	vars : {'plot_cfg': 'plots.cfg', 'no_type3': False, 'format': 'pdf', 'dry_run': False, 'group_label': None, 'strand_symmetry': False, 'group_ref': None, 'countsfile2': None, 'verbose': False, 'outpath': '../results/ensembl_snps_79/malignant_melanoma/directions/TtoA', 'countsfile': '../data/ensembl_snps_79/counts/malignant_melanoma/directions/freq_All-chrom_All-GC_All-TtoA.txt', 'first_order': False}
+2016-11-03 15:08:11	Thales.local:64048	INFO	countsfile1_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/counts/malignant_melanoma/directions/freq_All-chrom_All-GC_All-TtoA.txt
+2016-11-03 15:08:11	Thales.local:64048	INFO	countsfile1_path md5sum : 2d17ad4842498829f3c50f68412f3858
+2016-11-03 15:08:11	Thales.local:64048	INFO	analysis1 : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/malignant_melanoma/directions/TtoA/1.json
+2016-11-03 15:08:11	Thales.local:64048	INFO	analysis1 md5sum : 1b0c75cafe9564b4df73e99830c65d3c
+2016-11-03 15:08:11	Thales.local:64048	INFO	analysis2 : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/malignant_melanoma/directions/TtoA/2.json
+2016-11-03 15:08:11	Thales.local:64048	INFO	analysis2 md5sum : 8d6250c472a460e3d1d7723154db9286
+2016-11-03 15:08:12	Thales.local:64048	INFO	analysis3 : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/malignant_melanoma/directions/TtoA/3.json
+2016-11-03 15:08:12	Thales.local:64048	INFO	analysis3 md5sum : ff38fa52359bd2bcce8a896bbfafba6e
+2016-11-03 15:08:16	Thales.local:64048	INFO	analysis4 : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/malignant_melanoma/directions/TtoA/4.json
+2016-11-03 15:08:16	Thales.local:64048	INFO	analysis4 md5sum : 4ac3fc0eb195fb8dce0f498b46e51e69
+2016-11-03 15:08:18	Thales.local:64048	INFO	summary : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/malignant_melanoma/directions/TtoA/summary.txt
+2016-11-03 15:08:18	Thales.local:64048	INFO	summary md5sum : fd4f30c6889be37c871b3d09586662f3

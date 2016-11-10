@@ -1,16 +1,16 @@
 Position	RE	Deviance	df	prob	formula
-pos2	0.027466605852925128	21719.82284352931	3	0	count ~ group * mut * base - group : mut : base
-pos3	0.00496698639330887	3927.7537642096418	3	0	count ~ group * mut * base - group : mut : base
-pos0	0.0023798382476338687	1881.9094507579298	3	0	count ~ group * mut * base - group : mut : base
-pos1	0.010739637129887087	8492.604332475072	3	0	count ~ group * mut * base - group : mut : base
-pos1:pos2	0.0017029993146966897	1346.6841740813306	9	2.5508682410272464e-284	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
-pos1:pos3	0.0004936828776657938	390.3905965375351	9	1.5366484085732045e-78	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
-pos2:pos3	0.0012680482321104406	1002.7370366024373	9	4.4295626450699735e-210	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
-pos0:pos3	0.0002180247526399409	172.40786969459134	9	1.9435310224922743e-32	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
-pos0:pos2	0.0005185036521997747	410.0181700573202	9	9.9698510832809906e-83	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
-pos0:pos1	0.0005242095506289822	414.5302347699815	9	1.0850777651152238e-83	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
-pos0:pos1:pos3	9.925968761206315e-05	78.4917816923664	27	6.3785797710286304e-07	count ~ group * mut * base1 * base2 * base3 - group : mut : base1 : base2 : base3
-pos0:pos1:pos2	0.00011576036285538619	91.54005365587945	27	6.0320375197536242e-09	count ~ group * mut * base1 * base2 * base3 - group : mut : base1 : base2 : base3
-pos0:pos2:pos3	6.693185232381626e-05	52.92783472580883	27	0.0020533229249043898	count ~ group * mut * base1 * base2 * base3 - group : mut : base1 : base2 : base3
-pos1:pos2:pos3	0.00024727260487468743	195.53625230196633	27	1.7492765164820807e-27	count ~ group * mut * base1 * base2 * base3 - group : mut : base1 : base2 : base3
-pos0:pos1:pos2:pos3	0.0001804324344792389	142.6809170780167	81	2.8204568404340996e-05	count ~ group * mut * base1 * base2 * base3 * base4 - group : mut : base1 : base2 : base3 : base4
+pos0	0.00237983824763	1881.909450757934	3	0	count ~ group * mut * base - group : mut : base
+pos3	0.00496698639331	3927.7537642096613	3	0	count ~ group * mut * base - group : mut : base
+pos1	0.0107396371299	8492.604332475072	3	0	count ~ group * mut * base - group : mut : base
+pos2	0.0274666058529	21719.822843529306	3	0	count ~ group * mut * base - group : mut : base
+pos0:pos1	0.000524209550629	414.5302347699758	9	1.08507776512e-83	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
+pos0:pos2	0.0005185036522	410.0181700573198	9	9.96985108328e-83	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
+pos0:pos3	0.00021802475264	172.4078696945993	9	1.94353102248e-32	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
+pos1:pos2	0.0017029993147	1346.6841740813393	9	2.55086824102e-284	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
+pos1:pos3	0.000493682877666	390.39059653752474	9	1.53664840858e-78	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
+pos2:pos3	0.00126804823211	1002.7370366024445	9	4.42956264505e-210	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
+pos0:pos1:pos3	9.92596876121e-05	78.49178169237265	27	6.37857977101e-07	count ~ group * mut * base1 * base2 * base3 - group : mut : base1 : base2 : base3
+pos0:pos2:pos3	6.69318523238e-05	52.9278347258068	27	0.00205332292491	count ~ group * mut * base1 * base2 * base3 - group : mut : base1 : base2 : base3
+pos0:pos1:pos2	0.000115760362855	91.54005365587625	27	6.03203751976e-09	count ~ group * mut * base1 * base2 * base3 - group : mut : base1 : base2 : base3
+pos1:pos2:pos3	0.000247272604875	195.5362523019662	27	1.74927651648e-27	count ~ group * mut * base1 * base2 * base3 - group : mut : base1 : base2 : base3
+pos0:pos1:pos2:pos3	0.000180432434479	142.6809170780148	81	2.82045684044e-05	count ~ group * mut * base1 * base2 * base3 * base4 - group : mut : base1 : base2 : base3 : base4

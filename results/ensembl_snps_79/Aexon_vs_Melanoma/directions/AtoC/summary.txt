@@ -1,16 +1,16 @@
 Position	RE	Deviance	df	prob	formula
-pos2	0.00017425840830739066	7.773319077776082	3	0.050936351208365795	count ~ group * mut * base - group : mut : base
-pos3	0.00020608990245200466	9.193258368579023	3	0.026828759520657022	count ~ group * mut * base - group : mut : base
-pos0	0.00012824822696590055	5.7208969084948915	3	0.12600754828176275	count ~ group * mut * base - group : mut : base
-pos1	0.003284152870298474	146.49949123827435	3	1.4991065504655025e-31	count ~ group * mut * base - group : mut : base
-pos1:pos2	0.0008911120425034568	39.7507259919942	9	8.4307249398292431e-06	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
-pos1:pos3	0.0003085825278569568	13.765249402643127	9	0.13092421962231934	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
-pos2:pos3	0.0007139171644962558	31.84641687384898	9	0.00021167338402357905	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
-pos0:pos3	0.00021738096138783204	9.696929925588412	9	0.37557295011240793	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
-pos0:pos2	0.0006892509000999159	30.746104151657047	9	0.00032722630209758888	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
-pos0:pos1	0.0007475721960069387	33.34770051947752	9	0.00011615663737508391	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
-pos0:pos1:pos3	0.000877860611491083	39.15960615739423	27	0.061272670544646704	count ~ group * mut * base1 * base2 * base3 - group : mut : base1 : base2 : base3
-pos0:pos1:pos2	0.0009357334734365884	41.74119878305934	27	0.034900250635265133	count ~ group * mut * base1 * base2 * base3 - group : mut : base1 : base2 : base3
-pos0:pos2:pos3	0.0009759804936211111	43.536537859450526	27	0.023073779727472238	count ~ group * mut * base1 * base2 * base3 - group : mut : base1 : base2 : base3
-pos1:pos2:pos3	0.0007993033024830471	35.655321717163766	27	0.12303026868181954	count ~ group * mut * base1 * base2 * base3 - group : mut : base1 : base2 : base3
-pos0:pos1:pos2:pos3	0.0032264199859338006	143.924142732535	81	2.1137999554788356e-05	count ~ group * mut * base1 * base2 * base3 * base4 - group : mut : base1 : base2 : base3 : base4
+pos3	0.000206089902452	9.193258368580764	3	0.0268287595206	count ~ group * mut * base - group : mut : base
+pos0	0.000128248226966	5.7208969084954635	3	0.126007548282	count ~ group * mut * base - group : mut : base
+pos1	0.0032841528703	146.49949123827562	3	1.49910655046e-31	count ~ group * mut * base - group : mut : base
+pos2	0.000174258408307	7.7733190777751435	3	0.0509363512084	count ~ group * mut * base - group : mut : base
+pos0:pos3	0.000217380961388	9.696929925588408	9	0.375572950112	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
+pos1:pos3	0.000308582527857	13.765249402643336	9	0.130924219622	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
+pos0:pos2	0.0006892509001	30.74610415165692	9	0.000327226302098	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
+pos0:pos1	0.000747572196007	33.34770051947821	9	0.000116156637375	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
+pos2:pos3	0.000713917164496	31.846416873849147	9	0.000211673384024	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
+pos1:pos2	0.000891112042503	39.75072599199393	9	8.43072493983e-06	count ~ group * mut * base1 * base2 - group : mut : base1 : base2
+pos0:pos1:pos3	0.000877860611491	39.15960615739423	27	0.0612726705446	count ~ group * mut * base1 * base2 * base3 - group : mut : base1 : base2 : base3
+pos1:pos2:pos3	0.000799303302483	35.65532171716383	27	0.123030268682	count ~ group * mut * base1 * base2 * base3 - group : mut : base1 : base2 : base3
+pos0:pos1:pos2	0.000935733473437	41.741198783059524	27	0.0349002506353	count ~ group * mut * base1 * base2 * base3 - group : mut : base1 : base2 : base3
+pos0:pos2:pos3	0.000975980493621	43.53653785945054	27	0.0230737797275	count ~ group * mut * base1 * base2 * base3 - group : mut : base1 : base2 : base3
+pos0:pos1:pos2:pos3	0.00322641998593	143.92414273253513	81	2.11379995548e-05	count ~ group * mut * base1 * base2 * base3 * base4 - group : mut : base1 : base2 : base3 : base4

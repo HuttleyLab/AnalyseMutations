@@ -1,12 +1,12 @@
-2016-05-28 12:17:39	Thales.local:48234	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
-2016-05-28 12:17:39	Thales.local:48234	INFO	python : 2.7.10
-2016-05-28 12:17:39	Thales.local:48234	INFO	user : gavin
-2016-05-28 12:17:39	Thales.local:48234	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/mutation_analysis -1 ../data/ensembl_snps_79/counts/A/intron/combined_strand_symmetric/combined_counts.txt --strand_symmetry -o ../results/ensembl_snps_79/A/intron/combined_strand_symmetric/ spectra
-2016-05-28 12:17:39	Thales.local:48234	INFO	vars : {'verbose': False, 'dry_run': False, 'strand_symmetry': True, 'force_overwrite': False, 'outpath': u'../results/ensembl_snps_79/A/intron/combined_strand_symmetric/', 'countsfile2': None, 'countsfile': u'../data/ensembl_snps_79/counts/A/intron/combined_strand_symmetric/combined_counts.txt'}
-2016-05-28 12:17:39	Thales.local:48234	INFO	input_file_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/A/intron/combined_strand_symmetric/combined_counts.txt
-2016-05-28 12:17:39	Thales.local:48234	INFO	input_file_path md5sum : c61d43e0d97c0b25b89080fbb487e809
-2016-05-28 12:17:40	Thales.local:48234	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A/intron/combined_strand_symmetric/spectra_analysis.json
-2016-05-28 12:17:40	Thales.local:48234	INFO	output_file_path md5sum : 4804afe44beb5f7fd19486c33e39d108
-2016-05-28 12:17:40	Thales.local:48234	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A/intron/combined_strand_symmetric/spectra_summary.txt
-2016-05-28 12:17:40	Thales.local:48234	INFO	output_file_path md5sum : 01a8239e563918083dab41ccc205477f
-2016-05-28 12:17:40	Thales.local:48234	INFO	significance : ['RE=0.000001', 'Dev=9.03', 'df=2', 'p=0.0109482909522']
+2016-11-03 14:45:37	Thales.local:61725	INFO	system_details : system=Darwin Kernel Version 16.1.0: Thu Oct 13 21:26:57 PDT 2016; root:xnu-3789.21.3~60/RELEASE_X86_64
+2016-11-03 14:45:37	Thales.local:61725	INFO	python : 3.5.1
+2016-11-03 14:45:37	Thales.local:61725	INFO	user : gavin
+2016-11-03 14:45:37	Thales.local:61725	INFO	command_string : /Users/gavin/miniconda2/envs/py35/bin/mutation_analysis spectra -1 ../data/ensembl_snps_79/counts/A/intron/combined_strand_symmetric/combined_counts.txt --strand_symmetry -o ../results/ensembl_snps_79/A/intron/combined_strand_symmetric/
+2016-11-03 14:45:37	Thales.local:61725	INFO	vars : {'countsfile': '../data/ensembl_snps_79/counts/A/intron/combined_strand_symmetric/combined_counts.txt', 'outpath': '../results/ensembl_snps_79/A/intron/combined_strand_symmetric/', 'strand_symmetry': True, 'force_overwrite': False, 'dry_run': False, 'countsfile2': None, 'verbose': False}
+2016-11-03 14:45:37	Thales.local:61725	INFO	input_file_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/counts/A/intron/combined_strand_symmetric/combined_counts.txt
+2016-11-03 14:45:37	Thales.local:61725	INFO	input_file_path md5sum : c61d43e0d97c0b25b89080fbb487e809
+2016-11-03 14:45:38	Thales.local:61725	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/A/intron/combined_strand_symmetric/spectra_analysis.json
+2016-11-03 14:45:38	Thales.local:61725	INFO	output_file_path md5sum : b5a4a0a457c3eaf84367f6e34c1208dd
+2016-11-03 14:45:38	Thales.local:61725	INFO	output_file_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/A/intron/combined_strand_symmetric/spectra_summary.txt
+2016-11-03 14:45:38	Thales.local:61725	INFO	output_file_path md5sum : 773e647f47b067de96cb319c4a77838b
+2016-11-03 14:45:38	Thales.local:61725	INFO	significance : ['RE=0.000001', 'Dev=6.73', 'df=2', 'p=0.0345995322273']

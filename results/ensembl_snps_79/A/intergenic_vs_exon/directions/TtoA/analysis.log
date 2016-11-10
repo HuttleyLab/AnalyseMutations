@@ -1,21 +1,21 @@
-2016-05-28 11:44:39	Thales.local:46528	INFO	system_details : system=Darwin Kernel Version 15.5.0: Tue Apr 19 18:36:36 PDT 2016; root:xnu-3248.50.21~8/RELEASE_X86_64
-2016-05-28 11:44:39	Thales.local:46528	INFO	python : 2.7.10
-2016-05-28 11:44:39	Thales.local:46528	INFO	user : gavin
-2016-05-28 11:44:39	Thales.local:46528	INFO	command_string : /Users/gavin/.virtualenvs/trunk/bin/mutation_analysis -1 ../data/ensembl_snps_79/counts/A/intergenic/directions/freq_All-chrom_A-GC_All-TtoA.txt -2 ../data/ensembl_snps_79/counts/A/exon/directions/freq_All-chrom_A-GC_All-TtoA.txt -o ../results/ensembl_snps_79/A/intergenic_vs_exon/directions/TtoA nbr
-2016-05-28 11:44:39	Thales.local:46528	INFO	vars : {'verbose': False, 'dry_run': False, 'format': 'pdf', 'group_ref': None, 'first_order': False, 'group_label': None, 'strand_symmetry': False, 'plot_cfg': None, 'force_overwrite': False, 'cfg_context': <mutation_motif.mutation_analysis.Config object at 0x10708f210>, 'outpath': u'../results/ensembl_snps_79/A/intergenic_vs_exon/directions/TtoA', 'countsfile2': u'../data/ensembl_snps_79/counts/A/exon/directions/freq_All-chrom_A-GC_All-TtoA.txt', 'countsfile': u'../data/ensembl_snps_79/counts/A/intergenic/directions/freq_All-chrom_A-GC_All-TtoA.txt'}
-2016-05-28 11:44:39	Thales.local:46528	INFO	countsfile1_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/A/intergenic/directions/freq_All-chrom_A-GC_All-TtoA.txt
-2016-05-28 11:44:39	Thales.local:46528	INFO	countsfile1_path md5sum : d36bf22a2bd48db9313060b29dc58171
-2016-05-28 11:44:39	Thales.local:46528	INFO	countsfile2_path : /Users/gavin/DevRepos/AnalyseMutations/data/ensembl_snps_79/counts/A/exon/directions/freq_All-chrom_A-GC_All-TtoA.txt
-2016-05-28 11:44:39	Thales.local:46528	INFO	countsfile2_path md5sum : a591a3402230e5660eab46ce8d1f92e9
-2016-05-28 11:44:40	Thales.local:46528	INFO	group_counts : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A/intergenic_vs_exon/directions/TtoA/group_counts_table.txt
-2016-05-28 11:44:40	Thales.local:46528	INFO	group_counts md5sum : 18f65d2ae39f95436064bc0a9abba324
-2016-05-28 11:44:40	Thales.local:46528	INFO	analysis1 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A/intergenic_vs_exon/directions/TtoA/1.json
-2016-05-28 11:44:40	Thales.local:46528	INFO	analysis1 md5sum : cdf12f7c1d67cd24e3edc8fee0ce4833
-2016-05-28 11:44:40	Thales.local:46528	INFO	analysis2 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A/intergenic_vs_exon/directions/TtoA/2.json
-2016-05-28 11:44:40	Thales.local:46528	INFO	analysis2 md5sum : 8ef1393a3101fcf994a36409f2df7f51
-2016-05-28 11:44:42	Thales.local:46528	INFO	analysis3 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A/intergenic_vs_exon/directions/TtoA/3.json
-2016-05-28 11:44:42	Thales.local:46528	INFO	analysis3 md5sum : 6f9c5ea066eec9a80ed11ae52e3b2092
-2016-05-28 11:44:48	Thales.local:46528	INFO	analysis4 : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A/intergenic_vs_exon/directions/TtoA/4.json
-2016-05-28 11:44:48	Thales.local:46528	INFO	analysis4 md5sum : 5868256a848c3d837f6c87ba8cbb84ac
-2016-05-28 11:44:52	Thales.local:46528	INFO	summary : /Users/gavin/DevRepos/AnalyseMutations/results/ensembl_snps_79/A/intergenic_vs_exon/directions/TtoA/summary.txt
-2016-05-28 11:44:52	Thales.local:46528	INFO	summary md5sum : c8d65ec75139ee22d89705b07d1405ff
+2016-11-03 14:52:26	Thales.local:62614	INFO	system_details : system=Darwin Kernel Version 16.1.0: Thu Oct 13 21:26:57 PDT 2016; root:xnu-3789.21.3~60/RELEASE_X86_64
+2016-11-03 14:52:26	Thales.local:62614	INFO	python : 3.5.1
+2016-11-03 14:52:26	Thales.local:62614	INFO	user : gavin
+2016-11-03 14:52:26	Thales.local:62614	INFO	command_string : /Users/gavin/miniconda2/envs/py35/bin/mutation_analysis nbr -1 ../data/ensembl_snps_79/counts/A/intergenic/directions/freq_All-chrom_A-GC_All-TtoA.txt -2 ../data/ensembl_snps_79/counts/A/exon/directions/freq_All-chrom_A-GC_All-TtoA.txt -o ../results/ensembl_snps_79/A/intergenic_vs_exon/directions/TtoA
+2016-11-03 14:52:26	Thales.local:62614	INFO	vars : {'countsfile': '../data/ensembl_snps_79/counts/A/intergenic/directions/freq_All-chrom_A-GC_All-TtoA.txt', 'strand_symmetry': False, 'format': 'pdf', 'group_label': None, 'dry_run': False, 'plot_cfg': None, 'verbose': False, 'first_order': False, 'group_ref': None, 'countsfile2': '../data/ensembl_snps_79/counts/A/exon/directions/freq_All-chrom_A-GC_All-TtoA.txt', 'outpath': '../results/ensembl_snps_79/A/intergenic_vs_exon/directions/TtoA', 'no_type3': False}
+2016-11-03 14:52:26	Thales.local:62614	INFO	countsfile1_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/counts/A/intergenic/directions/freq_All-chrom_A-GC_All-TtoA.txt
+2016-11-03 14:52:26	Thales.local:62614	INFO	countsfile1_path md5sum : d36bf22a2bd48db9313060b29dc58171
+2016-11-03 14:52:26	Thales.local:62614	INFO	countsfile2_path : /Users/gavin/DevRepos/AnalyseMutationsGenetics/data/ensembl_snps_79/counts/A/exon/directions/freq_All-chrom_A-GC_All-TtoA.txt
+2016-11-03 14:52:26	Thales.local:62614	INFO	countsfile2_path md5sum : a591a3402230e5660eab46ce8d1f92e9
+2016-11-03 14:52:26	Thales.local:62614	INFO	group_counts : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/A/intergenic_vs_exon/directions/TtoA/group_counts_table.txt
+2016-11-03 14:52:26	Thales.local:62614	INFO	group_counts md5sum : 18f65d2ae39f95436064bc0a9abba324
+2016-11-03 14:52:26	Thales.local:62614	INFO	analysis1 : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/A/intergenic_vs_exon/directions/TtoA/1.json
+2016-11-03 14:52:26	Thales.local:62614	INFO	analysis1 md5sum : 29a1a0eaec9fd7ee9b7a2aa53be55ebd
+2016-11-03 14:52:26	Thales.local:62614	INFO	analysis2 : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/A/intergenic_vs_exon/directions/TtoA/2.json
+2016-11-03 14:52:26	Thales.local:62614	INFO	analysis2 md5sum : 772896a793e3c8075b7a774606b9b87f
+2016-11-03 14:52:29	Thales.local:62614	INFO	analysis3 : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/A/intergenic_vs_exon/directions/TtoA/3.json
+2016-11-03 14:52:29	Thales.local:62614	INFO	analysis3 md5sum : 788887540ae1fb817a926bc40d435568
+2016-11-03 14:52:38	Thales.local:62614	INFO	analysis4 : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/A/intergenic_vs_exon/directions/TtoA/4.json
+2016-11-03 14:52:38	Thales.local:62614	INFO	analysis4 md5sum : 7168c9ae8934f3c9e14f98cd99a17df5
+2016-11-03 14:52:42	Thales.local:62614	INFO	summary : /Users/gavin/DevRepos/AnalyseMutationsGenetics/results/ensembl_snps_79/A/intergenic_vs_exon/directions/TtoA/summary.txt
+2016-11-03 14:52:42	Thales.local:62614	INFO	summary md5sum : 547daf3e460033fbf2d7715a2010edbb

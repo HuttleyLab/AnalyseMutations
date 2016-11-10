@@ -1,16 +1,16 @@
 Position	RE	Deviance	df	prob	formula
-pos2	5.466821053500748e-07	1.415941640511436	3	0.70180221362285189	count ~ strand * mut * base - strand : mut : base
-pos3	7.206265886000733e-07	1.8664689845758602	3	0.60057843692291146	count ~ strand * mut * base - strand : mut : base
-pos0	2.4344663455141794e-06	6.305423640727838	3	0.097660192669301302	count ~ strand * mut * base - strand : mut : base
-pos1	2.3548100986069236e-07	0.6099108863238243	3	0.89415980155529495	count ~ strand * mut * base - strand : mut : base
-pos1:pos2	3.076033605033053e-06	7.967123903186329	9	0.53746271701866977	count ~ strand * mut * base1 * base2 - strand : mut : base1 : base2
-pos1:pos3	3.1183412204846463e-06	8.076703334893345	9	0.5264352593736914	count ~ strand * mut * base1 * base2 - strand : mut : base1 : base2
-pos2:pos3	2.5807329527792354e-06	6.684263514607197	9	0.66995394360721128	count ~ strand * mut * base1 * base2 - strand : mut : base1 : base2
-pos0:pos3	2.583353165364243e-06	6.691050032895973	9	0.66924986617371462	count ~ strand * mut * base1 * base2 - strand : mut : base1 : base2
-pos0:pos2	3.0660745504515676e-06	7.9413293144407895	9	0.54006949022431017	count ~ strand * mut * base1 * base2 - strand : mut : base1 : base2
-pos0:pos1	2.770402129228922e-06	7.175518820439178	9	0.61885104449291994	count ~ strand * mut * base1 * base2 - strand : mut : base1 : base2
-pos0:pos1:pos3	1.0520662288400636e-05	27.249188649344106	27	0.45041401764564132	count ~ strand * mut * base1 * base2 * base3 - strand : mut : base1 : base2 : base3
-pos0:pos1:pos2	9.31155634218647e-06	24.117526865868854	27	0.62378906730251638	count ~ strand * mut * base1 * base2 * base3 - strand : mut : base1 : base2 : base3
-pos0:pos2:pos3	9.710386995116488e-06	25.150523782119393	27	0.56602664379391721	count ~ strand * mut * base1 * base2 * base3 - strand : mut : base1 : base2 : base3
-pos1:pos2:pos3	6.942575611843992e-06	17.981715159515097	27	0.90407758624051082	count ~ strand * mut * base1 * base2 * base3 - strand : mut : base1 : base2 : base3
-pos0:pos1:pos2:pos3	2.89526046694904e-05	74.98909906067898	81	0.66703354138368076	count ~ strand * mut * base1 * base2 * base3 * base4 - strand : mut : base1 : base2 : base3 : base4
+pos0	2.43446634551e-06	6.305423640727952	3	0.0976601926693	count ~ strand * mut * base - strand : mut : base
+pos2	5.4668210535e-07	1.415941640511436	3	0.701802213623	count ~ strand * mut * base - strand : mut : base
+pos3	7.206265886e-07	1.8664689845758602	3	0.600578436923	count ~ strand * mut * base - strand : mut : base
+pos1	2.35481009861e-07	0.6099108863238243	3	0.894159801555	count ~ strand * mut * base - strand : mut : base
+pos2:pos3	2.58073295278e-06	6.684263514607105	9	0.669953943607	count ~ strand * mut * base1 * base2 - strand : mut : base1 : base2
+pos0:pos1	2.77040212923e-06	7.175518820439143	9	0.618851044493	count ~ strand * mut * base1 * base2 - strand : mut : base1 : base2
+pos1:pos2	3.07603360503e-06	7.9671239031863434	9	0.537462717019	count ~ strand * mut * base1 * base2 - strand : mut : base1 : base2
+pos0:pos2	3.06607455045e-06	7.941329314440797	9	0.540069490224	count ~ strand * mut * base1 * base2 - strand : mut : base1 : base2
+pos0:pos3	2.58335316536e-06	6.691050032895987	9	0.669249866174	count ~ strand * mut * base1 * base2 - strand : mut : base1 : base2
+pos1:pos3	3.11834122048e-06	8.07670333489336	9	0.526435259374	count ~ strand * mut * base1 * base2 - strand : mut : base1 : base2
+pos0:pos1:pos3	1.05206622884e-05	27.249188649344262	27	0.450414017646	count ~ strand * mut * base1 * base2 * base3 - strand : mut : base1 : base2 : base3
+pos0:pos2:pos3	9.71038699512e-06	25.15052378211943	27	0.566026643794	count ~ strand * mut * base1 * base2 * base3 - strand : mut : base1 : base2 : base3
+pos0:pos1:pos2	9.31155634219e-06	24.117526865868818	27	0.623789067303	count ~ strand * mut * base1 * base2 * base3 - strand : mut : base1 : base2 : base3
+pos1:pos2:pos3	6.94257561184e-06	17.9817151595151	27	0.904077586241	count ~ strand * mut * base1 * base2 * base3 - strand : mut : base1 : base2 : base3
+pos0:pos1:pos2:pos3	2.89526046695e-05	74.98909906067897	81	0.667033541384	count ~ strand * mut * base1 * base2 * base3 * base4 - strand : mut : base1 : base2 : base3 : base4

@@ -1,16 +1,16 @@
 Position	RE	Deviance	df	prob	formula
-pos2	0.03324974726451855	11469.433819401145	3	0	count ~ mut * base - mut : base
-pos3	0.0045051717524532435	1554.0499856652414	3	0	count ~ mut * base - mut : base
-pos0	0.013111344520478616	4522.732069650057	3	0	count ~ mut * base - mut : base
-pos1	0.07884153180925607	27196.228714539262	3	0	count ~ mut * base - mut : base
-pos1:pos2	0.01303576119567806	4496.659752926756	9	0	count ~ mut * base1 * base2 - mut : base1 : base2
-pos1:pos3	0.0019150444856427752	660.590765233504	9	2.0401630729550498e-136	count ~ mut * base1 * base2 - mut : base1 : base2
-pos2:pos3	0.0032427300648078766	1118.5732503953475	9	4.5572471167354033e-235	count ~ mut * base1 * base2 - mut : base1 : base2
-pos0:pos3	0.0003076108205380278	106.10973732295162	9	9.0887221069657686e-19	count ~ mut * base1 * base2 - mut : base1 : base2
-pos0:pos2	0.0031579233538889615	1089.3193450772894	9	9.3518674949369911e-229	count ~ mut * base1 * base2 - mut : base1 : base2
-pos0:pos1	0.005793610241961655	1998.4942657441889	9	0	count ~ mut * base1 * base2 - mut : base1 : base2
-pos0:pos1:pos3	0.000283666964161367	97.85035195353521	27	5.7864432489469599e-10	count ~ mut * base1 * base2 * base3 - mut : base1 : base2 : base3
-pos0:pos1:pos2	0.0005525895408703958	190.6146569441613	27	1.495497470203955e-26	count ~ mut * base1 * base2 * base3 - mut : base1 : base2 : base3
-pos0:pos2:pos3	0.0002867555575689973	98.91575607231047	27	3.875722837996435e-10	count ~ mut * base1 * base2 * base3 - mut : base1 : base2 : base3
-pos1:pos2:pos3	0.0004934804433986953	170.22509198949314	27	9.9051714621919968e-23	count ~ mut * base1 * base2 * base3 - mut : base1 : base2 : base3
-pos0:pos1:pos2:pos3	0.000375108646564011	129.39297741496247	81	0.00051322748788473673	count ~ mut * base1 * base2 * base3 * base4 - mut : base1 : base2 : base3 : base4
+pos0	0.0131113445205	4522.7320696500565	3	0	count ~ mut * base - mut : base
+pos2	0.0332497472645	11469.433819401143	3	0	count ~ mut * base - mut : base
+pos1	0.0788415318093	27196.228714539262	3	0	count ~ mut * base - mut : base
+pos3	0.00450517175245	1554.049985665241	3	0	count ~ mut * base - mut : base
+pos2:pos3	0.00324273006481	1118.5732503953475	9	4.55724711674e-235	count ~ mut * base1 * base2 - mut : base1 : base2
+pos0:pos3	0.000307610820538	106.10973732295162	9	9.08872210697e-19	count ~ mut * base1 * base2 - mut : base1 : base2
+pos0:pos1	0.00579361024196	1998.4942657441889	9	0	count ~ mut * base1 * base2 - mut : base1 : base2
+pos0:pos2	0.00315792335389	1089.3193450772887	9	9.35186749494e-229	count ~ mut * base1 * base2 - mut : base1 : base2
+pos1:pos3	0.00191504448564	660.5907652335044	9	2.04016307295e-136	count ~ mut * base1 * base2 - mut : base1 : base2
+pos1:pos2	0.0130357611957	4496.659752926756	9	0	count ~ mut * base1 * base2 - mut : base1 : base2
+pos0:pos1:pos3	0.000283666964161	97.85035195353527	27	5.78644324895e-10	count ~ mut * base1 * base2 * base3 - mut : base1 : base2 : base3
+pos0:pos1:pos2	0.00055258954087	190.6146569441613	27	1.4954974702e-26	count ~ mut * base1 * base2 * base3 - mut : base1 : base2 : base3
+pos1:pos2:pos3	0.000493480443399	170.225091989493	27	9.90517146219e-23	count ~ mut * base1 * base2 * base3 - mut : base1 : base2 : base3
+pos0:pos2:pos3	0.000286755557569	98.91575607231042	27	3.875722838e-10	count ~ mut * base1 * base2 * base3 - mut : base1 : base2 : base3
+pos0:pos1:pos2:pos3	0.000375108646564	129.39297741496244	81	0.000513227487885	count ~ mut * base1 * base2 * base3 * base4 - mut : base1 : base2 : base3 : base4
