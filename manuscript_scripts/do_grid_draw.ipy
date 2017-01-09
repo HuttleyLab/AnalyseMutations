@@ -8,13 +8,13 @@ base_dir = "../results/ensembl_snps_79/A/intergenic/directions/"
 json_path = os.path.join(base_dir, "json1_paths.cfg")
 print(json_path)
 !cp json1_paths.cfg  $json_path
-!mutation_draw nbr_grid --sample_size --paths_cfg $json_path
+!mutation_draw nbr_matrix --sample_size --paths_cfg $json_path
 
 base_dir = "../results/ensembl_snps_79/malignant_melanoma/directions/"
 json_path = os.path.join(base_dir, "json1_paths.cfg")
 print(json_path)
 !cp json1_paths.cfg $json_path
-!mutation_draw nbr_grid --sample_size --paths_cfg $json_path
+!mutation_draw nbr_matrix --sample_size --paths_cfg $json_path
 
 ## FOR THE SPECTRA EFFECTS
 ### Autosomal versus X for intergenic regions
